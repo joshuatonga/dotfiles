@@ -10,3 +10,7 @@
 - iTerm2
 - stow
 - commitizen
+
+### Scopes
+- tools - FIXME (add description here)
+- color - anything related to color changes
