@@ -1,132 +1,41 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-fugitive' "Plug for git
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-markdown'
-"Plug 'airblade/vim-gitgutter'
+
+Plug 'tpope/vim-fugitive'
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
 else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
-"Plug 'powerline/powerline'
-"Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdtree' " File directory tree plugin
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter' " For commenting
 Plug 'tpope/vim-surround' " CRUD of surrounding pairs makes easy
 Plug 'sheerun/vim-polyglot'
-"Plug 'w0rp/ale'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'jparise/vim-graphql'
-Plug 'majutsushi/tagbar'
-"Plug 'bling/vim-airline' " Lean and mean status/tabline for vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdcommenter' " For commenting
 Plug 'easymotion/vim-easymotion' " For easy movement 
-"Plug 'Raimondi/delimitMate' " for auto closing of quotes, braces, etc
-Plug 'mtth/scratch.vim'
-Plug 'posva/vim-vue'
+Plug 'Raimondi/delimitMate' " for auto closing of quotes, braces, etc
 Plug 'mattn/emmet-vim' " for emmet
 Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'c.vim'
-Plug 'zig-lang/zig.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'hashivim/vim-terraform'
-Plug 'sainnhe/sonokai'
-"Plug 'MarcWeber/vim-addon-mw-utils' " pluginns for snipmate
-"Plug 'tomtom/tlib_vim' " pluginns for snipmate
-"Plug 'garbas/vim-snipmate' " pluginns for snipmate
-"Plug 'honza/vim-snippets' " pluginns for snipmate
-"Plug 'Yggdroot/indentLine' " for indentation guide
-"Plug 'davidhalter/jedi-vim' " Auto complete python
-"Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar' " for summary of code
-Plug 'ap/vim-css-color' " show colors in css
-Plug 'terryma/vim-multiple-cursors' " for multi selection
+Plug 'ap/vim-css-color' " show colors in css while editing
+Plug 'terryma/vim-multiple-cursors' " for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
 Plug 'luochen1990/rainbow' " for parentheses colors
-"Plug 'HTML-AutoCloseTag' " Auto close tag for html
-Plug 'othree/html5.vim' " for html5
-Plug 'whatyouhide/vim-gotham'
-Plug 'isruslan/vim-es6'
 Plug 'gregsexton/MatchTag' " for html matching tags
-Plug 'fatih/vim-go'
-Plug 'AndrewRadev/splitjoin.vim'
-"Plug 'mxw/vim-jsx' " for reactjs syntax highlightning
-Plug 'chemzqm/vim-jsx-improve'
-"Plug 'TaskList.vim' " Todo list
-"Plug 'ervandew/supertab'
-"Plug 'klen/python-mode' " python completion
-"Plug 'Shougo/neosnippet'
-"Plug 'Shougo/neosnippet-snippets' " snippets for neocomplete
-"Plug 'nvie/vim-flake8' " pyython stnax checker
-"Plug 'SirVer/ultisnips' " For snippets creating
-Plug 'hail2u/vim-css3-syntax' " for css
-Plug 'briancollins/vim-jst'
-Plug 'groenewege/vim-less'
-"Plug 'andviro/flake8-vim' " for python syntax checker 
-"Plug 'Valloric/YouCompleteMe' " auto completion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim' " buffer
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher' " ctrlp fast matcher base on python
-"Plug 'mxw/vim-jsx' " for react jsx syntax highlighting and indentation of it
-Plug 'ekalinin/dockerfile.vim' " Dockerfile syntax
-Plug 'kchmck/vim-coffee-script' " Coffeescript syntax
-Plug 'digitaltoad/vim-jade' " Jade syntax
-Plug 'mustache/vim-mustache-handlebars' " Syntax
-
-"Plug 'altercation/vim-colors-solarized' " Vim colorscheme
-Plug 'sainnhe/edge'
-Plug 'zefei/cake16'
-Plug 'ajgrf/parchment'
-Plug 'flazz/vim-colorschemes'
-Plug 'morhetz/gruvbox'
-Plug 'matveyt/vim-modest'
-Plug 'arzg/vim-corvine'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'rakr/vim-two-firewatch'
-Plug 'sjl/badwolf'
 Plug 'edkolev/tmuxline.vim'
-Plug 'plytophogy/vim-virtualenv'
 Plug 'PieterjanMontens/vim-pipenv'
+
+" Colorschemes
 Plug 'ayu-theme/ayu-vim'
-Plug 'cocopon/iceberg.vim'
 Plug 'yasukotelin/shirotelin'
 
-" Track the engine.
-"Plug 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
-Plug 'fatih/molokai'
-"Plug 'sainnhe/edge'
-
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'deoplete-plugins/deoplete-go', {'build': {'unix': 'make'}}
-"
-Plug 'tpope/vim-dadbod'
-
-" Tfalseypescript setup
-Plug 'herringtondarkholme/yats.vim'
-"Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" coc extensions
-"let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-python', 'coc-eslint','coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+" Coc extensions
 let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-python', 'coc-eslint','coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
-
-
-Plug 'ianks/vim-tsx'
-
-"Plug 'Valloric/YouCompleteMe', {  
-     "\ 'build'      : {
-        "\ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        "\ 'unix'    : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        "\ 'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        "\ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-        "\ }
-     "\ }
 
 call plug#end()
 "let &runtimepath.=',~/.vim/bundle/ale'
