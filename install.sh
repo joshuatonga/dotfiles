@@ -15,3 +15,4 @@
 
 stow commitizen
 stow tmux
+stow configs
