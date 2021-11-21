@@ -14,3 +14,4 @@
 # popd
 
 stow commitizen
+stow tmux
