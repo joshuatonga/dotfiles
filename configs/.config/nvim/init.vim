@@ -14,7 +14,7 @@ endif
 "Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdtree' " File directory tree plugin
 Plug 'tpope/vim-surround' " CRUD of surrounding pairs makes easy
-"Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 "Plug 'w0rp/ale'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'jparise/vim-graphql'
