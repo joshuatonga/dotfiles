@@ -13,4 +13,7 @@
 
 ### Scopes
 - tools - FIXME (add description here)
+  - nvim
+  - tmux
+  - zsh
 - color - anything related to color changes

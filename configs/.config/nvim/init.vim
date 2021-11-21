@@ -1,7 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-fugitive' "Plug for git
-"Plug 'calorie/vim-typing-sound'
-"Plug 'joonty/vim-do.git'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-markdown'
 "Plug 'airblade/vim-gitgutter'
@@ -93,6 +91,7 @@ Plug 'plytophogy/vim-virtualenv'
 Plug 'PieterjanMontens/vim-pipenv'
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'yasukotelin/shirotelin'
 
 " Track the engine.
 "Plug 'SirVer/ultisnips'
@@ -337,8 +336,11 @@ let g:gruvbox_italic=1
 "colorscheme modest
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
+"let ayucolor="dark"   " for dark version of theme
+" dark mode
 colorscheme ayu
+" light mode
+"colorscheme shirotelin
 "colorscheme parchment
 "colorscheme cake16
 
@@ -351,7 +353,7 @@ if has("gui_running")
  ""let g:edge_disable_italic_comment = 1
   "colorscheme edge
   "set background=light
-  colorscheme modest
+  "colorscheme modest
   "colorscheme corvine_light
   "colorscheme parchment
 endif
