@@ -127,8 +127,8 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
 
 " NerdTree - open/close nerdtree in normal mode
-nmap <F3> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize=60
+nmap <C-\> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=40
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
