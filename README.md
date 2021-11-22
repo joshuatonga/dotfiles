@@ -6,6 +6,9 @@
 - Update README.md with instructions
 - Add git config?
 
+## Requirements
+- go (for compiling nvim plugins specifically vim-hexokinase)
+
 ### Programs/Tools
 - iTerm2
 - stow

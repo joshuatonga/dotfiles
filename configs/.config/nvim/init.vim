@@ -22,7 +22,7 @@ Plug 'Raimondi/delimitMate' " for auto closing of quotes, braces, etc
 Plug 'mattn/emmet-vim' " for emmet
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'majutsushi/tagbar' " for summary of code
-Plug 'ap/vim-css-color' " show colors in css while editing
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'terryma/vim-multiple-cursors' " for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
 Plug 'luochen1990/rainbow' " for parentheses colors
 Plug 'gregsexton/MatchTag' " for html matching tags
@@ -112,6 +112,8 @@ nnoremap <C-Right> :tabnext<CR>
 
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
+
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 
 " ****************************
@@ -336,3 +338,6 @@ nnoremap <leader>hd :SignifyHunkDiff<cr>
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 nmap <silent> <cr> <plug>(signify-next-hunk)
 nmap <silent> <backspace> <plug>(signify-prev-hunk)
+
+" Hexokinase - colors
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
