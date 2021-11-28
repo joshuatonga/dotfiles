@@ -34,8 +34,8 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'PieterjanMontens/vim-pipenv'
 
 " Colorschemes
-Plug 'epmor/hotline-vim'
 Plug 'yasukotelin/shirotelin'
+Plug 'fnune/base16-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Coc extensions
@@ -190,7 +190,8 @@ set nohlsearch
 syntax on
 "set hlsearch
 
-colorscheme hotline " dark mode
+let base16colorspace=256 " access colors present in 256 colorspace
+colorscheme base16-windows-nt " dark red
 "colorscheme shirotelin " light mode
 
 let g:user_emmet_install_global = 1
