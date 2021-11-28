@@ -1,9 +1,10 @@
 [alias]
+  a = add
+  p = push
   st = status
   ci = commit
   br = branch
   co = checkout
-  p = push
 
 [init]
 	defaultBranch = master
