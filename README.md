@@ -15,8 +15,10 @@
 - commitizen
 
 ### Scopes
-- tools - FIXME (add description here)
+- tools
   - nvim
   - tmux
   - zsh
+  - git
+  - iterm2
 - color - anything related to color changes
