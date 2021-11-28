@@ -1,5 +1,6 @@
+alias v=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
-alias v=$EDITOR
 
 alias k=kubectl
+alias g=git
