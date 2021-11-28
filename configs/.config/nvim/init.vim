@@ -34,7 +34,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'PieterjanMontens/vim-pipenv'
 
 " Colorschemes
-Plug 'ayu-theme/ayu-vim'
+Plug 'epmor/hotline-vim'
 Plug 'yasukotelin/shirotelin'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -85,6 +85,8 @@ set expandtab " always uses spaces instead of tab characters
 set ai " auto indent
 set si " smart indent
 set wrap " wrap lines
+
+autocmd FileType python setlocal ts=4 sw=4 sts=4 expandtab
 
 " put color in column 80
 set colorcolumn=120
@@ -173,23 +175,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
 let g:airline#extension#tabline#enabled=1
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_theme = 'deus'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_theme = 'minimalist'
 set laststatus=2 " for vim airline to appear
-
-autocmd FileType python setlocal ts=4 sw=4 sts=4 expandtab
 
 " Themes
 set t_Co=256 " 256 colors
@@ -203,10 +190,7 @@ set nohlsearch
 syntax on
 "set hlsearch
 
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu " dark mode
+colorscheme hotline " dark mode
 "colorscheme shirotelin " light mode
 
 let g:user_emmet_install_global = 1
