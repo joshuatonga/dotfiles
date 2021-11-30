@@ -18,3 +18,4 @@ stow tmux
 stow configs
 stow zsh
 stow git
+stow powerlevel10k
