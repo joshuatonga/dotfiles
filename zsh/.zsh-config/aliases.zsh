@@ -6,5 +6,6 @@ alias vim=$EDITOR
 alias k=kubectl
 alias kc=kubectx
 alias kn=kubens
+alias kt=kubetail
 
 alias g=git
