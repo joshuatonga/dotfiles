@@ -21,4 +21,5 @@
   - zsh
   - git
   - iterm2
+  - powerlevel10k
 - color - anything related to color changes
