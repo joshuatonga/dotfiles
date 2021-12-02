@@ -112,9 +112,10 @@ source ~/.zsh-config/vendor/powerlevel10k/powerlevel10k.zsh-theme
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
 # NVM installation (https://tecadmin.net/install-nvm-macos-with-homebrew/)
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 source $HOME/.zsh-config/aliases.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
