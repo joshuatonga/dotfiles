@@ -9,3 +9,5 @@ alias kn=kubens
 alias kt=kubetail
 
 alias g=git
+
+alias f=fzf
