@@ -81,38 +81,16 @@ imap <c-s> <Esc>:w<CR>
 
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
-
-" ****************************
-" Plugins - mapping keys, configs
-" ****************************
-
-" Tagbar
-nmap <F4> :TagbarToggle<CR>
-" tagbar tags for typescript
-let g:tagbar_type_typescript = {                                                  
-  \ 'ctagsbin' : 'tstags',                                                        
-  \ 'ctagsargs' : '-f-',                                                           
-  \ 'kinds': [                                                                     
-    \ 'e:enums:0:1',                                                               
-    \ 'f:function:0:1',                                                            
-    \ 't:typealias:0:1',                                                           
-    \ 'M:Module:0:1',                                                              
-    \ 'I:import:0:1',                                                              
-    \ 'i:interface:0:1',                                                           
-    \ 'C:class:0:1',                                                               
-    \ 'm:method:0:1',                                                              
-    \ 'p:property:0:1',                                                            
-    \ 'v:variable:0:1',                                                            
-    \ 'c:const:0:1',                                                              
-  \ ],                                                                            
-  \ 'sort' : 0                                                                    
-\ }    
-
 " for navigating split navigations or etc
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+" ****************************
+" Plugins - mapping keys, configs
+" ****************************
 
 " Themes
 set t_Co=256 " 256 colors

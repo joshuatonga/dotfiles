@@ -18,7 +18,6 @@ Plug 'easymotion/vim-easymotion' " For easy movement
 Plug 'Raimondi/delimitMate' " for auto closing of quotes, braces, etc
 Plug 'mattn/emmet-vim' " for emmet
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'majutsushi/tagbar' " for summary of code
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'terryma/vim-multiple-cursors' " for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
 Plug 'luochen1990/rainbow' " for parentheses colors
