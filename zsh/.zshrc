@@ -119,3 +119,4 @@ source $(brew --prefix nvm)/nvm.sh
 source $HOME/.zsh-config/aliases.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
