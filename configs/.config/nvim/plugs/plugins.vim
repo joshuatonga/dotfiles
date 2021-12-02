@@ -16,7 +16,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion' " For easy movement 
 Plug 'Raimondi/delimitMate' " for auto closing of quotes, braces, etc
-Plug 'mattn/emmet-vim' " for emmet
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'terryma/vim-multiple-cursors' " for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi

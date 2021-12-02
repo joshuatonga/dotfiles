@@ -107,5 +107,3 @@ syntax on
 let base16colorspace=256 " access colors present in 256 colorspace
 colorscheme base16-windows-nt " dark red
 "colorscheme shirotelin " light mode
-
-let g:user_emmet_install_global = 1
