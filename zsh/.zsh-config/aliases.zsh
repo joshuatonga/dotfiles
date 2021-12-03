@@ -11,3 +11,6 @@ alias kt=kubetail
 alias g=git
 
 alias f=fzf
+
+
+alias aliases="vi $HOME/dotfiles/zsh/.zsh-config/aliases.zsh"
