@@ -13,4 +13,5 @@ alias g=git
 alias f=fzf
 
 
+alias vplug="vi $HOME/dotfiles/configs/.config/nvim/plugs/plugins.vim"
 alias aliases="vi $HOME/dotfiles/zsh/.zsh-config/aliases.zsh"
