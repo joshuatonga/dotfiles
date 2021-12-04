@@ -37,3 +37,8 @@ Plug 'yasukotelin/shirotelin'
 Plug 'fnune/base16-vim'
 
 call plug#end()
+
+" Alias
+command PI PlugInstall
+command PC PlugClean
+command PU PlugUpdate
