@@ -36,6 +36,7 @@ Plug 'voldikss/vim-floaterm'
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
 Plug 'fnune/base16-vim'
+Plug 'kdheepak/lazygit.nvim'
 
 call plug#end()
 
