@@ -34,6 +34,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'mtth/scratch.vim'
+Plug 'MattesGroeger/vim-bookmarks'
 
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
