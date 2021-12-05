@@ -1,13 +1,6 @@
-## TODO
-- Add nvim
-- Add tmux
-- Add zsh
-- Add aliases and shortcuts
-- Update README.md with instructions
-- Add git config?
-
 ## Requirements
 - go (for compiling nvim plugins specifically vim-hexokinase)
+- nodejs
 
 ### Programs/Tools
 - iTerm2
@@ -23,3 +16,6 @@
   - iterm2
   - powerlevel10k
 - color - anything related to color changes
+
+## TODO
+- Update README.md with instructions
