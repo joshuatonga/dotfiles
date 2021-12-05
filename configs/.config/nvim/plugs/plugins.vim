@@ -33,6 +33,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'mtth/scratch.vim'
 
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
