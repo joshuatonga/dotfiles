@@ -1,3 +1,8 @@
+## Shortcuts
+- vim-scratch
+  - gs - in normal mode opens the scratch window and enters insert mode. The scratch window closes when you leave insert mode. This is especially useful for quick notes.
+  - gs - in visual mode pastes the current selection (character-wise, line-wise or block-wise) into the scratch buffer.
+
 ## Requirements
 - go (for compiling nvim plugins specifically vim-hexokinase)
 - nodejs
