@@ -32,11 +32,11 @@ Plug 'neoclide/coc.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'kdheepak/lazygit.nvim'
 
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
 Plug 'fnune/base16-vim'
-Plug 'kdheepak/lazygit.nvim'
 
 call plug#end()
 
