@@ -13,3 +13,4 @@ source $HOME/.config/nvim/modules/ctrlp.vim
 source $HOME/.config/nvim/modules/fzf.vim
 source $HOME/.config/nvim/modules/floaterm.vim
 source $HOME/.config/nvim/modules/lazygit.vim
+source $HOME/.config/nvim/modules/bookmarks.vim

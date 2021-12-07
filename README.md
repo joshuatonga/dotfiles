@@ -1,12 +1,12 @@
 ## Shortcuts
 - vim-bookmarks
-  - `mm` - add/remove bookmark at current line
-  - `mi` - add/edit/remove annotation at current line
-  - `mn` - jump to next bookmark in buffer
-  - `mp` - jump to previous bookmark in buffer
-  - `ma` - show all bookmarks (toggle)
-  - `mc` - clear bookmarks in current buffer only
-  - `mx` - clear bookmarks in all buffers
+  - `;;` - add/remove bookmark at current line
+  - `;i` - add/edit/remove annotation at current line
+  - `;n` - jump to next bookmark in buffer
+  - `;p` - jump to previous bookmark in buffer
+  - `;a` - show all bookmarks (toggle)
+  - `;c` - clear bookmarks in current buffer only
+  - `;x` - clear bookmarks in all buffers
   - `:BookmarkSave` <FILE_PATH> - save all bookmarks to file
   - `:BookmarkLoad` <FILE_PATH> - load bookmarks from a file
 - vim-scratch
