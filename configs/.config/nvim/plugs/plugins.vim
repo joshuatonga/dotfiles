@@ -35,6 +35,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'mtth/scratch.vim'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'bronson/vim-trailing-whitespace'
 
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
