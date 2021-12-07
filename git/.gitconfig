@@ -2,9 +2,16 @@
   a = add
   p = push
   st = status
+  sb = status -sb
   ci = commit
   br = branch
   co = checkout
+  d = diff
+  dv = difftool -t vimdiff -y
+  l = log
+  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  last = log -1 HEAD --stat
+  gl = config --global -l
 
 [init]
 	defaultBranch = master
