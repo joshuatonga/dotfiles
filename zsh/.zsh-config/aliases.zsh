@@ -11,6 +11,7 @@ alias kt=kubetail
 alias g=git
 
 alias f=fzf
+alias fb=firebase
 
 
 alias vplug="vi $HOME/dotfiles/configs/.config/nvim/plugs/plugins.vim"
