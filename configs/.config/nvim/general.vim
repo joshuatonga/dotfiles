@@ -1,9 +1,12 @@
 syntax on
 filetype plugin indent on
 autocmd FileType python setlocal ts=4 sw=4 sts=4 expandtab
+" unfold all when opening a file
+autocmd BufRead * normal zR
 
 highlight clear LineNr " make linenumbers transparent
 highlight NonText ctermbg=None " make non text line transparent
+
 
 set nohlsearch
 set autoread " set to auto read when a file is changed from the outside
