@@ -30,6 +30,3 @@
 - iterm2
 - powerlevel10k
 - color - anything related to color changes
-
-## TODO
-- Update README.md with instructions

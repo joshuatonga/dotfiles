@@ -120,3 +120,6 @@ source $HOME/.zsh-config/aliases.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
+
+# For commit signing in MacOS
+export GPG_TTY=$TTY
