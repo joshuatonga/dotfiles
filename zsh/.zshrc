@@ -123,3 +123,9 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
 
 # For commit signing in MacOS
 export GPG_TTY=$TTY
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Created by `pipx` on 2022-04-27 18:08:22
+export PATH="$PATH:/Users/joshuatonga/.local/bin"
+eval "$(register-python-argcomplete pipx)"
