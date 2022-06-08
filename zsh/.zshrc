@@ -1,3 +1,5 @@
+ZSH_FOLDER=.zsh-config
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -105,7 +107,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.zsh-config/vendor/powerlevel10k/powerlevel10k.zsh-theme
+source ~/$ZSH_FOLDER/vendor/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -116,7 +118,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-source $HOME/.zsh-config/aliases.zsh
+source $HOME/$ZSH_FOLDER/aliases.zsh
+source $HOME/$ZSH_FOLDER/utils.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
@@ -129,3 +132,5 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 # Created by `pipx` on 2022-04-27 18:08:22
 export PATH="$PATH:/Users/joshuatonga/.local/bin"
 eval "$(register-python-argcomplete pipx)"
+
+fpath=($fpath ~/$ZSH_FOLDER/completion)
