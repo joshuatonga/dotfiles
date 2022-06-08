@@ -133,3 +133,6 @@ export PATH="$PATH:/Users/joshuatonga/.local/bin"
 eval "$(register-python-argcomplete pipx)"
 
 fpath=($fpath ~/$ZSH_FOLDER/completion)
+
+# Disable aws cli pager
+export AWS_PAGER=""
