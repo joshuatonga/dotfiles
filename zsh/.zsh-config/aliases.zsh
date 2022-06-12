@@ -8,6 +8,8 @@ alias kc=kubectx
 alias kn=kubens
 alias kt=kubetail
 
+alias tf=terraform
+
 alias g=git
 
 alias f=fzf
