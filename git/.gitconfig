@@ -16,3 +16,4 @@
 
 [init]
 	defaultBranch = master
+	templateDir = /Users/joshuatonga/.git-template
