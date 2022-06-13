@@ -15,7 +15,7 @@
   gl = config --global -l
 
 [init]
-	defaultBranch = master
+	defaultBranch = main
 	templateDir = /Users/joshuatonga/.git-template
 
 [url "https://github.com/"]
