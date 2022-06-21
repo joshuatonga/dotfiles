@@ -10,5 +10,7 @@
 			"initializationOptions": {},
 			"settings": {}
 		}
-	}
+	},
+	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextCurrentLineOnly": false
 }
