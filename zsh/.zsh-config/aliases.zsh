@@ -16,3 +16,4 @@ alias fb=firebase
 
 alias vplug="vi $HOME/dotfiles/configs/.config/nvim/plugs/plugins.vim"
 alias aliases="vi $HOME/dotfiles/zsh/.zsh-config/aliases.zsh"
+alias tracker="node ~/projects/home/coding-tracker/src/index.js"
