@@ -119,6 +119,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 source $HOME/$ZSH_FOLDER/aliases.zsh
+source $HOME/$ZSH_FOLDER/mappings.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
