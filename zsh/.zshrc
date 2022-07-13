@@ -119,6 +119,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 source $HOME/$ZSH_FOLDER/aliases.zsh
+source $HOME/$ZSH_FOLDER/utils.zsh
 source $HOME/$ZSH_FOLDER/mappings.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
