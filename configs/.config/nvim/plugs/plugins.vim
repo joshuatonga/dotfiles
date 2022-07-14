@@ -41,6 +41,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
 Plug 'fnune/base16-vim'
+Plug 'tomasr/molokai'
 
 call plug#end()
 
