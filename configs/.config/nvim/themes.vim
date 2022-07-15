@@ -9,6 +9,8 @@ endif
 
 "let base16colorspace=256 " access colors present in 256 colorspace
 "colorscheme base16-windows-nt " dark red
-let g:rehash256 = 1
-colorscheme molokai " dark red
+"let g:rehash256 = 1
+"colorscheme molokai " dark red
 "colorscheme shirotelin " light mode
+let g:neosolarized_termtrans=1
+colorscheme NeoSolarized

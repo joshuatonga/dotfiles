@@ -42,6 +42,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'yasukotelin/shirotelin'
 Plug 'fnune/base16-vim'
 Plug 'tomasr/molokai'
+Plug 'overcache/NeoSolarized'
 
 call plug#end()
 
