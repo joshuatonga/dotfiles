@@ -1,7 +1,7 @@
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/general.vim
 source $HOME/.config/nvim/mappings.vim
-source $HOME/.config/nvim/themes/general.vim
+source $HOME/.config/nvim/themes.vim
 source $HOME/.config/nvim/modules/coc.vim
 source $HOME/.config/nvim/modules/signify.vim
 source $HOME/.config/nvim/modules/hexokinase.vim
