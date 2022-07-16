@@ -1,8 +1,6 @@
 syntax on
 filetype plugin indent on
 autocmd FileType python setlocal ts=4 sw=4 sts=4 expandtab
-" unfold all when opening a file
-autocmd BufRead * normal zR
 
 highlight clear LineNr " make linenumbers transparent
 highlight NonText ctermbg=None " make non text line transparent
@@ -34,6 +32,7 @@ set wrap " wrap lines
 set colorcolumn=120
 set foldmethod=indent
 set foldnestmax=10
+set nofoldenable " don't fold when opening a file
 set clipboard=unnamedplus
 set viminfo='100,f1 " for marks
 set shortmess+=A
