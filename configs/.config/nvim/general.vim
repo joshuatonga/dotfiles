@@ -10,7 +10,7 @@ highlight NonText ctermbg=None " make non text line transparent
 
 set nohlsearch
 set autoread " set to auto read when a file is changed from the outside
-set timeout timeoutlen=1500
+set timeout timeoutlen=200
 set encoding=utf8 " set standard encoding 
 set ffs=unix,dos,mac " use unix as the standard file type
 set splitbelow " open new split panes to right and bottom which feels more natural than vim's default
