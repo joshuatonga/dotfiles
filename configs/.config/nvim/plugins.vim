@@ -14,7 +14,7 @@ Plug 'tpope/vim-surround' " CRUD of surrounding pairs makes easy
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'easymotion/vim-easymotion' " For easy movement 
+Plug 'easymotion/vim-easymotion' " For easy movement
 Plug 'Raimondi/delimitMate' " for auto closing of quotes, braces, etc
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
