@@ -6,6 +6,7 @@ nnoremap <C-Right> :tabnext<CR>
 " ctrl+s to save current file while in normal mode or insert mode
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
+imap jj <Esc>
 
 " ,sv to reload nvim config
 nnoremap <Leader>sv :source $MYVIMRC<CR>
