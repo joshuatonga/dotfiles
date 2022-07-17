@@ -21,6 +21,7 @@ set ic " case insensitive
 set showmatch " show matching brackets when text indicator is over them
 set mat=2 "h ow many tenths of a second to blink when matching brackets
 set number " add left side numbes ( line number )
+set relativenumber
 set tabstop=2 " size of a hard tabstop
 set shiftwidth=2 " size of an indent
 set softtabstop=2 " a combination of spaces and tabs are used to simulate tab stops at a width other than the (hard)tabstop
