@@ -36,6 +36,7 @@ Plug 'mtth/scratch.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'honza/vim-snippets'
 
 " Colorschemes
 Plug 'yasukotelin/shirotelin'

@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-python', 'coc-eslint','coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-python', 'coc-eslint','coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-snippets']
 
 set hidden " if hidden is not set, TextEdit might fail.
 set nobackup " some servers have issues with backup files, see #649
