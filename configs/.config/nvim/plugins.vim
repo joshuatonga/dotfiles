@@ -25,7 +25,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher' " ctrlp fast matcher base on python
-Plug 'edkolev/tmuxline.vim'
 Plug 'PieterjanMontens/vim-pipenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim'
