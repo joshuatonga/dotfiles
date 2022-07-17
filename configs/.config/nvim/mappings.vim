@@ -1,5 +1,6 @@
 let mapleader = ","
 
+nnoremap <silent> Q <nop>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
