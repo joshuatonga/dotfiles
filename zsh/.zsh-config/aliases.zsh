@@ -13,6 +13,7 @@ alias g=git
 alias lg=lazygit
 alias gb=fzf-git-branch
 alias gco=fzf-git-checkout
+alias gr=jump-to-git-root
 alias f=fzf
 alias fb=firebase
 
