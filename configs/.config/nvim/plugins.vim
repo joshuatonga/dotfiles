@@ -37,6 +37,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'honza/vim-snippets'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
