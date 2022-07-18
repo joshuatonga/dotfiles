@@ -1,17 +1,14 @@
 {
-	"languageserver": {
-		"terraform": {
-			"command": "terraform-ls",
-			"args": ["serve"],
-			"filetypes": [
-				"terraform",
-				"tf"
-			],
-			"initializationOptions": {},
-			"settings": {}
-		}
-	},
-	"suggest.completionItemKindLabels": {
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  },
+  "suggest.completionItemKindLabels": {
     "method": "  method",
     "function": "  function",
     "variable": "[] variable",
@@ -37,12 +34,12 @@
     "constructor": "  constructor",
     "value": "  value",
     "enumMember": "  enumMember"
-	},
-	"snippets.priority": 1,
-	"coc.source.file.priority": 2,
-	"coc.source.around.priority": 3,
-	"coc.source.buffer.priority": 4,
-	"suggest.languageSourcePriority": 99,
-	"diagnostic.virtualText": true,
-	"diagnostic.virtualTextCurrentLineOnly": false
+  },
+  "snippets.priority": 1,
+  "coc.source.file.priority": 2,
+  "coc.source.around.priority": 3,
+  "coc.source.buffer.priority": 4,
+  "suggest.languageSourcePriority": 99,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false
 }
