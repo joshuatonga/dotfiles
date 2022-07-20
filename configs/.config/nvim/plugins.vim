@@ -23,8 +23,6 @@ Plug 'luochen1990/rainbow' " for parentheses colors
 Plug 'gregsexton/MatchTag' " for html matching tags
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher' " ctrlp fast matcher base on python
 Plug 'PieterjanMontens/vim-pipenv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim'
