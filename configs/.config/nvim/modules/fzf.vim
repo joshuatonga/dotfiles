@@ -1,5 +1,15 @@
-nnoremap <silent> <C-f> :Files<CR>
-nnoremap <silent> <Leader>f :Ag<CR>
+" For list of commands see: https://github.com/junegunn/fzf.vim#commands
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <Leader>fs :Ag<CR>
+nnoremap <silent> <Leader>fa :Agh<CR>
+nnoremap <silent> <Leader>fb :Buffers<CR>
+" view recent files
+nnoremap <silent> <Leader>fh :History<CR>
+" view files from git status
+nnoremap <silent> <Leader>fg :GFiles?<CR>
+nnoremap <silent> <Leader>fc :Commits<CR>
+" view commits for the current buffer
+nnoremap <silent> <Leader>fv :BCommits<CR>
 
 " ctrl-_ to toggle preview window
 let g:fzf_preview_window = ['right:60%', 'ctrl-_']
