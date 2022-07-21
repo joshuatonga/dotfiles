@@ -30,7 +30,7 @@
 	required = true
 
 [include]
-  path = ~/dotfiles/personal/git/.gitconfig
+  path = ~/personal/dotfiles/personal/git/.gitconfig
 
 [pager]
 	diff = diff-so-fancy | less --tabs=4 -RFX

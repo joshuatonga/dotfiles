@@ -20,6 +20,6 @@ alias fb=firebase
 alias pc=pre-commit
 alias pca="pre-commit run --all-files"
 
-alias vplug="vi $HOME/dotfiles/configs/.config/nvim/plugs/plugins.vim"
-alias aliases="vi $HOME/dotfiles/zsh/.zsh-config/aliases.zsh"
-alias tracker="node ~/projects/home/coding-tracker/src/index.js"
+alias vplug="vi $HOME/personal/dotfiles/configs/.config/nvim/plugs/plugins.vim"
+alias aliases="vi $HOME/personal/dotfiles/zsh/.zsh-config/aliases.zsh"
+alias tracker="node ~/personal/coding-tracker/src/index.js"
