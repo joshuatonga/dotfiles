@@ -13,6 +13,7 @@
   ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   last = log -1 HEAD --stat
   gl = config --global -l
+  pro = pull --rebase origin main
 
 [init]
 	defaultBranch = main
