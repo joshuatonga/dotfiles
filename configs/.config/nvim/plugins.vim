@@ -36,6 +36,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'honza/vim-snippets'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Colorschemes
 Plug 'yasukotelin/shirotelin'
