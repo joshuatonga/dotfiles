@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STOW_FOLDERS="commitizen,tmux,configs,zsh,git,powerlevel10k"
+STOW_FOLDERS="general,commitizen,tmux,configs,zsh,git,powerlevel10k"
 
 DOT_FILES=$HOME/dotfiles
 
