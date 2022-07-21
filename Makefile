@@ -1,5 +1,5 @@
-all:
+install:
 	stow --verbose --target=$$HOME --restow */
 
-delete:
+uninstall:
 	stow --verbose --target=$$HOME --delete */
