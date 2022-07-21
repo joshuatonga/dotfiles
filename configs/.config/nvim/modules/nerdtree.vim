@@ -1,5 +1,5 @@
 nmap <C-e> :NERDTreeToggle<CR>
-nmap <C-\> :NERDTreeFind<CR>
+nmap <leader>ns :NERDTreeFind<CR>
 nmap <leader>nf :NERDTreeFocus<CR>
 
 let g:NERDTreeWinSize=40
