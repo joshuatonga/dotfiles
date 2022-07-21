@@ -13,5 +13,7 @@ nnoremap <silent> <Leader>fv :BCommits<CR>
 
 " ctrl-_ to toggle preview window
 let g:fzf_preview_window = ['right:60%', 'ctrl-_']
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--path-to-ignore ~/.ignore', fzf#vim#with_preview(), <bang>0)
-command! -bang -nargs=* Agh call fzf#vim#ag(<q-args>, '--path-to-ignore ~/.ignore --hidden', fzf#vim#with_preview(), <bang>0)
+let s:AG_OPTIONS = "--path-to-ignore ~/.ignore"
+let s:PREVIEW_OPTIONS = {'options': '--delimiter : --nth 4..'}
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, s:AG_OPTIONS, fzf#vim#with_preview(s:PREVIEW_OPTIONS), <bang>0)
+command! -bang -nargs=* Agh call fzf#vim#ag(<q-args>, s:AG_OPTIONS . ' --hidden', fzf#vim#with_preview(s:PREVIEW_OPTIONS), <bang>0)
