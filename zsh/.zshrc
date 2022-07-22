@@ -69,6 +69,9 @@ ZSH_THEME="robbyrussell"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+export HISTSIZE=10000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh-config/custom
