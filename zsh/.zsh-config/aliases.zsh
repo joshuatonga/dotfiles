@@ -8,6 +8,7 @@ alias kc=kubectx
 alias kn=kubens
 alias kt=kubetail
 
+alias t=tmux
 alias tf=terraform
 alias g=git
 alias lg=lazygit
