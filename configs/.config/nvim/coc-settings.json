@@ -41,7 +41,7 @@
   "coc.source.around.priority": 3,
   "coc.source.buffer.priority": 4,
   "suggest.languageSourcePriority": 99,
-  "coc.preferences.formatOnSaveFiletypes": ["json"],
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false
 }
