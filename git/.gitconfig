@@ -38,3 +38,6 @@
 
 [advice]
 	addEmptyPathspec = false
+
+[push]
+	default = current
