@@ -37,6 +37,7 @@
   },
   "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnips",
   "snippets.priority": 1,
+  "coc.source.tmuxcomplete.enable": false,
   "coc.source.file.priority": 2,
   "coc.source.around.priority": 3,
   "coc.source.buffer.priority": 4,
