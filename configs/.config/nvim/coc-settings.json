@@ -44,8 +44,5 @@
   "suggest.languageSourcePriority": 99,
   "coc.preferences.formatOnSaveFiletypes": ["json", "yaml", "terraform"],
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false,
-  "yaml.schemas": {
-    "kubernetes":  ["/*.yaml"]
-  }
+  "diagnostic.virtualTextCurrentLineOnly": false
 }
