@@ -8,6 +8,7 @@ let g:coc_global_extensions = [
       \ 'coc-json',
       \ 'coc-yank',
       \ 'coc-prettier',
+      \ 'coc-yaml',
       \ 'coc-snippets'
       \]
 
