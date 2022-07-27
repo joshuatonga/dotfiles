@@ -44,5 +44,6 @@
   "suggest.languageSourcePriority": 99,
   "coc.preferences.formatOnSaveFiletypes": ["json", "yaml", "terraform"],
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "yaml.enable": false
 }
