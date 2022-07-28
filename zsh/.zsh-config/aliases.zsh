@@ -8,6 +8,8 @@ alias kc=kubectx
 alias kn=kubens
 alias kt=kubetail
 
+alias alert="afplay /System/Library/Sounds/Submarine.aiff"
+
 alias t=tmux
 alias tf=terraform
 alias g=git
