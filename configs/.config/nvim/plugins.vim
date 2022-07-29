@@ -43,6 +43,7 @@ Plug 'fnune/base16-vim'
 Plug 'tomasr/molokai'
 Plug 'overcache/NeoSolarized'
 Plug 'michaeldyrynda/carbon'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 call plug#end()
 

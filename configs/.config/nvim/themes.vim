@@ -13,5 +13,7 @@ endif
 "colorscheme molokai " dark red
 "colorscheme shirotelin " light mode
 "let g:neosolarized_termtrans=1
-colorscheme NeoSolarized
+"colorscheme NeoSolarized
 "colorscheme Carbon
+let g:tokyonight_style = 'night'
+colorscheme tokyonight
