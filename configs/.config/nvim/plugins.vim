@@ -42,6 +42,7 @@ Plug 'yasukotelin/shirotelin'
 Plug 'fnune/base16-vim'
 Plug 'tomasr/molokai'
 Plug 'overcache/NeoSolarized'
+Plug 'michaeldyrynda/carbon'
 
 call plug#end()
 
