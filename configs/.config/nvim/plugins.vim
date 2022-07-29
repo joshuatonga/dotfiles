@@ -44,6 +44,7 @@ Plug 'tomasr/molokai'
 Plug 'overcache/NeoSolarized'
 Plug 'michaeldyrynda/carbon'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 

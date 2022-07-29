@@ -12,8 +12,9 @@ endif
 "let g:rehash256 = 1
 "colorscheme molokai " dark red
 "colorscheme shirotelin " light mode
-"let g:neosolarized_termtrans=1
-"colorscheme NeoSolarized
+let g:neosolarized_termtrans=1
+colorscheme NeoSolarized
 "colorscheme Carbon
-let g:tokyonight_style = 'night'
-colorscheme tokyonight
+"let g:tokyonight_style = 'night'
+"colorscheme tokyonight
+"colorscheme terafox
