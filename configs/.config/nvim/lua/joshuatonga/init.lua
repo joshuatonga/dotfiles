@@ -1,1 +1,2 @@
-require "joshuatonga.packer"
+require 'joshuatonga.packer'
+require 'joshuatonga.plugins.nerdtree'
