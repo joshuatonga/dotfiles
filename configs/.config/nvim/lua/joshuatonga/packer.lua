@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
   use 'honza/vim-snippets'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'wellle/tmux-complete.vim'
+  use { 'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end }
 
   use 'EdenEast/nightfox.nvim'
 end)
