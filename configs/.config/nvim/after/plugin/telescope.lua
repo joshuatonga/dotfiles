@@ -24,7 +24,16 @@ require('telescope').setup {
       '--smart-case',
       '--hidden',
     }
-  }
+  },
+  pickers = {
+    find_files = {
+      mappings = {
+        i = {
+          ['<C-f>'] = function() require('telescope.builtin').oldfiles() end,
+        }
+      }
+    },
+  },
 }
 require('telescope').load_extension('fzf')
 
@@ -38,3 +47,8 @@ nnoremap('<leader>fm', ":lua require('telescope.builtin').man_pages()<CR>")
 nnoremap('<leader>fr', ":lua require('telescope.builtin').oldfiles()<CR>")
 nnoremap('<leader>fg', ":lua require('telescope.builtin').git_status()<CR>")
 nnoremap('<leader>fc', ":lua require('telescope.builtin').git_bcommits()<CR>")
+
+-- vim.api.nvim_create_autocmd({ 'FileType' }, {
+--   pattern = 'TelescopePrompt',
+--   command = 'echo "hello"'
+-- })
