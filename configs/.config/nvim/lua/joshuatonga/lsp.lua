@@ -44,6 +44,11 @@ local lsp_flags = {
 }
 
 local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local default_server_setup = {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+}
 
 lsp.sumneko_lua.setup {
   on_attach = on_attach,
@@ -71,20 +76,6 @@ lsp.sumneko_lua.setup {
   },
 }
 
-lsp.pyright.setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-}
-
-lsp.tsserver.setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-}
-
-lsp.terraformls.setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-}
+lsp.pyright.setup(default_server_setup)
+lsp.tsserver.setup(default_server_setup)
+lsp.terraformls.setup(default_server_setup)
