@@ -1,6 +1,8 @@
+require('lsp-format').setup()
 local lsp = require 'lspconfig'
 local cmp_nvim_lsp = require 'cmp_nvim_lsp'
 local keymap = require 'joshuatonga.core.keymap'
+
 local nnoremap = keymap.nnoremap
 
 nnoremap('<Space>e', vim.diagnostic.open_float)
@@ -33,12 +35,7 @@ local on_attach = function(client, bufnr)
   nnoremap('gr', vim.lsp.buf.references, bufopts)
   nnoremap('<Space>f', vim.lsp.buf.formatting, bufopts)
 
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command('augroup Format')
-    vim.api.nvim_command('autocmd! * <buffer>')
-    vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()')
-    vim.api.nvim_command('augroup END')
-  end
+  require('lsp-format').on_attach(client)
 end
 
 local lsp_flags = {
