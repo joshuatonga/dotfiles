@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use 'Raimondi/delimitMate' -- for auto closing of quotes, braces, etc
   use 'nathanaelkane/vim-indent-guides'
   use 'terryma/vim-multiple-cursors' -- for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
+  use 'norcalli/nvim-colorizer.lua'
   use 'luochen1990/rainbow' -- for parentheses colors
   use 'gregsexton/MatchTag' -- for html matching tags
   use 'PieterjanMontens/vim-pipenv'
