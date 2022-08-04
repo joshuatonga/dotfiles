@@ -17,7 +17,6 @@ return require('packer').startup(function(use)
   use 'easymotion/vim-easymotion' -- For easy movement
   use 'Raimondi/delimitMate' -- for auto closing of quotes, braces, etc
   use 'nathanaelkane/vim-indent-guides'
-  use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }
   use 'terryma/vim-multiple-cursors' -- for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
   use 'luochen1990/rainbow' -- for parentheses colors
   use 'gregsexton/MatchTag' -- for html matching tags
