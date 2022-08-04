@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround' -- CRUD of surrounding pairs makes easy
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-  use 'easymotion/vim-easymotion' -- For easy movement
+  use 'phaazon/hop.nvim' -- For easy movement
   use 'Raimondi/delimitMate' -- for auto closing of quotes, braces, etc
   use 'lukas-reineke/indent-blankline.nvim'
   use 'terryma/vim-multiple-cursors' -- for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
