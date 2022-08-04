@@ -12,6 +12,11 @@ nnoremap('<C-k>', '<C-w><C-k>')
 nnoremap('<C-l>', '<C-w><C-l>')
 nnoremap('<C-h>', '<C-w><C-h>')
 
+nnoremap('<C-w>+', ':resize +5<CR>', { silent = true, noremap = true })
+nnoremap('<C-w>-', ':resize -5<CR>', { silent = true, noremap = true })
+nnoremap('<C-w>>', ':vertical resize +5<CR>', { silent = true, noremap = true })
+nnoremap('<C-w><', ':vertical resize -5<CR>', { silent = true, noremap = true })
+
 nnoremap('<C-s', ':w<CR>')
 inoremap('<C-s', '<Esc>:w<CR>')
 inoremap('jj', '<Esc>')
