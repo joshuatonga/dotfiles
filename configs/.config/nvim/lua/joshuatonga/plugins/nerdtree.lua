@@ -7,7 +7,7 @@ nnoremap('<leader>nf', ':NERDTreeFind<CR>')
 
 vim.g.NERDTReeWinSize = 40
 vim.g.NERDTreeGitStatusUseNerdFonts = 1
-vim.g.NERDTreeQuitOnOpen = 1
+--vim.g.NERDTreeQuitOnOpen = 1
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeShowLineNumbers = 1
 
