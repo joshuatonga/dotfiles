@@ -6,7 +6,6 @@ make install
 ```
 
 ### Requirements
-- go (for compiling nvim plugins specifically vim-hexokinase)
 - nodejs
 
 ### Programs/Tools
