@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
   use 'bronson/vim-trailing-whitespace'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'honza/vim-snippets'
-  use 'lukas-reineke/indent-blankline.nvim'
   use 'wellle/tmux-complete.vim'
   use { 'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end }
 
