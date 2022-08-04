@@ -26,12 +26,20 @@ return require('packer').startup(function(use)
   use 'bronson/vim-trailing-whitespace'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'honza/vim-snippets'
-  use { 'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end }
+  use { 'nvim-treesitter/nvim-treesitter',
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end }
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
   use 'neovim/nvim-lspconfig';
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'SirVer/ultisnips'
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
 
   use 'EdenEast/nightfox.nvim'
 end)

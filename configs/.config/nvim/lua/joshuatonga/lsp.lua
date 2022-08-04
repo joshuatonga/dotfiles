@@ -1,4 +1,5 @@
 local lsp = require 'lspconfig'
+local cmp_nvim_lsp = require 'cmp_nvim_lsp'
 local keymap = require 'joshuatonga.core.keymap'
 local nnoremap = keymap.nnoremap
 
@@ -45,9 +46,11 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 lsp.sumneko_lua.setup {
   on_attach = on_attach,
   flags = lsp_flags,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -73,9 +76,11 @@ lsp.sumneko_lua.setup {
 lsp.pyright.setup {
   on_attach = on_attach,
   flags = lsp_flags,
+  capabilities = capabilities,
 }
 
 lsp.tsserver.setup {
   on_attach = on_attach,
   flags = lsp_flags,
+  capabilities = capabilities,
 }
