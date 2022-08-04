@@ -16,4 +16,4 @@ nnoremap('<C-s', ':w<CR>')
 inoremap('<C-s', '<Esc>:w<CR>')
 inoremap('jj', '<Esc>')
 
-nnoremap('<Leader>sv', ':source<CR>')
+nnoremap('<Leader>sv', ':source %<CR>')
