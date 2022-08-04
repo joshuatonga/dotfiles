@@ -27,6 +27,10 @@ return require('packer').startup(function(use)
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'honza/vim-snippets'
   use { 'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end }
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
 
   use 'EdenEast/nightfox.nvim'
 end)
