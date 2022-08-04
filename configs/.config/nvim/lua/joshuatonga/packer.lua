@@ -5,7 +5,7 @@ vim.api.nvim_create_user_command('PC', 'PackerClean', {})
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'mhinz/vim-signify'
+  use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
   use 'scrooloose/nerdtree' -- File directory tree plugin
   use 'Xuyuanp/nerdtree-git-plugin'
