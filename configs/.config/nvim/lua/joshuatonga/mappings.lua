@@ -18,7 +18,6 @@ nnoremap('<C-w>>', ':vertical resize +5<CR>', { silent = true })
 nnoremap('<C-w><', ':vertical resize -5<CR>', { silent = true })
 
 nnoremap('<C-s', ':w<CR>')
-inoremap('<C-s', '<Esc>:w<CR>')
 inoremap('jj', '<Esc>')
 
 nnoremap('<Leader>sv', ':source %<CR>')
