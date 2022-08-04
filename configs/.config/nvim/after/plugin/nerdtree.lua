@@ -1,7 +1,6 @@
 local keymap = require 'joshuatonga.core.keymap'
 local nnoremap = keymap.nnoremap
 
-print('hello')
 nnoremap('<C-e>', ':NERDTreeToggle<CR>')
 nnoremap('<C-t>', ':NERDTreeFocus<CR>')
 nnoremap('<leader>nf', ':NERDTreeFind<CR>')

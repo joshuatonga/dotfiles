@@ -12,7 +12,6 @@ nnoremap('<C-k>', '<C-w><C-k>')
 nnoremap('<C-l>', '<C-w><C-l>')
 nnoremap('<C-h>', '<C-w><C-h>')
 
-print('mapping resizes')
 nnoremap('<C-w>+', ':resize +5<CR>', { silent = true })
 nnoremap('<C-w>-', ':resize -5<CR>', { silent = true })
 nnoremap('<C-w>>', ':vertical resize +5<CR>', { silent = true })
