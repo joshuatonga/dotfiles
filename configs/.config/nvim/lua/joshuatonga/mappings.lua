@@ -15,6 +15,9 @@ nnoremap('<C-j>', '<C-w><C-j>')
 nnoremap('<C-k>', '<C-w><C-k>')
 nnoremap('<C-l>', '<C-w><C-l>')
 nnoremap('<C-h>', '<C-w><C-h>')
+nnoremap('<C-f>', function()
+  vim.cmd('!tmux neww tmux-sessionizer')
+end)
 
 nnoremap('<Leader>hw', ':help <C-r><C-w><CR>') -- Open help page for the word under cursor
 nnoremap('<C-w>+', ':resize +10<CR>', opts)
