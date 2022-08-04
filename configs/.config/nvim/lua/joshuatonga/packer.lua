@@ -24,7 +24,6 @@ return require('packer').startup(function(use)
   use 'PieterjanMontens/vim-pipenv'
   use 'voldikss/vim-floaterm'
   use 'mtth/scratch.vim'
-  use 'MattesGroeger/vim-bookmarks'
   use 'bronson/vim-trailing-whitespace'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'honza/vim-snippets'
