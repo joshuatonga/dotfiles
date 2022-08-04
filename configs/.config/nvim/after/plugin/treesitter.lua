@@ -22,6 +22,11 @@ require('nvim-treesitter.configs').setup {
   indent = {
     enable = true,
     disable = {},
+  },
+  rainbow = {
+    enable = false,
+    extended_mode = true,
+    max_file_lines = nil,
   }
 }
 

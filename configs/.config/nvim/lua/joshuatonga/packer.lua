@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'terryma/vim-multiple-cursors' -- for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
   use 'norcalli/nvim-colorizer.lua'
-  use 'luochen1990/rainbow' -- for parentheses colors
+  use 'p00f/nvim-ts-rainbow' -- for parenthesis colors
   use 'gregsexton/MatchTag' -- for html matching tags
   use 'PieterjanMontens/vim-pipenv'
   use 'voldikss/vim-floaterm'
