@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'scrooloose/nerdcommenter' -- For commenting
   use 'tpope/vim-surround' -- CRUD of surrounding pairs makes easy
-  use 'sheerun/vim-polyglot'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use 'easymotion/vim-easymotion' -- For easy movement
