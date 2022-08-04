@@ -15,7 +15,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   nnoremap('gD', vim.lsp.buf.declaration, bufopts)
   nnoremap('gd', vim.lsp.buf.definition, bufopts)
   nnoremap('K', vim.lsp.buf.hover, bufopts)
@@ -31,6 +31,13 @@ local on_attach = function(client, bufnr)
   nnoremap('<Space>ca', vim.lsp.buf.code_action, bufopts)
   nnoremap('gr', vim.lsp.buf.references, bufopts)
   nnoremap('<Space>f', vim.lsp.buf.formatting, bufopts)
+
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command('augroup Format')
+    vim.api.nvim_command('autocmd! * <buffer>')
+    vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()')
+    vim.api.nvim_command('augroup END')
+  end
 end
 
 local lsp_flags = {
@@ -49,7 +56,7 @@ lsp.sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
