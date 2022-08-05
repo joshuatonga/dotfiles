@@ -25,6 +25,13 @@ nnoremap('<C-w>-', ':resize -10<CR>', opts)
 nnoremap('<C-w>>', ':vertical resize +10<CR>', opts)
 nnoremap('<C-w><', ':vertical resize -10<CR>', opts)
 
+-- Quickfix mappings
+nnoremap('<C-q>', ':copen<CR>', opts)
+nnoremap(']q', ':cnext<CR>', opts)
+nnoremap('[q', ':cprev<CR>', opts)
+nnoremap(']Q', ':cfirst<CR>', opts)
+nnoremap('[Q', ':clast<CR>', opts)
+
 -- Stay in visual mode when indenting. Ref: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/keymaps.lua
 vnoremap('<', '<gv', opts)
 vnoremap('>', '>gv', opts)
