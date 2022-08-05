@@ -52,7 +52,7 @@ cmp.setup({
       vim_item.menu = ({
         buffer = '[Buffer]',
         nvim_lsp = '[LSP]',
-        luasnip = '[LuaSnip]',
+        ultisnips = '[UltiSnips]',
         nvim_lua = '[Lua]',
       })[entry.source.name]
       return vim_item
