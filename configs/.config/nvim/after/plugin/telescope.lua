@@ -33,6 +33,20 @@ require('telescope').setup {
         }
       }
     },
+    oldfiles = {
+      mappings = {
+        i = {
+          ['<C-f>'] = function() require('telescope.builtin').buffers() end,
+        }
+      }
+    },
+    buffers = {
+      mappings = {
+        i = {
+          ['<C-f>'] = function() require('telescope.builtin').find_files({ hidden = true }) end,
+        }
+      }
+    },
   },
 }
 require('telescope').load_extension('fzf')
