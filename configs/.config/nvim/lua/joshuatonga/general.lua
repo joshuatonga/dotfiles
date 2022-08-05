@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd({'FileType'}, {
 vim.api.nvim_set_hl(0, 'LineNr', {})
 vim.api.nvim_set_hl(0, 'NonText', { ctermbh = nil })
 
+vim.opt.confirm = true
 vim.opt.shortmess = vim.opt.shortmess:append({ I = true, A = true }) -- disable startup message
 vim.opt.termguicolors = true
 vim.opt.hlsearch = false
