@@ -1,5 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
+vim.api.nvim_create_user_command('PI', 'PackerInstall', {})
 vim.api.nvim_create_user_command('PS', 'PackerSync', {})
 vim.api.nvim_create_user_command('PC', 'PackerClean', {})
 
