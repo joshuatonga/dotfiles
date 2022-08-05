@@ -8,13 +8,15 @@ vim.g.mapleader = ','
 
 local opts = { silent = true }
 
-nnoremap('Q', '<nop>', opts)
-nnoremap('<C-left>', ':tabprevious')
-nnoremap('<C-left>', ':tabprevious')
+nnoremap('<C-q>', ':q<CR>', opts)
+
+-- Pane navigations
 nnoremap('<C-j>', '<C-w><C-j>')
 nnoremap('<C-k>', '<C-w><C-k>')
 nnoremap('<C-l>', '<C-w><C-l>')
 nnoremap('<C-h>', '<C-w><C-h>')
+
+-- Custom utilities
 nnoremap('<C-f>', function()
   vim.cmd('silent !tmux neww tmux-sessionizer')
 end)
@@ -26,7 +28,7 @@ nnoremap('<C-w>>', ':vertical resize +10<CR>', opts)
 nnoremap('<C-w><', ':vertical resize -10<CR>', opts)
 
 -- Quickfix mappings
-nnoremap('<C-q>', ':copen<CR>', opts)
+nnoremap('Q', ':copen<CR>', opts)
 nnoremap(']q', ':cnext<CR>', opts)
 nnoremap('[q', ':cprev<CR>', opts)
 nnoremap(']Q', ':cfirst<CR>', opts)
