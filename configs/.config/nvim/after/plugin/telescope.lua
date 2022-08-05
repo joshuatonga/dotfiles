@@ -2,16 +2,20 @@ local keymap = require 'joshuatonga.core.keymap'
 local nnoremap = keymap.nnoremap
 
 local actions = require 'telescope.actions'
+local actions_layout = require 'telescope.actions.layout'
+
 require('telescope').setup {
   defaults = {
     mappings = {
       n = {
         ['q'] = actions.close,
+        ['<C-\\>'] = actions_layout.toggle_preview,
       },
 
       i = {
         ['<C-j>'] = actions.move_selection_next,
         ['<C-k>'] = actions.move_selection_previous,
+        ['<C-\\>'] = actions_layout.toggle_preview,
       }
     },
     vimgrep_arguments = {
