@@ -43,4 +43,5 @@ return require('packer').startup(function(use)
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
   use 'EdenEast/nightfox.nvim'
+  use 'folke/tokyonight.nvim'
 end)
