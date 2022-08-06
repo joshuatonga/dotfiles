@@ -76,6 +76,7 @@ vim.api.nvim_create_user_command('Maps', 'Telescope keymaps', {})
 
 nnoremap('<C-p>', ":lua require('telescope.builtin').find_files()<CR>")
 nnoremap('<C-\\>', ":lua require('telescope.builtin').commands()<CR>")
+nnoremap('<leader>fp', ":lua require('telescope.builtin').command_history()<CR>")
 nnoremap('<leader>fs', ":lua require('telescope.builtin').live_grep()<CR>")
 nnoremap('<leader>fb', ":lua require('telescope.builtin').buffers()<CR>")
 nnoremap('<leader>fh', ":lua require('telescope.builtin').help_tags()<CR>")
