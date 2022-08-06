@@ -57,6 +57,7 @@ require('telescope').setup {
 
 require('telescope').load_extension('fzf')
 
+vim.api.nvim_create_user_command('Tel', 'Telescope <args>', { nargs = '*' })
 vim.api.nvim_create_user_command('Maps', 'Telescope keymaps', {})
 
 nnoremap('<C-p>', ":lua require('telescope.builtin').find_files()<CR>")
