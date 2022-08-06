@@ -1,4 +1,4 @@
-vim.api.nvim_create_autocmd({'FileType'}, {
+vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = 'python',
   command = 'setlocal ts=4 sw=4 sts=4 expandtab'
 })
@@ -16,11 +16,11 @@ vim.opt.ttimeout = true
 vim.opt.timeoutlen = 500
 vim.opt.ttimeoutlen = 10
 vim.opt.encoding = 'utf8' -- set standard encoding
-vim.opt.ffs = {'unix', 'dos', 'mac'} -- use unix as the standard file type
+vim.opt.ffs = { 'unix', 'dos', 'mac' } -- use unix as the standard file type
 vim.opt.splitbelow = true -- open new split panes to right and bottom which feels more natural than vim's default
 vim.opt.splitright = true
 vim.opt.wildmenu = true -- visual autocomplete for command menu
-vim.opt.wildignore = {'*.o','*~','*.pyc'} -- ignore compiled files
+vim.opt.wildignore = { '*.o', '*~', '*.pyc' } -- ignore compiled files
 vim.opt.cursorline = true -- highlight current line
 vim.opt.incsearch = true -- search as characters are entered
 vim.opt.ignorecase = true -- case insensitive
