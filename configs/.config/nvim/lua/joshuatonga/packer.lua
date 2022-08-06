@@ -28,7 +28,9 @@ return require('packer').startup(function(use)
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'honza/vim-snippets'
   use 'mhinz/vim-grepper'
+  use 'folke/which-key.nvim'
 
+  -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end }
   use 'nvim-lua/popup.nvim'
@@ -45,6 +47,7 @@ return require('packer').startup(function(use)
   use 'SirVer/ultisnips'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
+  -- Themes
   use 'EdenEast/nightfox.nvim'
   use 'folke/tokyonight.nvim'
   use 'ellisonleao/gruvbox.nvim'
