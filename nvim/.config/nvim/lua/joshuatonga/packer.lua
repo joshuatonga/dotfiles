@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
   use 'mg979/vim-visual-multi'
   use 'norcalli/nvim-colorizer.lua'
   use 'p00f/nvim-ts-rainbow' -- for parenthesis colors
-  use 'gregsexton/MatchTag' -- for html matching tags
+  use 'leafOfTree/vim-matchtag'
   use 'voldikss/vim-floaterm'
   use 'mtth/scratch.vim'
   use 'bronson/vim-trailing-whitespace'
