@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'scrooloose/nerdtree' -- File directory tree plugin
   use 'Xuyuanp/nerdtree-git-plugin'
+  use 'ryanoasis/vim-devicons'
+  use 'tiagofumo/vim-nerdtree-syntax-highlight'
   use 'scrooloose/nerdcommenter' -- For commenting
   use 'tpope/vim-surround' -- CRUD of surrounding pairs makes easy
   use 'phaazon/hop.nvim' -- For easy movement
