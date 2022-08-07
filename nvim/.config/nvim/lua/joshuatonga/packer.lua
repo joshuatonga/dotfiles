@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'mhinz/vim-grepper'
   use 'folke/which-key.nvim'
+  use 'tpope/vim-dispatch'
+  use 'vim-test/vim-test'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
