@@ -55,4 +55,5 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'vimoxide/vim-cinnabar'
+  use 'agude/vim-eldar'
 end)
