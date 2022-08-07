@@ -12,8 +12,6 @@ return require('packer').startup(function(use)
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'scrooloose/nerdcommenter' -- For commenting
   use 'tpope/vim-surround' -- CRUD of surrounding pairs makes easy
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
   use 'phaazon/hop.nvim' -- For easy movement
   use 'lukas-reineke/indent-blankline.nvim'
   use 'mg979/vim-visual-multi'
@@ -30,6 +28,8 @@ return require('packer').startup(function(use)
   use 'vim-test/vim-test'
   use 'skywind3000/asynctasks.vim'
   use 'skywind3000/asyncrun.vim'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-lualine/lualine.nvim'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
