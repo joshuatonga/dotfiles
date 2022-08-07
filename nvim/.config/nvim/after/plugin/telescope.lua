@@ -4,8 +4,6 @@ local nnoremap = keymap.nnoremap
 local actions = require 'telescope.actions'
 local actions_layout = require 'telescope.actions.layout'
 
-local is_hidden_files = false;
-
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -37,9 +35,7 @@ require('telescope').setup {
         i = {
           ['<C-f>'] = function() require('telescope.builtin').oldfiles() end,
           ['<C-h>'] = function()
-            local new_hidden_value = not is_hidden_files
-            is_hidden_files = new_hidden_value
-            require('telescope.builtin').find_files({ hidden = new_hidden_value })
+            require('telescope.builtin').find_files({ hidden = true })
           end,
           ['<C-r>'] = function() require('telescope.builtin').git_files() end,
         }
