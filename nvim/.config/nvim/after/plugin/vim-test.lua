@@ -1,9 +1,9 @@
 local keymap = require 'joshuatonga.core.keymap'
 local nnoremap = keymap.nnoremap
 
-local opts = { silent = true }
 vim.g['test#strategy'] = 'make'
 
+local opts = { silent = true }
 nnoremap('<Leader>gt', ':TestNearest<CR>', opts)
 nnoremap('<Leader>gT', ':TestFile<CR>', opts)
 nnoremap('<Leader>gs', ':TestSuite<CR>', opts)
