@@ -28,6 +28,8 @@ return require('packer').startup(function(use)
   use 'folke/which-key.nvim'
   use 'tpope/vim-dispatch'
   use 'vim-test/vim-test'
+  use 'skywind3000/asynctasks.vim'
+  use 'skywind3000/asyncrun.vim'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
