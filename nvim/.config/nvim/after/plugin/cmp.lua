@@ -31,6 +31,9 @@ local kind_icons = {
 }
 
 cmp.setup({
+  performance = {
+    debounce = 500,
+  },
   snippet = {
     expand = function(args)
       vim.fn["UltiSnips#Anon"](args.body)
