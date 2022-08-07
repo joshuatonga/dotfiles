@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline-themes'
   use 'phaazon/hop.nvim' -- For easy movement
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'terryma/vim-multiple-cursors' -- for multi selection, FIXME, replace this with https://github.com/mg979/vim-visual-multi
+  use 'mg979/vim-visual-multi'
   use 'norcalli/nvim-colorizer.lua'
   use 'p00f/nvim-ts-rainbow' -- for parenthesis colors
   use 'gregsexton/MatchTag' -- for html matching tags
