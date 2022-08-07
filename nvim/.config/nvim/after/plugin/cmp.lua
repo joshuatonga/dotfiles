@@ -31,8 +31,8 @@ local kind_icons = {
 }
 
 cmp.setup({
-  performance = {
-    debounce = 500,
+  completion = {
+    autocomplete = false, -- Manual trigger completion with <C-space>
   },
   snippet = {
     expand = function(args)
