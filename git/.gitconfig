@@ -44,4 +44,4 @@
 	autoSetupRemote = true
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore-global
