@@ -13,6 +13,6 @@ vim.api.nvim_create_user_command('At', 'AsyncTask <args>', {
 })
 
 local opts = { silent = true }
-nnoremap('<Leader>gab', ':AsyncRun build<CR>', opts)
-nnoremap('<Leader>gat', ':AsyncRun test<CR>', opts)
-nnoremap('<Leader>gar', ':AsyncRun run<CR>', opts)
+nnoremap('<Leader>gab', ':AsyncTask build<CR>', opts)
+nnoremap('<Leader>gat', ':AsyncTask test<CR>', opts)
+nnoremap('<Leader>gar', ':AsyncTask run<CR>', opts)
