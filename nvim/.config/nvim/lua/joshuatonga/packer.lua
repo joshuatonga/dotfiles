@@ -21,12 +21,10 @@ return require('packer').startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'p00f/nvim-ts-rainbow' -- for parenthesis colors
   use 'gregsexton/MatchTag' -- for html matching tags
-  use 'PieterjanMontens/vim-pipenv'
   use 'voldikss/vim-floaterm'
   use 'mtth/scratch.vim'
   use 'bronson/vim-trailing-whitespace'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
-  use 'honza/vim-snippets'
   use 'mhinz/vim-grepper'
   use 'folke/which-key.nvim'
 
@@ -45,6 +43,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'SirVer/ultisnips'
+  use 'honza/vim-snippets'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
   -- Themes
