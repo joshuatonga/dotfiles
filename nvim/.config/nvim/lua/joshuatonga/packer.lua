@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
   use 'skywind3000/asyncrun.vim'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
+  use 'joshuatonga/vim-game-snake-hard-mode'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
