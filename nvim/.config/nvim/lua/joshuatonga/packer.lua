@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
   use 'mtth/scratch.vim'
   use 'bronson/vim-trailing-whitespace'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
+  use 'cohama/lexima.vim'
   use 'mhinz/vim-grepper'
   use 'folke/which-key.nvim'
   use 'tpope/vim-dispatch'
