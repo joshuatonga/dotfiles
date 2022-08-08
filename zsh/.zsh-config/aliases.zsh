@@ -2,6 +2,8 @@ alias v=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
 
+alias work=~/.tmux-startup.sh
+
 # kubernetes stuff
 alias k=kubectl
 alias kc=kubectx
