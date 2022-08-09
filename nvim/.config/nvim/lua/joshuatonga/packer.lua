@@ -6,35 +6,40 @@ vim.api.nvim_create_user_command('PC', 'PackerClean', {})
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
+  -- Text/Movement
+  use 'tpope/vim-surround' -- CRUD of surrounding pairs makes easy
+  use 'phaazon/hop.nvim' -- For easy movement
+  use 'mg979/vim-visual-multi'
+  use 'p00f/nvim-ts-rainbow' -- for parenthesis colors
+  use 'leafOfTree/vim-matchtag'
+  use 'bronson/vim-trailing-whitespace'
+  use 'cohama/lexima.vim'
+  use 'scrooloose/nerdcommenter' -- For commenting
+
+  -- UI
+  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-lualine/lualine.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use 'tpope/vim-fugitive'
   use 'scrooloose/nerdtree' -- File directory tree plugin
   use 'Xuyuanp/nerdtree-git-plugin'
   -- use 'ryanoasis/vim-devicons'
   use 'tiagofumo/vim-nerdtree-syntax-highlight'
-  use 'scrooloose/nerdcommenter' -- For commenting
-  use 'tpope/vim-surround' -- CRUD of surrounding pairs makes easy
-  use 'phaazon/hop.nvim' -- For easy movement
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'mg979/vim-visual-multi'
   use 'norcalli/nvim-colorizer.lua'
-  use 'p00f/nvim-ts-rainbow' -- for parenthesis colors
-  use 'leafOfTree/vim-matchtag'
+
+  -- Tools
+  use 'folke/which-key.nvim'
+  use 'Einenlum/yaml-revealer'
+  use 'tpope/vim-fugitive'
   use 'voldikss/vim-floaterm'
   use 'mtth/scratch.vim'
-  use 'bronson/vim-trailing-whitespace'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
-  use 'cohama/lexima.vim'
   use 'mhinz/vim-grepper'
-  use 'folke/which-key.nvim'
   use 'tpope/vim-dispatch'
   use 'vim-test/vim-test'
   use 'skywind3000/asynctasks.vim'
   use 'skywind3000/asyncrun.vim'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'nvim-lualine/lualine.nvim'
-  use 'joshuatonga/vim-game-snake-god-mode'
-  use 'Einenlum/yaml-revealer'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
@@ -59,4 +64,7 @@ return require('packer').startup(function(use)
   use 'ellisonleao/gruvbox.nvim'
   use 'vimoxide/vim-cinnabar'
   use 'agude/vim-eldar'
+
+  -- Games
+  use 'joshuatonga/vim-game-snake-god-mode'
 end)
