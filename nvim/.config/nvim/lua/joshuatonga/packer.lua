@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'joshuatonga/vim-game-snake-god-mode'
+  use 'Einenlum/yaml-revealer'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
