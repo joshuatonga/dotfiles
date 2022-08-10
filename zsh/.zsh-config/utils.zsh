@@ -53,3 +53,9 @@ function jump-to-git-root {
   echo "Git repo root: $_root_dir"
   cd $_root_dir
 }
+
+dl-music() {
+  local _path="~/Music/desktop-music/$1/%(title)s.%(ext)s"
+  echo "Downloading youtube video to $_path"
+  youtube-dl -o $_path -x --audio-format mp3 $2
+}
