@@ -87,7 +87,8 @@ cmp.setup.filetype('gitcommit', {
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer', max_item_count = 10 }
+    { name = 'nvim_lsp_document_symbol' },
+    { name = 'buffer', max_item_count = 10 },
   }
 })
 
