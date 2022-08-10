@@ -35,7 +35,7 @@ cmp.setup({
   --   autocomplete = false, -- Manual trigger completion with <C-space>
   -- },
   performance = {
-    debounce = 500,
+    debounce = 150,
   },
   snippet = {
     expand = function(args)
