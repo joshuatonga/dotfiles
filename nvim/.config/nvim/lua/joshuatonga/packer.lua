@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/cmp-nvim-lsp-signature-help';
+  use 'davidsierradz/cmp-conventionalcommits'
   use 'hrsh7th/nvim-cmp'
   use 'SirVer/ultisnips'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
