@@ -139,5 +139,7 @@ eval "$(register-python-argcomplete pipx)"
 
 fpath=($fpath ~/$ZSH_FOLDER/completion)
 
+export CONFIG_DIR="$HOME/.config/lazygit"
+
 # Disable aws cli pager
 export AWS_PAGER=""
