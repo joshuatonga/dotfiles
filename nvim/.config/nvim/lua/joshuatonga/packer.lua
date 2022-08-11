@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
   use 'vim-test/vim-test'
   use 'skywind3000/asynctasks.vim'
   use 'skywind3000/asyncrun.vim'
+  use 'vimwiki/vimwiki'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
