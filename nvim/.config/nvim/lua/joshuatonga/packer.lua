@@ -61,6 +61,8 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'SirVer/ultisnips'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 
   -- Themes
   use 'EdenEast/nightfox.nvim'
