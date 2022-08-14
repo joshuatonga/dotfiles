@@ -78,4 +78,11 @@ lsp.sumneko_lua.setup {
 
 lsp.pyright.setup(default_server_setup)
 lsp.tsserver.setup(default_server_setup)
+
 lsp.terraformls.setup(default_server_setup)
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+  pattern = { '*.tf', '*.tfvars' },
+  callback = function()
+    vim.opt_local.filetype = 'terraform'
+  end,
+})
