@@ -79,6 +79,7 @@ lsp.sumneko_lua.setup {
 
 lsp.pyright.setup(default_server_setup)
 lsp.tsserver.setup(default_server_setup)
+lsp.gopls.setup(default_server_setup)
 
 -- TODO: Custom ultisnips not working
 lsp.terraformls.setup(default_server_setup)
