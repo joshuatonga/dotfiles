@@ -10,5 +10,6 @@ make install
 
 ### Programs/Tools
 - iTerm2
+- alacritty (for Linux)
 - stow
 - commitizen
