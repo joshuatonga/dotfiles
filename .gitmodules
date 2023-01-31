@@ -1,3 +1,7 @@
 [submodule "personal"]
 	path = personal
 	url = git@github.com:hellojoshuatonga/dotfiles-personal.git
+
+[submodule "powerlevel10k"]
+	path = zsh/.zsh-config/vendor/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git

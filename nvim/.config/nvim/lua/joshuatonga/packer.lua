@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use 'scrooloose/nerdtree' -- File directory tree plugin
   use 'Xuyuanp/nerdtree-git-plugin'
   -- use 'ryanoasis/vim-devicons'
-  use 'tiagofumo/vim-nerdtree-syntax-highlight'
+  -- use 'tiagofumo/vim-nerdtree-syntax-highlight'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'norcalli/nvim-colorizer.lua'
 

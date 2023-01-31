@@ -10,7 +10,7 @@ fi
 export PATH=$HOME/bin:~/bin/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebrew/opt/influxdb@1/bin:${KREW_ROOT:-$HOME/.krew}/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/joshuatonga/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -119,7 +119,13 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # NVM installation (https://tecadmin.net/install-nvm-macos-with-homebrew/)
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if [[ $OSTYPE == darwin* ]]; then
+	source $(brew --prefix nvm)/nvm.sh
+
+	# Created by `pipx` on 2022-04-27 18:08:22
+	export PATH="$PATH:~/.local/bin"
+	eval "$(register-python-argcomplete pipx)"
+fi
 
 source $HOME/$ZSH_FOLDER/aliases.zsh
 source $HOME/$ZSH_FOLDER/utils.zsh
@@ -133,13 +139,12 @@ export GPG_TTY=$TTY
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-# Created by `pipx` on 2022-04-27 18:08:22
-export PATH="$PATH:/Users/joshuatonga/.local/bin"
-eval "$(register-python-argcomplete pipx)"
 
 fpath=($fpath ~/$ZSH_FOLDER/completion)
 
 export CONFIG_DIR="$HOME/.config/lazygit"
+
+eval "$(thefuck --alias)"
 
 # Disable aws cli pager
 export AWS_PAGER=""

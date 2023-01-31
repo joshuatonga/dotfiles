@@ -18,7 +18,7 @@
 
 [init]
 	defaultBranch = main
-	templateDir = /Users/joshuatonga/.git-template
+	templateDir = ~/.git-template
 
 [url "https://github.com/"]
 	insteadOf = git://github.com/

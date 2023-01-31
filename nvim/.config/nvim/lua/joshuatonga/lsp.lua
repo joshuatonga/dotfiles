@@ -43,7 +43,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local default_server_setup = {
   on_attach = on_attach,
@@ -68,6 +68,7 @@ lsp.sumneko_lua.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file('', true),
+        checkThirdParty = false
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
