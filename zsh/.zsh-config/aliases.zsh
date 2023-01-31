@@ -2,6 +2,10 @@ alias v=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
 
+if [[ $OSTYPE == linux-gnu* ]]; then
+  alias open="xdg-open"
+fi
+
 alias work=~/.tmux-startup.sh
 
 # kubernetes stuff
