@@ -15,3 +15,8 @@ vim.api.nvim_create_autocmd({'FileType'}, {
   pattern = 'nerdtree',
   command = 'setlocal relativenumber'
 })
+
+vim.api.nvim_create_autocmd({'VimEnter'}, {
+  pattern = '*',
+  command = 'NERDTree'
+})
