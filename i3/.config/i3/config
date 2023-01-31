@@ -30,7 +30,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- xscreensaver-command -lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -57,12 +57,14 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shippina
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+Control+q exec --no-startup-id "xscreensaver-command -lock"
 
 # change focus
 bindsym $mod+j focus left
@@ -116,16 +118,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1: work"
+set $ws2 "2: home"
+set $ws3 "3: terminal"
+set $ws4 "4: files"
+set $ws5 "5: notes"
+set $ws6 "6: proj"
+set $ws7 "7: stuff"
+set $ws8 "8: email"
+set $ws9 "9: music"
+set $ws10 "10: chat"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -176,7 +178,6 @@ mode "resize" {
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -192,3 +193,13 @@ bar {
 }
 
 focus_follows_mouse no
+workspace_auto_back_and_forth yes
+
+for_window [class="Spotify"] move to workspace $ws9
+for_window [class="Slack"] move to workspace $ws10
+
+# exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable; sleep 30'
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id feh --bg-scale ~/wallpapers/tux.jpeg
+exec --no-startup-id spotify-launcher
+exec --no-startup-id slack
