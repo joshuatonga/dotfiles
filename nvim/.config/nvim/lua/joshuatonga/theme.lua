@@ -5,4 +5,5 @@
 
 -- Black background
 -- vim.cmd('colorscheme eldar')
-vim.cmd('colorscheme default')
+-- vim.cmd('colorscheme default')
+vim.cmd('colorscheme github_light')
