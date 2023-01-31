@@ -28,3 +28,13 @@ alias pca="pre-commit run --all-files"
 alias vplug="vi $HOME/personal/dotfiles/configs/.config/nvim/plugs/plugins.vim"
 alias aliases="vi $HOME/personal/dotfiles/zsh/.zsh-config/aliases.zsh"
 alias tracker="node ~/personal/coding-tracker/src/index.js"
+
+# search stuff
+alias sw="s -p wikipedia"
+alias saw="s -p archwiki"
+alias sap="s -p archpkg"
+alias ses="s -p explainshell"
+alias sr="s -p reddit"
+alias sreg="s -p regex"
+alias ss="s -p stackoverflow"
+alias sy="s -p youtube"
