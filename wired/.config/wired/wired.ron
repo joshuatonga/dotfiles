@@ -83,7 +83,7 @@
             name: "root",
             parent: "",
             hook: Hook(parent_anchor: TM, self_anchor: TL),
-            offset: Vec2(x: -150.0, y: 0.0),
+            offset: Vec2(x: -200.0, y: 0.0),
             //render_criteria: [HintImage],
             // https://github.com/Toqozz/wired-notify/wiki/NotificationBlock
             params: NotificationBlock((
