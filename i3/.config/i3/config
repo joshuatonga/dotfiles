@@ -196,12 +196,14 @@ bar {
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
 
+for_window [class="thunderbird"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Slack"] move to workspace $ws10
 
 # exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable; sleep 30'
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id feh --bg-scale ~/wallpapers/tux.jpeg
+exec --no-startup-id thunderbird
 exec --no-startup-id spotify-launcher
 exec --no-startup-id slack
 exec --no-startup-id volnoti # notification daemon for volume adjustment
