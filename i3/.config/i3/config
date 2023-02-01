@@ -206,4 +206,5 @@ exec --no-startup-id feh --bg-scale ~/wallpapers/tux.jpeg
 exec --no-startup-id thunderbird
 exec --no-startup-id spotify-launcher
 exec --no-startup-id slack
+exec --no-startup-id wired # notification-daemon
 exec --no-startup-id volnoti # notification daemon for volume adjustment
