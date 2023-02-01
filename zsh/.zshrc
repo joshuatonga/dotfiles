@@ -126,6 +126,8 @@ if [[ $OSTYPE == darwin* ]]; then
 	# Created by `pipx` on 2022-04-27 18:08:22
 	export PATH="$PATH:~/.local/bin"
 	eval "$(register-python-argcomplete pipx)"
+
+  source /usr/share/fzf/key-bindings.zsh
 fi
 
 source $HOME/$ZSH_FOLDER/aliases.zsh
