@@ -11,12 +11,12 @@ vim.g.NERDTreeGitStatusUseNerdFonts = 1
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeShowLineNumbers = 1
 
-vim.api.nvim_create_autocmd({'FileType'}, {
+vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = 'nerdtree',
   command = 'setlocal relativenumber'
 })
 
-vim.api.nvim_create_autocmd({'VimEnter'}, {
-  pattern = '*',
-  command = 'NERDTree'
-})
+-- vim.api.nvim_create_autocmd({'VimEnter'}, {
+--   pattern = '*',
+--   command = 'NERDTree'
+-- })
