@@ -149,5 +149,8 @@ export CONFIG_DIR="$HOME/.config/lazygit"
 
 eval "$(thefuck --alias)"
 
+# add persistent rehash. see https://wiki.archlinux.org/title/zsh#Persistent_rehash
+zstyle ':completion:*' rehash true
+
 # Disable aws cli pager
 export AWS_PAGER=""
