@@ -188,17 +188,38 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym Print exec --no-startup-id flameshot full
-bindsym Shift+Print exec --no-startup-id flameshot gui
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #dcdad5 #000000 #000000   #000000
+client.focused_inactive #414345 #5f676a #000000 #484e50   #5f676a
+client.unfocused        #6f7478 #414345 #ffffff #292d2e   #222222
+client.urgent           #2f343a #fc0303 #ffffff #fc0303   #fc0303
+client.placeholder      #000000 #0c0c0c #000000 #000000   #0c0c0c
+client.background       #ffffff
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status
+    colors {
+        background #dcdad5
+        statusline #000000
+        separator #666666
+
+        focused_workspace  #585959 #565757 #d7dbdb
+        active_workspace   #333333 #5f676a #000000
+        inactive_workspace #dfe3e8 #dfe3e8 #3e3f40
+        urgent_workspace   #2f343a #fc0303 #ffffff
+        binding_mode       #2f343a #fc0303 #ffffff
+    }
 }
 
+# custom options
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
+
+# custom bindings
+bindsym Print exec --no-startup-id flameshot full
+bindsym Shift+Print exec --no-startup-id flameshot gui
 
 for_window [class="Mousepad"] move to workspace $ws5
 for_window [class="thunderbird"] move to workspace $ws8
