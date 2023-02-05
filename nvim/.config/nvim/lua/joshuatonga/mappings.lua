@@ -9,6 +9,10 @@ vim.g.mapleader = ','
 local opts = { silent = true }
 
 nnoremap('<C-q>', ':q<CR>', opts)
+nnoremap('<C-s>', ':w<CR>')
+inoremap('jj', '<Esc>')
+
+nnoremap('<Leader>sv', ':source %<CR>')
 
 -- Pane navigations
 nnoremap('<C-j>', '<C-w><C-j>')
@@ -20,6 +24,13 @@ nnoremap('<C-h>', '<C-w><C-h>')
 nnoremap('<C-f>', function()
   vim.cmd('silent !tmux neww tmux-sessionizer')
 end)
+
+-- Ref: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 nnoremap('<Leader>hw', ':help <C-r><C-w><CR>') -- Open help page for the word under cursor
 nnoremap('<C-w>+', ':resize +10<CR>', opts)
@@ -46,8 +57,3 @@ xnoremap('J', ":move '>+1<CR>gv-gv", opts)
 xnoremap('K', ":move '<-2<CR>gv-gv", opts)
 -- xnoremap('<A-j>', ":move '>+1<CR>gv-gv", opts)
 -- xnoremap('<A-k>', ":move '<-2<CR>gv-gv", opts)
-
-nnoremap('<C-s>', ':w<CR>')
-inoremap('jj', '<Esc>')
-
-nnoremap('<Leader>sv', ':source %<CR>')
