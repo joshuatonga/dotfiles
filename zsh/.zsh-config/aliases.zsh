@@ -29,6 +29,9 @@ alias fb=firebase
 alias pc=pre-commit
 alias pca="pre-commit run --all-files"
 
+alias yt=yt-dlp
+alias yt-mp3=yt-dlp -x -f bestaudio
+
 alias vplug="vi $HOME/personal/dotfiles/configs/.config/nvim/plugs/plugins.vim"
 alias aliases="vi $HOME/personal/dotfiles/zsh/.zsh-config/aliases.zsh"
 alias tracker="node ~/personal/coding-tracker/src/index.js"
