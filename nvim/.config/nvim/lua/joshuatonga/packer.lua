@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
   use 'skywind3000/asynctasks.vim'
   use 'skywind3000/asyncrun.vim'
   use 'vimwiki/vimwiki'
+  use 'phelipetls/jsonpath.nvim'
 
   -- LSP
   use { 'nvim-treesitter/nvim-treesitter',
