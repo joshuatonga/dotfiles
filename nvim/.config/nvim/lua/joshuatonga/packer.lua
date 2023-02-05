@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
 
   -- Tools
+  use 'lambdalisue/suda.vim'
   use 'folke/which-key.nvim'
   use 'Einenlum/yaml-revealer'
   use 'tpope/vim-fugitive'
