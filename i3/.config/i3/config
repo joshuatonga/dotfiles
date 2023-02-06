@@ -238,5 +238,6 @@ exec --no-startup-id spotify-launcher
 exec --no-startup-id slack
 exec --no-startup-id mousepad ~/notes/todos.md -o window
 exec --no-startup-id mousepad ~/paymongo/notes/todos.md -o window
+exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
 exec --no-startup-id wired # notification-daemon
 exec --no-startup-id volnoti # notification daemon for volume adjustment
