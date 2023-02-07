@@ -59,3 +59,10 @@ dl-music() {
   echo "Downloading youtube video to $_path"
   youtube-dl -o $_path -x --audio-format mp3 $2
 }
+
+push-bashrc() {
+  if [[ "$2" != "" ]]; then
+    local _alias=":($2)"
+  fi
+  echo "export PS1=\"\\\u@\\h$_alias "\\W\$\""" | ssh $1 'mkdir -p .jtonga && cat > .jtonga/bashrc'
+}
