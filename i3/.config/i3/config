@@ -65,7 +65,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+Control+q exec --no-startup-id "xscreensaver-command -lock"
+bindsym $mod+Control+l exec --no-startup-id "xscreensaver-command -lock"
 
 # change focus
 bindsym $mod+j focus left
