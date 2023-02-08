@@ -1,7 +1,7 @@
 (
     // Maximum number of notifications to show at any one time.
     // A value of 0 means that there is no limit.
-    max_notifications: 3,
+    max_notifications: 5,
 
     // The default timeout, in miliseconds, for notifications that don't have an initial timeout set.
     // 1000ms = 1s.
@@ -97,7 +97,7 @@
                 border_color_critical: Color(hex: "#00ff12"),
                 //border_color_paused: Color(hex: "#fabd2f"),
 
-                gap: Vec2(x: 300.0, y: -22.0),
+                gap: Vec2(x: 0, y: 5),
                 notification_hook: Hook(parent_anchor: BL, self_anchor: TL),
             )),
         ),
