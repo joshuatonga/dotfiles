@@ -17,6 +17,7 @@ alias kt=kubetail
 alias alert="afplay /System/Library/Sounds/Submarine.aiff"
 
 alias t=tmux
+alias letsgo=tmux new-session -s c
 alias tf=terraform
 alias g=git
 alias lg=lazygit
