@@ -42,3 +42,4 @@ vim.opt.foldnestmax = 10
 vim.opt.foldenable = false -- don't fold when opening a file
 vim.opt.clipboard = { 'unnamed', 'unnamedplus' }
 vim.opt.shada = "!,'300,<50,@100,s10,h"
+vim.opt.mouse = ""
