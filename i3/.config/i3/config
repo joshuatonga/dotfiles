@@ -191,7 +191,7 @@ bindsym $mod+r mode "resize"
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #dcdad5 #000000 #000000   #000000
 client.focused_inactive #414345 #5f676a #000000 #484e50   #5f676a
-client.unfocused        #6f7478 #414345 #ffffff #292d2e   #222222
+client.unfocused        #6f7478 #969799 #ffffff #292d2e   #222222
 client.urgent           #2f343a #fc0303 #ffffff #fc0303   #fc0303
 client.placeholder      #000000 #0c0c0c #000000 #000000   #0c0c0c
 client.background       #ffffff
@@ -208,7 +208,7 @@ bar {
 
         focused_workspace  #585959 #565757 #d7dbdb
         active_workspace   #333333 #5f676a #000000
-        inactive_workspace #dfe3e8 #dfe3e8 #3e3f40
+        inactive_workspace #000000 #c9c8c3 #3e3f40
         urgent_workspace   #2f343a #fc0303 #ffffff
         binding_mode       #2f343a #fc0303 #ffffff
     }
