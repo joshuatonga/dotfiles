@@ -128,6 +128,7 @@ if [[ $OSTYPE == darwin* ]]; then
 	eval "$(register-python-argcomplete pipx)"
 fi
 
+source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
