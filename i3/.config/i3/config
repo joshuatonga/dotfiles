@@ -228,6 +228,7 @@ bindsym Alt_R workspace back_and_forth
 for_window [class="thunderbird"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Slack"] move to workspace $ws10
+for_window [class="Pidgin"] move to workspace $ws10
 
 # exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable; sleep 30'
 exec --no-startup-id google-chrome-stable
@@ -236,6 +237,7 @@ exec --no-startup-id thunderbird
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id spotify-launcher
 exec --no-startup-id slack
+exec --no-startup-id pidgin
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
 exec --no-startup-id wired # notification-daemon
