@@ -4,6 +4,13 @@ local keymap = require('joshuatonga.core.keymap')
 
 local nnoremap = keymap.nnoremap
 
+require('lsp_signature').setup({
+  hint_enable = false,
+  handler_opts = {
+    border = 'none',
+  },
+})
+
 nnoremap('<Space>e', vim.diagnostic.open_float)
 nnoremap('[d', vim.diagnostic.goto_prev)
 nnoremap(']d', vim.diagnostic.goto_next)
