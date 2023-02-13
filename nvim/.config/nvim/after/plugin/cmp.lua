@@ -1,4 +1,4 @@
-local cmp = require 'cmp'
+local cmp = require('cmp')
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
@@ -27,7 +27,7 @@ local kind_icons = {
   Struct = ' struct',
   Event = ' event',
   Operator = ' operator',
-  TypeParameter = ' typeparam'
+  TypeParameter = ' typeparam',
 }
 
 cmp.setup({
@@ -39,7 +39,7 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body)
+      vim.fn['UltiSnips#Anon'](args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -62,16 +62,15 @@ cmp.setup({
         nvim_lua = '[Lua]',
       })[entry.source.name]
       return vim_item
-    end
+    end,
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'ultisnips' },
-    { name = 'nvim_lsp_signature_help' },
     { name = 'path' },
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 -- Set configuration for specific filetype.
@@ -81,7 +80,7 @@ cmp.setup.filetype('gitcommit', {
     { name = 'conventionalcommits' },
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -90,15 +89,15 @@ cmp.setup.cmdline('/', {
   sources = {
     { name = 'nvim_lsp_document_symbol' },
     { name = 'buffer', max_item_count = 10 },
-  }
+  },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    { name = 'path' },
   }, {
-    { name = 'cmdline' }
-  })
+    { name = 'cmdline' },
+  }),
 })

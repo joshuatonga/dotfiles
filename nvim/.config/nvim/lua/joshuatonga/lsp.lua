@@ -1,7 +1,6 @@
-require('lsp-format').setup()
-local lsp = require 'lspconfig'
-local cmp_nvim_lsp = require 'cmp_nvim_lsp'
-local keymap = require 'joshuatonga.core.keymap'
+local lsp = require('lspconfig')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+local keymap = require('joshuatonga.core.keymap')
 
 local nnoremap = keymap.nnoremap
 
@@ -33,50 +32,50 @@ local on_attach = function(client, bufnr)
   nnoremap('<Space>rn', vim.lsp.buf.rename, bufopts)
   nnoremap('<Space>ca', vim.lsp.buf.code_action, bufopts)
   nnoremap('gr', vim.lsp.buf.references, bufopts)
-  nnoremap('<Space>f', vim.lsp.buf.formatting, bufopts)
-
-  require('lsp-format').on_attach(client)
+  nnoremap('<Space>f', function()
+    vim.lsp.buf.format({ async = true })
+  end, bufopts)
 end
 
 local lsp_flags = {
-    -- This is the default in Nvim 0.7+
-    debounce_text_changes = 150,
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
 }
 
 local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local default_server_setup = {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
 }
 
-lsp.lua_ls.setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file('', true),
-                checkThirdParty = false
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-        },
+lsp.lua_ls.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file('', true),
+        checkThirdParty = false,
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
     },
-}
+  },
+})
 
 lsp.pyright.setup(default_server_setup)
 lsp.tsserver.setup(default_server_setup)
@@ -85,8 +84,8 @@ lsp.gopls.setup(default_server_setup)
 -- TODO: Custom ultisnips not working
 lsp.terraformls.setup(default_server_setup)
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-    pattern = { '*.tf', '*.tfvars' },
-    callback = function()
-      vim.opt_local.filetype = 'terraform'
-    end,
+  pattern = { '*.tf', '*.tfvars' },
+  callback = function()
+    vim.opt_local.filetype = 'terraform'
+  end,
 })
