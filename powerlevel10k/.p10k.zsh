@@ -32,7 +32,7 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # os_icon               # os identifier
     context                 # user@hostname
-    dir                     # current directory
+    # dir                     # current directory
     prompt_char             # prompt symbol
   )
 
