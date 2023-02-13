@@ -1,5 +1,5 @@
 require('hop').setup()
-local keymap = require 'joshuatonga.core.keymap'
+local keymap = require('joshuatonga.core.keymap')
 local nnoremap = keymap.nnoremap
 
 nnoremap('<Leader><Leader>w', ':HopWord<CR>')

@@ -1,4 +1,4 @@
-local keymap = require 'joshuatonga.core.keymap'
+local keymap = require('joshuatonga.core.keymap')
 local nnoremap = keymap.nnoremap
 
 vim.g['test#strategy'] = 'make'
