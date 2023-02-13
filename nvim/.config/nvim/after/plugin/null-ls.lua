@@ -8,6 +8,7 @@ null_ls.setup({
     null_ls.builtins.formatting.stylua.with({
       extra_args = { '--indent-type', 'Spaces', '--indent-width', '2', '--quote-style', 'ForceSingle' },
     }),
+    null_ls.builtins.formatting.prettierd,
   },
   on_attach = function(client, bufnr)
     if client.supports_method('textDocument/formatting') then
