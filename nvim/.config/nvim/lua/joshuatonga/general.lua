@@ -1,6 +1,6 @@
 vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = 'python',
-  command = 'setlocal ts=4 sw=4 sts=4 expandtab'
+  command = 'setlocal ts=4 sw=4 sts=4 expandtab',
 })
 
 vim.api.nvim_set_hl(0, 'LineNr', {})
@@ -41,6 +41,7 @@ vim.opt.foldmethod = 'indent'
 vim.opt.foldnestmax = 10
 vim.opt.foldenable = false -- don't fold when opening a file
 vim.opt.clipboard = { 'unnamed', 'unnamedplus' }
-vim.opt.shada = "!,'300,<50,@100,s10,h"
-vim.opt.mouse = ""
+vim.opt.shada = '!,\'300,<50,@100,s10,h'
+vim.opt.mouse = ''
 vim.opt.scrolloff = 8
+vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'

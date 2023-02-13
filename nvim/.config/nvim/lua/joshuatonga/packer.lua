@@ -20,8 +20,6 @@ return require('packer').startup(function(use)
   -- UI
   use('nvim-lualine/lualine.nvim')
   use('lewis6991/gitsigns.nvim')
-  use('scrooloose/nerdtree') -- File directory tree plugin
-  use('Xuyuanp/nerdtree-git-plugin')
   use('lukas-reineke/indent-blankline.nvim')
   use('norcalli/nvim-colorizer.lua')
 

@@ -1,4 +1,4 @@
-local keymap = require 'joshuatonga.core.keymap'
+local keymap = require('joshuatonga.core.keymap')
 local nnoremap = keymap.nnoremap
 local inoremap = keymap.inoremap
 local vnoremap = keymap.vnoremap
@@ -7,6 +7,8 @@ local xnoremap = keymap.xnoremap
 vim.g.mapleader = ','
 
 local opts = { silent = true }
+
+nnoremap('<Leader>pv', vim.cmd.Ex)
 
 nnoremap('<C-q>', ':q<CR>', opts)
 nnoremap('<C-s>', ':w<CR>')
@@ -26,11 +28,11 @@ nnoremap('<C-f>', function()
 end)
 
 -- Ref: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 nnoremap('<Leader>hw', ':help <C-r><C-w><CR>') -- Open help page for the word under cursor
 nnoremap('<C-w>+', ':resize +10<CR>', opts)
@@ -53,7 +55,7 @@ vnoremap('>', '>gv', opts)
 vnoremap('p', '"_dP', opts)
 
 -- Visual block moving
-xnoremap('J', ":move '>+1<CR>gv-gv", opts)
-xnoremap('K', ":move '<-2<CR>gv-gv", opts)
+xnoremap('J', ':move \'>+1<CR>gv-gv', opts)
+xnoremap('K', ':move \'<-2<CR>gv-gv', opts)
 -- xnoremap('<A-j>', ":move '>+1<CR>gv-gv", opts)
 -- xnoremap('<A-k>', ":move '<-2<CR>gv-gv", opts)
