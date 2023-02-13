@@ -1,3 +1,5 @@
+os:
+  editCommand: 'gvim'
 customCommands:
   - key: "K"
     command: "git cz"
