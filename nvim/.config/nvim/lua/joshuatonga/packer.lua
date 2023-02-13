@@ -18,13 +18,10 @@ return require('packer').startup(function(use)
   use('scrooloose/nerdcommenter') -- For commenting
 
   -- UI
-  use('kyazdani42/nvim-web-devicons')
   use('nvim-lualine/lualine.nvim')
   use('lewis6991/gitsigns.nvim')
   use('scrooloose/nerdtree') -- File directory tree plugin
   use('Xuyuanp/nerdtree-git-plugin')
-  -- use 'ryanoasis/vim-devicons'
-  -- use 'tiagofumo/vim-nerdtree-syntax-highlight'
   use('lukas-reineke/indent-blankline.nvim')
   use('norcalli/nvim-colorizer.lua')
 
