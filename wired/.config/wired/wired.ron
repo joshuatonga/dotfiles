@@ -70,7 +70,7 @@
     // you have a 1x1 pixel notification...
     // Generally, you shouldn't need to set this.
     min_window_width: 300,
-    min_window_height: 22,
+    min_window_height: 26,
 
     // Enable/disable debug rendering.
     debug: false,
