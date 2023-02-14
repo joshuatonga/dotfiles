@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   use('mg979/vim-visual-multi')
   use('p00f/nvim-ts-rainbow') -- for parenthesis colors
   use('leafOfTree/vim-matchtag')
-  use('bronson/vim-trailing-whitespace')
+  use('ntpeters/vim-better-whitespace')
   use('cohama/lexima.vim')
   use('scrooloose/nerdcommenter') -- For commenting
 
