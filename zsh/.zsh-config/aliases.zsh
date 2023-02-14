@@ -1,6 +1,7 @@
 alias vi=$EDITOR
 alias vim=$EDITOR
 alias v="fd --type f --hidden --exclude .git --print0 | fzf --read0 --print0 --exit-0 | xargs -r -0 $EDITOR"
+alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
 
 if [[ $OSTYPE == linux-gnu* ]]; then
   alias open="xdg-open"
