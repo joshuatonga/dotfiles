@@ -9,5 +9,6 @@ augroup END
 ]])
 
 vim.g.UltiSnipsEditSplit = 'vertical'
+vim.g.UltiSnipsSnippetDirectories = { 'ultisnips' }
 
 nnoremap('<Leader>use', ':UltiSnipsEdit<CR>')
