@@ -1,9 +1,9 @@
-require('hop').setup()
-local keymap = require('joshuatonga.core.keymap')
+require("hop").setup()
+local keymap = require("joshuatonga.core.keymap")
 local nnoremap = keymap.nnoremap
 
-nnoremap('<Leader><Leader>w', ':HopWord<CR>')
-nnoremap('<Leader><Leader>b', ':HopWordBC<CR>')
+nnoremap("<Leader><Leader>w", ":HopWord<CR>")
+nnoremap("<Leader><Leader>b", ":HopWordBC<CR>")
 -- nnoremap('f',
 --   "<CMD>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
 -- nnoremap('f',

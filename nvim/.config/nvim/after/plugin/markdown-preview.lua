@@ -1,1 +1,1 @@
-vim.api.nvim_create_user_command('MP', 'MarkdownPreview', {})
+vim.api.nvim_create_user_command("MP", "MarkdownPreview", {})

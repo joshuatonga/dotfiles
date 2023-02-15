@@ -1,7 +1,7 @@
 -- Add spaces after comment delimiters by default
 vim.g.NERDSpaceDelims = 1
 -- Align line-wise comment delimiters flush left instead of following code indentation
-vim.g.NERDDefaultAlign = 'left'
+vim.g.NERDDefaultAlign = "left"
 -- Allow commenting and inverting empty lines (useful when commenting a region)
 vim.g.NERDCommentEmptyLines = 1
 -- Enable trimming of trailing whitespace when uncommenting
