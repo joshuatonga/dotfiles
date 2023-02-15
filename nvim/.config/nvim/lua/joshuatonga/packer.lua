@@ -66,6 +66,7 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("ray-x/lsp_signature.nvim")
 	use("pearofducks/ansible-vim")
+	use("jose-elias-alvarez/typescript.nvim")
 
 	-- Themes
 	use("EdenEast/nightfox.nvim")
