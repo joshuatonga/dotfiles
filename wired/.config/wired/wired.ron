@@ -70,7 +70,7 @@
     // you have a 1x1 pixel notification...
     // Generally, you shouldn't need to set this.
     min_window_width: 300,
-    min_window_height: 26,
+    min_window_height: 29,
 
     // Enable/disable debug rendering.
     debug: false,
@@ -114,7 +114,7 @@
                 ellipsize: Middle,
                 color: Color(hex: "#ffffff"),
                 color_hovered: Color(hex: "#ffffff"),
-                padding: Padding(left: 5.0, right: 0.0, top: 0.0, bottom: 0.0),
+                padding: Padding(left: 5.0, right: 0.0, top: 2.0, bottom: 0.0),
                 dimensions: (width: (min: 50, max: 150), height: (min: 0, max: 0)),
             )),
         ),
@@ -130,7 +130,7 @@
                 font: "monospace 10",
                 color: Color(hex: "#ffffff"),
                 color_hovered: Color(hex: "#ffffff"),
-                padding: Padding(left: 0.0, right: 5.0, top: 0.0, bottom: 0.0),
+                padding: Padding(left: 3.0, right: 5.0, top: 2.0, bottom: 0.0),
                 width: (min: 150, max: 250),
                 scroll_speed: 0.15,
                 lhs_dist: 35.0,
