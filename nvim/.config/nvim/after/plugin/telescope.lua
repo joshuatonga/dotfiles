@@ -36,8 +36,8 @@ require("telescope").setup({
 					["<C-f>"] = function()
 						require("telescope.builtin").oldfiles()
 					end,
-					["<C-e>"] = function()
-						require("telescope.builtin").find_files({ hidden = true })
+					["<C-h>"] = function()
+						require("telescope.builtin").find_files({ hidden = true, prompt_title = "Hidden Files" })
 					end,
 					["<C-r>"] = function()
 						require("telescope.builtin").git_status()
