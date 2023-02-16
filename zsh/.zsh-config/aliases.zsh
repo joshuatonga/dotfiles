@@ -10,6 +10,9 @@ fi
 
 alias work=~/.tmux-startup.sh
 
+alias notes="vi ~/notes/"
+alias pnotes="vi ~/paymongo/notes/"
+
 # kubernetes stuff
 alias k=kubectl
 alias kc=kubectx
@@ -36,7 +39,8 @@ alias yt=yt-dlp
 alias yt-mp3=yt-dlp -x -f bestaudio
 
 alias vplug="vi $HOME/personal/dotfiles/configs/.config/nvim/plugs/plugins.vim"
-alias aliases="vi $HOME/personal/dotfiles/zsh/.zsh-config/aliases.zsh"
+alias aliases="vi $HOME/me/dotfiles/zsh/.zsh-config/aliases.zsh"
+alias i3config="vi $HOME/me/dotfiles/i3/.config/i3/config"
 alias tracker="node ~/personal/coding-tracker/src/index.js"
 
 # search stuff
