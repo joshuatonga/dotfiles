@@ -5,3 +5,7 @@
 [submodule "powerlevel10k"]
 	path = zsh/.zsh-config/vendor/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
+
+[submodule "paymongo"]
+	path = paymongo
+	url = git@github.com:joshuatonga/dotfiles-paymongo.git

@@ -156,3 +156,5 @@ zstyle ':completion:*' rehash true
 
 # Disable aws cli pager
 export AWS_PAGER=""
+
+[ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
