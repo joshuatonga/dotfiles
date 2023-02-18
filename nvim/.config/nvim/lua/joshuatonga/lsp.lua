@@ -110,3 +110,5 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		vim.opt_local.filetype = "terraform"
 	end,
 })
+
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua require('joshuatonga.core.utils').code_action_listener()]])
