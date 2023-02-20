@@ -29,11 +29,12 @@ nnoremap("<C-f>", function()
 end)
 
 -- Ref: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+xnoremap("<leader>p", '"_dP')
+nnoremap("J", "mzJ`z")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("n", "nzzzv")
+nnoremap("N", "Nzzzv")
 
 nnoremap("<Leader>hw", ":help <C-r><C-w><CR>") -- Open help page for the word under cursor
 nnoremap("<C-w>+", ":resize +10<CR>", opts)
@@ -51,9 +52,6 @@ nnoremap("[Q", ":clast<CR>", opts)
 -- Stay in visual mode when indenting. Ref: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/keymaps.lua
 vnoremap("<", "<gv", opts)
 vnoremap(">", ">gv", opts)
-
--- Don't copy the word when pasting
-vnoremap("p", '"_dP', opts)
 
 -- Visual block moving
 xnoremap("J", ":move '>+1<CR>gv-gv", opts)
