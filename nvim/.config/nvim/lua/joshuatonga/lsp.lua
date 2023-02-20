@@ -1,3 +1,7 @@
+require("neodev").setup({
+	library = { plugins = { "nvim-dap-ui" }, types = true },
+})
+
 local lsp = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local keymap = require("joshuatonga.core.keymap")

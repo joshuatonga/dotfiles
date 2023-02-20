@@ -60,6 +60,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/nvim-cmp")
 	use("SirVer/ultisnips")
 	use("honza/vim-snippets")
+	use("folke/neodev.nvim")
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
@@ -67,6 +68,19 @@ return require("packer").startup(function(use)
 	use("ray-x/lsp_signature.nvim")
 	use("pearofducks/ansible-vim")
 	use("jose-elias-alvarez/typescript.nvim")
+
+	-- Debugging
+	use("mfussenegger/nvim-dap")
+	use("jay-babu/mason-nvim-dap.nvim")
+	use("theHamsta/nvim-dap-virtual-text")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npm run compile",
+		tag = "v1.74.1",
+	})
 
 	-- Themes
 	use("EdenEast/nightfox.nvim")
