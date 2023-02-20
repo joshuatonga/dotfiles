@@ -70,3 +70,16 @@ push-bashrc() {
 ghpr() {
   GH_FORCE_TTY=100% gh pr list | fzf --ansi --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --header-lines 3 | awk '{print $1}' | xargs gh pr checkout
 }
+
+conv-mp4-to-mp3() {
+  if [[ -z "$1" ]]; then
+    echo "provide source as 1st argument"
+    exit 1
+  fi
+
+  if [[ -z "$2" ]]; then
+    echo "provide dest as 2nd argument"
+    exit 1
+  fi
+  ffmpeg -i $1 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 $2
+}
