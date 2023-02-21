@@ -7,6 +7,7 @@ local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local keymap = require("joshuatonga.core.keymap")
 
 local nnoremap = keymap.nnoremap
+local inoremap = keymap.inoremap
 
 require("lsp_signature").setup({
 	hint_enable = false,
@@ -44,6 +45,9 @@ local on_attach = function(_, bufnr)
 	nnoremap("<Space>ca", vim.lsp.buf.code_action, bufopts)
 	nnoremap("gr", vim.lsp.buf.references, bufopts)
 	nnoremap("<Space>f", function()
+		vim.lsp.buf.format({ async = true })
+	end, bufopts)
+	inoremap("<C-g>f", function()
 		vim.lsp.buf.format({ async = true })
 	end, bufopts)
 end
