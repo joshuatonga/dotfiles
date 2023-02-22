@@ -157,4 +157,7 @@ zstyle ':completion:*' rehash true
 # Disable aws cli pager
 export AWS_PAGER=""
 
+# add color to man
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
