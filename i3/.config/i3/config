@@ -119,6 +119,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+exec --no-startup-id xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --right-of DP-3 --output DP-3 --mode 1920x1080 --pos 0x0 --rotate normal
+
+set $out_main HDMI-0
+set $out_second DP-3
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: home"
@@ -126,11 +131,22 @@ set $ws2 "2: work"
 set $ws3 "3: terminal"
 set $ws4 "4: files"
 set $ws5 "5: notes"
-set $ws6 "6: proj"
-set $ws7 "7: stuff"
+set $ws6 "6: stuff"
+set $ws7 "7: more stuff"
 set $ws8 "8: email"
 set $ws9 "9: music"
 set $ws10 "10: chat"
+
+workspace $ws1 output $out_main
+workspace $ws2 output $out_main
+workspace $ws3 output $out_main
+workspace $ws4 output $out_main
+workspace $ws5 output $out_main
+workspace $ws6 output $out_second
+workspace $ws7 output $out_second
+workspace $ws8 output $out_second
+workspace $ws9 output $out_second
+workspace $ws10 output $out_second
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -203,6 +219,7 @@ client.background       #ffffff
 bar {
     position top
     status_command i3status
+    tray_output primary
     colors {
         background #dcdad5
         statusline #000000
@@ -237,7 +254,7 @@ exec --no-startup-id google-chrome-stable
 exec --no-startup-id feh --bg-scale ~/wallpapers/tux.jpeg
 exec --no-startup-id thunderbird
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id spotify-launcher
+exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id pidgin
 exec --no-startup-id 1password --silent
