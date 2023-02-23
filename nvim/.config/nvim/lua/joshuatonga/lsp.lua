@@ -56,7 +56,6 @@ local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
 }
-
 local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local default_server_setup = {
@@ -64,6 +63,12 @@ local default_server_setup = {
 	flags = lsp_flags,
 	capabilities = capabilities,
 }
+
+local servers = { "gopls", "ansiblels", "bashls", "terraformls", "pyright" }
+
+for _, server in pairs(servers) do
+	lsp[server].setup(default_server_setup)
+end
 
 lsp.lua_ls.setup({
 	on_attach = on_attach,
@@ -95,7 +100,6 @@ lsp.lua_ls.setup({
 	},
 })
 
-lsp.pyright.setup(default_server_setup)
 require("typescript").setup({
 	disable_commands = false, -- prevent the plugin from creating Vim commands
 	debug = false, -- enable debug logging for commands
@@ -106,12 +110,7 @@ require("typescript").setup({
 		on_attach = on_attach,
 	},
 })
-lsp.gopls.setup(default_server_setup)
-lsp.ansiblels.setup(default_server_setup)
-lsp.bashls.setup(default_server_setup)
 
--- TODO: Custom ultisnips not working
-lsp.terraformls.setup(default_server_setup)
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = { "*.tf", "*.tfvars" },
 	callback = function()
