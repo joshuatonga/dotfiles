@@ -12,7 +12,7 @@ nnoremap("<Leader>pv", vim.cmd.Ex)
 
 nnoremap("<C-q>", ":q<CR>", opts)
 nnoremap("<C-s>", ":w<CR>")
-inoremap("<C-s>w", "<Esc>:w<CR>")
+inoremap("<C-s>w", "<Esc>:w<CR>a")
 inoremap("<C-s>q", "<Esc>:wq<CR>")
 inoremap("jj", "<Esc>")
 inoremap("<C-e>", "<C-o>de") -- delete word forward in insert mode. C-w to delete backward
