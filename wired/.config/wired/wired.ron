@@ -61,7 +61,7 @@
     // Useful for scripting purposes.
     // The data is written as JSON.
     // Default: None
-    //print_to_file: "/tmp/wired.log",
+    print_to_file: "/tmp/wired.log",
 
     // Minimum window width and height.  This is used to create the base rect that the notification
     // grows within.
