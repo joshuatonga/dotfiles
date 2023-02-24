@@ -244,6 +244,7 @@ bindsym Shift+Print exec --no-startup-id flameshot gui
 # bind right alt for back and forth workspace switcher
 bindsym Alt_R workspace back_and_forth
 
+for_window [class="Mechvibes"] move to workspace $ws7
 for_window [class="thunderbird"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Slack"] move to workspace $ws10
@@ -257,6 +258,7 @@ exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id pidgin
+exec --no-startup-id mechvibes
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
 exec --no-startup-id wired # notification-daemon
