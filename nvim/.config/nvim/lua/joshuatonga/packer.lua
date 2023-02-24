@@ -22,6 +22,7 @@ return require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("norcalli/nvim-colorizer.lua")
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- Tools
 	use("lambdalisue/suda.vim")
