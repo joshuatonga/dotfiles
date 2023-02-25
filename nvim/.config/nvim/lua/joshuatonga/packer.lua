@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
 		after = "nvim-treesitter",
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Tools
 	use("lambdalisue/suda.vim")
