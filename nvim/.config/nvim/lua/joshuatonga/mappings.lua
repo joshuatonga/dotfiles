@@ -52,6 +52,12 @@ nnoremap("[q", ":cprev<CR>", opts)
 nnoremap("]Q", ":cfirst<CR>", opts)
 nnoremap("[Q", ":clast<CR>", opts)
 
+-- Locationlist mappings
+nnoremap("]l", ":lnext<CR>", opts)
+nnoremap("[l", ":lprev<CR>", opts)
+nnoremap("]L", ":lfirst<CR>", opts)
+nnoremap("[L", ":llast<CR>", opts)
+
 -- Stay in visual mode when indenting. Ref: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/keymaps.lua
 vnoremap("<", "<gv", opts)
 vnoremap(">", ">gv", opts)
