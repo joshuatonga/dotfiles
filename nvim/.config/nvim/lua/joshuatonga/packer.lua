@@ -22,7 +22,18 @@ return require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("norcalli/nvim-colorizer.lua")
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
 	use("nvim-treesitter/nvim-treesitter-context")
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
 
 	-- Tools
 	use("lambdalisue/suda.vim")
@@ -41,12 +52,6 @@ return require("packer").startup(function(use)
 	use("phelipetls/jsonpath.nvim")
 
 	-- LSP
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
-	})
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
