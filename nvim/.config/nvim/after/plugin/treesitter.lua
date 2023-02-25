@@ -104,10 +104,10 @@ require("nvim-treesitter.configs").setup({
 			-- Use if you want more granular movements
 			-- Make it even more gradual by adding multiple queries and regex.
 			goto_next = {
-				["]d"] = "@conditional.outer",
+				["]t"] = "@conditional.outer",
 			},
 			goto_previous = {
-				["[d"] = "@conditional.outer",
+				["[t"] = "@conditional.outer",
 			},
 		},
 		swap = {
