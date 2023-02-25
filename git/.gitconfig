@@ -8,7 +8,7 @@
   co = checkout
   d = diff
   ds = diff --staged
-  dv = difftool -t vimdiff -y
+  dt = difftool
 	dunk = !git diff | dunk
   l = log
   ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -45,3 +45,12 @@
 
 [core]
 	excludesfile = ~/.gitignore-global
+
+[difftool]
+  prompt = false
+
+[diff]
+  tool = vimdiff
+
+[difftool "vimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
