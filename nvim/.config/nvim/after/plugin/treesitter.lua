@@ -2,17 +2,17 @@ local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
-		"javascript",
+		"help",
 		"dockerfile",
 		"json",
-		"lua",
 		"markdown",
-		"python",
 		"regex",
-		"typescript",
-		"vim",
 		"yaml",
-		"help",
+		"vim",
+		"javascript",
+		"lua",
+		"python",
+		"typescript",
 		"rust",
 	},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
