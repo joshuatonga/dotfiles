@@ -7,7 +7,7 @@ vim.api.nvim_set_hl(0, "LineNr", {})
 vim.api.nvim_set_hl(0, "NonText", { ctermbh = nil })
 
 vim.opt.confirm = true
-vim.opt.shortmess = vim.opt.shortmess:append({ A = true }) -- disable swap message
+vim.opt.shortmess = vim.opt.shortmess + { A = true } -- disable swap message
 vim.opt.termguicolors = true
 vim.opt.hlsearch = false
 vim.opt.autoread = true -- set to auto read when a file is changed from the outside
