@@ -1,7 +1,5 @@
 local cmp = require("cmp")
 
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
-
 local kind_icons = {
 	Text = " text",
 	Method = " method",
@@ -32,7 +30,8 @@ local kind_icons = {
 
 cmp.setup({
 	-- completion = {
-	--   autocomplete = false, -- Manual trigger completion with <C-space>
+	-- completeopt = "menuone,noselect,noinsert",
+	-- autocomplete = false, -- Manual trigger completion with <C-space>
 	-- },
 	performance = {
 		debounce = 150,
@@ -49,7 +48,7 @@ cmp.setup({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
 	}),
 	formatting = {
 		format = function(entry, vim_item)
