@@ -165,6 +165,18 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+# mx keys keypad
+bindsym KP_Home workspace number $ws7
+bindsym KP_Up workspace number $ws8
+bindsym KP_Prior workspace number $ws9
+bindsym KP_Left workspace number $ws4
+bindsym KP_Begin workspace number $ws5
+bindsym KP_Right workspace number $ws6
+bindsym KP_Insert workspace number $ws10
+bindsym KP_End exec --no-startup-id google-chrome-stable
+bindsym KP_Down exec --no-startup-id thunar
+bindsym KP_Next exec --no-startup-id calibre
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
