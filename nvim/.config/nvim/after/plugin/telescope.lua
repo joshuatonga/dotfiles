@@ -37,7 +37,7 @@ require("telescope").setup({
 						require("telescope.builtin").oldfiles()
 					end,
 					["<C-h>"] = function()
-						require("telescope.builtin").find_files({ hidden = true, prompt_title = "Hidden Files" })
+						require("telescope.builtin").find_files()
 					end,
 					["<C-r>"] = function()
 						require("telescope.builtin").git_status()
@@ -80,7 +80,7 @@ require("telescope").load_extension("fzf")
 vim.api.nvim_create_user_command("Tel", "Telescope <args>", { nargs = "*" })
 vim.api.nvim_create_user_command("Maps", "Telescope keymaps", {})
 
-nnoremap("<C-p>", ":lua require('telescope.builtin').find_files()<CR>")
+nnoremap("<C-p>", ":lua require('telescope.builtin').find_files({ hidden = true, prompt_title = 'Hidden Files' })<CR>")
 nnoremap("<C-\\>", ":lua require('telescope.builtin').commands()<CR>")
 nnoremap("<leader>fc", ":lua require('telescope.builtin').command_history()<CR>")
 nnoremap("<leader>fs", ":lua require('telescope.builtin').live_grep()<CR>")
