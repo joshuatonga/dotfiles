@@ -253,7 +253,7 @@ for_window [class="Mechvibes"] move to workspace $ws7
 for_window [class="thunderbird"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Slack"] move to workspace $ws10
-for_window [class="Pidgin"] move to workspace $ws10
+for_window [class="Pidgin"] move to workspace $ws7
 
 # exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable; sleep 30'
 exec --no-startup-id google-chrome-stable
