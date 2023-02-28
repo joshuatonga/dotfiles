@@ -4,6 +4,9 @@ local tnoremap = keymap.tnoremap
 
 local opts = { silent = true }
 
+vim.g.floaterm_height = 0.9
+vim.g.floaterm_width = 0.9
+
 nnoremap("<Leader>tf", ":FloatermNew<CR>", opts)
 nnoremap("<Leader>tt", ":FloatermToggle<CR>", opts)
 nnoremap("<Leader>tk", ":FloatermKill<CR>", opts)
