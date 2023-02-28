@@ -173,7 +173,7 @@ bindsym KP_Left workspace number $ws4
 bindsym KP_Begin workspace number $ws5
 bindsym KP_Right workspace number $ws6
 bindsym KP_Insert workspace number $ws10
-bindsym KP_End exec --no-startup-id google-chrome-stable
+bindsym KP_End exec --no-startup-id mousepad
 bindsym KP_Down exec --no-startup-id thunar
 bindsym KP_Next exec --no-startup-id calibre
 
