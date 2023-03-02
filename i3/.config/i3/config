@@ -289,6 +289,8 @@ for_window [class="Pidgin"] move to workspace $ws7
 for_window [class="MainTerm"] move to workspace $ws3
 for_window [class="calibre"] move to workspace $ws5
 
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 
 exec --no-startup-id "i3-msg 'workspace number 6; append_layout ~/.config/i3/workspace-6.json'"
 exec --no-startup-id alacritty --class WeeChatTerm --command weechat
