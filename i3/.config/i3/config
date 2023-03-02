@@ -223,6 +223,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+x [urgent=latest] focus
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #0037DA #ffffff #000000   #000000
