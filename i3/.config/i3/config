@@ -255,6 +255,7 @@ bar {
 bar {
     position top
     output DP-3
+    tray_output none
     colors {
         background #dcdad5
         statusline #000000
