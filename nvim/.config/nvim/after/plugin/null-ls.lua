@@ -11,6 +11,8 @@ null_ls.setup({
 		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.diagnostics.ansiblelint,
 		null_ls.builtins.code_actions.gomodifytags,
+		null_ls.builtins.formatting.yamlfmt,
+		null_ls.builtins.diagnostics.yamllint,
 		require("typescript.extensions.null-ls.code-actions"),
 	},
 	on_attach = function(client, bufnr)
