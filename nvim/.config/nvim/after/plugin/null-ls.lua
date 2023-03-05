@@ -13,6 +13,7 @@ null_ls.setup({
 		null_ls.builtins.code_actions.gomodifytags,
 		null_ls.builtins.formatting.yamlfmt,
 		null_ls.builtins.diagnostics.yamllint,
+		null_ls.builtins.diagnostics.write_good,
 		require("typescript.extensions.null-ls.code-actions"),
 	},
 	on_attach = function(client, bufnr)
