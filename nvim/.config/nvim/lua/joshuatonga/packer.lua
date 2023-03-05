@@ -77,6 +77,7 @@ return require("packer").startup(function(use)
 	use("ray-x/lsp_signature.nvim")
 	use("pearofducks/ansible-vim")
 	use("jose-elias-alvarez/typescript.nvim")
+	use("fatih/vim-go")
 
 	-- Debugging
 	use("mfussenegger/nvim-dap")
