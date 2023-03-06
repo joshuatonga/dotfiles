@@ -64,7 +64,8 @@ local default_server_setup = {
 	capabilities = capabilities,
 }
 
-local servers = { "gopls", "ansiblels", "bashls", "terraformls", "pyright", "rust_analyzer", "html", "dockerls" }
+local servers =
+	{ "gopls", "ansiblels", "bashls", "terraformls", "pyright", "rust_analyzer", "html", "dockerls", "cssls" }
 
 for _, server in pairs(servers) do
 	lsp[server].setup(default_server_setup)
