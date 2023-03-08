@@ -10,7 +10,6 @@ null_ls.setup({
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.formatting.gofmt,
-		null_ls.builtins.formatting.goimports,
 		null_ls.builtins.formatting.goimports_reviser,
 		null_ls.builtins.formatting.yamlfmt,
 		null_ls.builtins.diagnostics.ansiblelint,
