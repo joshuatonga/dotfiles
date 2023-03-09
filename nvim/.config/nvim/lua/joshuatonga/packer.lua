@@ -78,6 +78,17 @@ return require("packer").startup(function(use)
 	use("pearofducks/ansible-vim")
 	use("jose-elias-alvarez/typescript.nvim")
 	use("fatih/vim-go")
+	use({
+		"someone-stole-my-name/yaml-companion.nvim",
+		requires = {
+			{ "neovim/nvim-lspconfig" },
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+		config = function()
+			require("telescope").load_extension("yaml_schema")
+		end,
+	})
 
 	-- Debugging
 	use("mfussenegger/nvim-dap")
