@@ -1,3 +1,4 @@
+require("dap-go").setup()
 local dap = require("dap")
 local dapui = require("dapui")
 

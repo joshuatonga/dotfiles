@@ -91,6 +91,7 @@ return require("packer").startup(function(use)
 		run = "npm install --legacy-peer-deps && npm run compile",
 		tag = "v1.74.1",
 	})
+	use("leoluz/nvim-dap-go")
 
 	-- Themes
 	use("EdenEast/nightfox.nvim")
