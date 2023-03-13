@@ -15,8 +15,8 @@ alias pnotes="vi ~/paymongo/notes/"
 
 # kubernetes stuff
 alias k=kubectl
-alias kc="kubie ctx"
-alias kn="kubie ns"
+alias kc="kubectx"
+alias kn="kubens"
 alias kt=kubetail
 
 alias alert="afplay /System/Library/Sounds/Submarine.aiff"
