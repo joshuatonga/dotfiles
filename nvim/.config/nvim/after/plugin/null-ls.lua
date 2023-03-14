@@ -12,7 +12,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.gofmt,
 		null_ls.builtins.formatting.goimports_reviser,
 		null_ls.builtins.diagnostics.ansiblelint,
-		null_ls.builtins.diagnostics.yamllint,
+		-- null_ls.builtins.diagnostics.yamllint,
 		null_ls.builtins.diagnostics.write_good,
 		null_ls.builtins.code_actions.gomodifytags,
 		require("typescript.extensions.null-ls.code-actions"),
