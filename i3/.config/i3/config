@@ -281,6 +281,13 @@ bindsym Shift+Print exec --no-startup-id flameshot gui
 # bind right alt for back and forth workspace switcher
 bindsym Alt_R workspace back_and_forth
 
+# speaker
+bindsym KP_Divide exec pacmd set-default-sink "alsa_output.pci-0000_28_00.4.analog-stereo"
+# headset
+bindsym KP_Multiply exec pacmd set-default-sink "alsa_output.usb-SteelSeries_SteelSeries_Arctis_5_00000000-00.analog-chat"
+# earphones
+bindsym KP_Subtract exec pacmd set-default-sink "bluez_sink.1C_E6_1D_E0_B0_D3.a2dp_sink"
+
 for_window [class="Mechvibes"] move to workspace $ws7
 for_window [class="thunderbird"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
