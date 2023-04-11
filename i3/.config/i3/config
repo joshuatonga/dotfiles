@@ -303,7 +303,7 @@ exec --no-startup-id "i3-msg 'workspace number 6; append_layout ~/.config/i3/wor
 # exec --no-startup-id alacritty --class WeeChatTerm --command weechat
 exec --no-startup-id alacritty --class CmusTerm --command cmus
 exec --no-startup-id mousepad ~/notes/distractions-scratch.txt
-exec --no-startup-id gtimelog
+# exec --no-startup-id gtimelog
 # exec --no-startup-id alacritty --class TermDownTerm
 exec --no-startup-id vlc ~/Videos/working/space-girl-music.mp4
 
