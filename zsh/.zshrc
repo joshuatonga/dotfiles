@@ -10,6 +10,7 @@ fi
 export PATH=$HOME/bin:~/bin/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebrew/opt/influxdb@1/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.ebcli-virtual-env/executables
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+export PATH=$PATH:$HOME/.local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
