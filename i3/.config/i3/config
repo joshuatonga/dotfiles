@@ -324,6 +324,7 @@ exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id spotify
 # exec --no-startup-id slack
 # exec --no-startup-id pidgin
+exec --no-startup-id deluge
 exec --no-startup-id mechvibes
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
