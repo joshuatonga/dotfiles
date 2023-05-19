@@ -43,6 +43,8 @@ alias aliases="vi $HOME/me/dotfiles/zsh/.zsh-config/aliases.zsh"
 alias i3config="vi $HOME/me/dotfiles/i3/.config/i3/config"
 alias tracker="node ~/personal/coding-tracker/src/index.js"
 
+alias usd-php="curl -s 'https://api.exchangerate-api.com/v4/latest/USD' | jq '.rates.PHP'"
+
 # search stuff
 alias sw="s -p wikipedia"
 alias saw="s -p archwiki"
