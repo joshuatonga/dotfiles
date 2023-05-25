@@ -25,7 +25,7 @@ font pango:monospace 14
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec_always --no-startup-id xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --right-of DP-3 --output DP-3 --mode 1920x1080 --pos 0x0 --rotate left && feh --bg-scale ~/wallpapers/tux.jpeg
+exec_always --no-startup-id xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --right-of DP-3 --output DP-3 --mode 1920x1080 --pos 0x0 --rotate normal && feh --bg-scale ~/wallpapers/tux.jpeg
 
 exec --no-startup-id dex --autostart --environment i3
 
@@ -293,7 +293,7 @@ bindsym KP_Multiply exec pacmd set-default-sink "alsa_output.usb-SteelSeries_Ste
 bindsym KP_Subtract exec pacmd set-default-sink "bluez_sink.1C_E6_1D_E0_B0_D3.a2dp_sink"
 
 for_window [class="Mechvibes"] move to workspace $ws7
-# for_window [class="thunderbird"] move to workspace $ws8
+for_window [class="thunderbird"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Slack"] move to workspace $ws10
 for_window [class="Pidgin"] move to workspace $ws7
@@ -317,17 +317,17 @@ exec --no-startup-id vlc ~/Videos/working/space-girl-music.mp4
 
 # exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable; sleep 30'
 exec --no-startup-id google-chrome-stable
-# exec --no-startup-id thunderbird
+exec --no-startup-id thunderbird
 exec --no-startup-id calibre
 exec --no-startup-id alacritty --class MainTerm --command tmux
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id spotify
-# exec --no-startup-id slack
+exec --no-startup-id slack
 # exec --no-startup-id pidgin
 exec --no-startup-id deluge
 exec --no-startup-id mechvibes
 exec --no-startup-id 1password --silent
-exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
+# exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
  # notification-daemon
 exec --no-startup-id wired
  # notification daemon for volume adjustment
