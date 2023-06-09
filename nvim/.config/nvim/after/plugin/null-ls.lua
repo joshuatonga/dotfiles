@@ -5,20 +5,28 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	debug = false,
 	sources = {
+		-- Lua
 		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.prettierd,
+		-- Python
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.usort,
+		null_ls.builtins.diagnostics.ruff,
+		-- Rust
 		null_ls.builtins.formatting.rustfmt,
+		-- Go
 		null_ls.builtins.formatting.gofmt,
 		null_ls.builtins.formatting.goimports_reviser,
-		null_ls.builtins.diagnostics.ansiblelint,
-		null_ls.builtins.formatting.shfmt,
-		-- null_ls.builtins.diagnostics.yamllint,
-		null_ls.builtins.diagnostics.write_good,
-		null_ls.builtins.diagnostics.ruff,
 		null_ls.builtins.code_actions.gomodifytags,
+		-- TypeScript/JavaScript
+		null_ls.builtins.formatting.prettierd,
 		require("typescript.extensions.null-ls.code-actions"),
+		-- shell
+		null_ls.builtins.formatting.shfmt,
+		-- markdown
+		null_ls.builtins.diagnostics.write_good,
+		-- others
+		null_ls.builtins.diagnostics.ansiblelint,
+		-- null_ls.builtins.diagnostics.yamllint,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
