@@ -15,6 +15,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.shfmt,
 		-- null_ls.builtins.diagnostics.yamllint,
 		null_ls.builtins.diagnostics.write_good,
+		null_ls.builtins.diagnostics.ruff,
 		null_ls.builtins.code_actions.gomodifytags,
 		require("typescript.extensions.null-ls.code-actions"),
 	},
