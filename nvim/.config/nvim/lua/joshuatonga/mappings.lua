@@ -8,7 +8,9 @@ vim.g.mapleader = ","
 
 local opts = { silent = true }
 
-nnoremap("<Leader>pv", vim.cmd.Ex)
+nnoremap("<Leader>pe", vim.cmd.Ex)
+nnoremap("<Leader>pv", ":Vex!<CR>")
+nnoremap("<Leader>ph", vim.cmd.Hex)
 
 nnoremap("<C-q>", ":q<CR>", opts)
 nnoremap("<C-s>", ":w<CR>")
