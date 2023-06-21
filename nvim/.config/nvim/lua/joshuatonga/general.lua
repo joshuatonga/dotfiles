@@ -46,3 +46,5 @@ vim.opt.shada = "!,'300,<50,@100,s10,h"
 vim.opt.mouse = ""
 vim.opt.scrolloff = 8
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+-- vim.g.netrw_altfile = 1
+vim.g.python3_host_prog = "~/.py3nvim/bin/python"
