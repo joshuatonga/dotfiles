@@ -34,22 +34,13 @@ require("telescope").setup({
 			mappings = {
 				i = {
 					["<C-f>"] = function()
-						require("telescope.builtin").oldfiles()
+						require("telescope.builtin").buffers()
 					end,
 					["<C-h>"] = function()
 						require("telescope.builtin").find_files()
 					end,
 					["<C-r>"] = function()
 						require("telescope.builtin").git_status()
-					end,
-				},
-			},
-		},
-		oldfiles = {
-			mappings = {
-				i = {
-					["<C-f>"] = function()
-						require("telescope.builtin").buffers()
 					end,
 				},
 			},
@@ -66,7 +57,7 @@ require("telescope").setup({
 		git_status = {
 			mappings = {
 				i = {
-					["<C-p>"] = function()
+					["<C-f>"] = function()
 						require("telescope.builtin").find_files()
 					end,
 				},
