@@ -61,7 +61,7 @@ floating_modifier $mod
 #tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id qutebrowser
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -117,6 +117,13 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+# bindsym $mod+m [class="thunar"] scratchpad show; move position center
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -210,16 +217,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 50 px or 50 ppt
+        bindsym k resize grow height 50 px or 50 ppt
+        bindsym l resize shrink height 50 px or 50 ppt
+        bindsym semicolon resize grow width 50 px or 50 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 50 px or 50 ppt
+        bindsym Down resize grow height 50 px or 50 ppt
+        bindsym Up resize shrink height 50 px or 50 ppt
+        bindsym Right resize grow width 50 px or 50 ppt
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -227,7 +234,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+x [urgent=latest] focus
+bindsym $mod+x focus output right
+bindsym $mod+Shift+x [urgent=latest] focus
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #000000 #13A10E #000000 #000000   #000000
@@ -315,7 +323,6 @@ exec --no-startup-id mousepad ~/notes/distractions-scratch.txt
 # exec --no-startup-id alacritty --class TermDownTerm
 exec --no-startup-id vlc ~/Videos/working/space-girl-music.mp4
 
-# exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable; sleep 30'
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id thunderbird
 exec --no-startup-id calibre
@@ -330,5 +337,6 @@ exec --no-startup-id 1password --silent
 # exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
  # notification-daemon
 exec --no-startup-id wired
+exec --no-startup-id gromit-mpx
  # notification daemon for volume adjustment
 exec --no-startup-id volnoti
