@@ -1,0 +1,20 @@
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+local keymap = require("joshuatonga.core.keymap")
+local nnoremap = keymap.nnoremap
+
+nnoremap("<C-g><Space>", mark.add_file)
+nnoremap("<C-g>e", ui.toggle_quick_menu)
+nnoremap("<C-g>j", function()
+	ui.nav_file(1)
+end)
+nnoremap("<C-g>k", function()
+	ui.nav_file(2)
+end)
+nnoremap("<C-g>l", function()
+	ui.nav_file(3)
+end)
+nnoremap("<C-g>;", function()
+	ui.nav_file(4)
+end)
