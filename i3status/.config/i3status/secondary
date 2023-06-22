@@ -1,0 +1,31 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "path_exists DND"
+order += "tztime utc"
+order += "tztime local"
+
+path_exists DND {
+  path = /tmp/dnd_status.txt
+  format = "DO NOT DISTURB!!!   "
+  color_good = "#FF0000"
+}
+
+tztime local {
+        format = "%Y/%m/%d %H:%M"
+}
+
+tztime utc {
+        format = "UTC %d %H:%M"
+        timezone = "UTC"
+}

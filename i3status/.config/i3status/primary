@@ -11,12 +11,19 @@ general {
         interval = 5
 }
 
+order += "path_exists DND"
 order += "ethernet _first_"
 order += "disk /"
-order += "load"
 order += "cpu_usage"
 order += "memory"
+order += "tztime utc"
 order += "tztime local"
+
+path_exists DND {
+  path = /tmp/dnd_status.txt
+  format = "DO NOT DISTURB!!!   "
+  color_good = "#FF0000"
+}
 
 ethernet _first_ {
         format_up = "E: %ip (%speed)"
@@ -28,20 +35,21 @@ disk "/" {
         format = "%avail"
 }
 
-load {
-        format = "load %1min"
-}
-
 cpu_usage {
         format = "cpu %usage "
 }
 
 memory {
-        format = "%used | %available"
+        format = "mem %used"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%Y/%m/%d %H:%M"
+}
+
+tztime utc {
+        format = "UTC %d %H:%M"
+        timezone = "UTC"
 }
