@@ -13,6 +13,8 @@ alias work=~/.tmux-startup.sh
 alias notes="vi ~/notes/"
 alias pnotes="vi ~/paymongo/notes/"
 
+alias wa="watch -n1 "
+
 # kubernetes stuff
 alias k=kubectl
 alias kc="kubectx"
