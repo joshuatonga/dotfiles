@@ -18,6 +18,7 @@ order += "tztime local"
 path_exists DND {
   path = /tmp/dnd_status.txt
   format = "DO NOT DISTURB!!!   "
+  format_down = ""
   color_good = "#FF0000"
 }
 
