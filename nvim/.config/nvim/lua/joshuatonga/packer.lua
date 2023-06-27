@@ -61,7 +61,6 @@ return require("packer").startup(function(use)
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
 		requires = {
 			{ "nvim-telescope/telescope-live-grep-args.nvim" },
 		},
@@ -108,7 +107,7 @@ return require("packer").startup(function(use)
 		"microsoft/vscode-js-debug",
 		opt = true,
 		run = "npm install --legacy-peer-deps && npm run compile",
-		tag = "v1.74.1",
+		-- tag = "v1.74.1",
 	})
 	use("leoluz/nvim-dap-go")
 
