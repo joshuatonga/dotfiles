@@ -59,7 +59,13 @@ return require("packer").startup(function(use)
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.0",
+		requires = {
+			{ "nvim-telescope/telescope-live-grep-args.nvim" },
+		},
+	})
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
