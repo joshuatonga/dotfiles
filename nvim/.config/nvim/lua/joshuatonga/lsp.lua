@@ -22,7 +22,6 @@ nnoremap("]d", vim.diagnostic.goto_next)
 nnoremap("<Space>q", vim.diagnostic.setloclist)
 
 vim.diagnostic.config({
-	severity_sort = true,
 	float = {
 		source = "always",
 	},

@@ -31,7 +31,7 @@ nnoremap("<C-f>", function()
 end)
 
 -- Ref: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
-xnoremap("<leader>p", '"_dP')
+xnoremap("<Leader>p", '"_dP')
 nnoremap("J", "mzJ`z")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
@@ -46,6 +46,7 @@ nnoremap("<C-w><", ":vertical resize -10<CR>", opts)
 
 -- Quickfix mappings
 nnoremap("Q", ":copen<CR>", opts)
+nnoremap("qc", ":cexpr []<CR>", opts)
 nnoremap("]q", ":cnext<CR>", opts)
 nnoremap("[q", ":cprev<CR>", opts)
 nnoremap("]Q", ":cfirst<CR>", opts)
