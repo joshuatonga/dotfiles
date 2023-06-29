@@ -10,6 +10,8 @@ fi
 
 alias work=~/.tmux-startup.sh
 
+alias p1="cd ~/paymongo/"
+
 alias notes="vi ~/notes/"
 alias pnotes="vi ~/paymongo/notes/"
 
