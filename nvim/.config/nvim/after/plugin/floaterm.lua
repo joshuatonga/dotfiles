@@ -18,5 +18,5 @@ tnoremap("<Leader>tk", "<C-\\><C-n>:FloatermKill<CR>", opts)
 tnoremap("<Leader>tn", "<C-\\><C-n>:FloatermNext<CR>", opts)
 tnoremap("<Leader>tp", "<C-\\><C-n>:FloatermPrev<CR>", opts)
 
-vim.api.nvim_create_user_command("LG", "FloatermNew --height=0.9 --width=0.9 lazygit", {})
+vim.api.nvim_create_user_command("LG", "FloatermNew --height=0.99 --width=0.99 lazygit", {})
 nnoremap("<Leader>gg", ":LG<CR>")
