@@ -317,6 +317,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 assign [window_role="GtkFileChooserDialog"] output $out_main
 for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1200px 800px, move to position center
+for_window [title="Lock Screen — 1Password"] floating enable, resize set 800px 600px, move to position center
 for_window [window_role="pop-up"] floating enable, resize set 1200px 800px, move to position center
 
 
