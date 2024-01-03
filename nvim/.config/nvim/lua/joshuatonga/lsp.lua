@@ -3,6 +3,8 @@ require("neodev").setup({
 })
 
 local lsp = require("lspconfig")
+local configs = require("lspconfig.configs")
+local util = require("lspconfig.util")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local keymap = require("joshuatonga.core.keymap")
 
@@ -114,6 +116,23 @@ lsp.lua_ls.setup({
 			},
 		},
 	},
+})
+
+if not configs.helm_ls then
+	configs.helm_ls = {
+		default_config = {
+			cmd = { "helm_ls", "serve" },
+			filetypes = { "helm" },
+			root_dir = function(fname)
+				return util.root_pattern("Chart.yaml")(fname)
+			end,
+		},
+	}
+end
+
+lsp.helm_ls.setup({
+	filetypes = { "helm" },
+	cmd = { "helm_ls", "serve" },
 })
 
 -- lsp.yamlls.setup(require("yaml-companion").setup())

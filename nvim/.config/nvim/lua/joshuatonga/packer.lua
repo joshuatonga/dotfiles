@@ -96,6 +96,8 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("simrat39/rust-tools.nvim")
+	use("https://github.com/towolf/vim-helm")
+	use("https://github.com/mrjosh/helm-ls")
 
 	-- Debugging
 	use("mfussenegger/nvim-dap")
