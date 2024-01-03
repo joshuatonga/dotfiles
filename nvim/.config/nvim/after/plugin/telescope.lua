@@ -35,7 +35,7 @@ require("telescope").setup({
 			mappings = {
 				i = {
 					["<C-f>"] = function()
-						require("telescope.builtin").oldfiles()
+						require("telescope.builtin").buffers()
 					end,
 					["<C-h>"] = function()
 						require("telescope.builtin").find_files()
@@ -50,7 +50,7 @@ require("telescope").setup({
 			mappings = {
 				i = {
 					["<C-f>"] = function()
-						require("telescope.builtin").buffers()
+						require("telescope.builtin").oldfiles()
 					end,
 				},
 			},
@@ -63,7 +63,7 @@ require("telescope").setup({
 					["<C-f>"] = function()
 						require("telescope.builtin").find_files({ hidden = true, prompt_title = "Hidden Files" })
 					end,
-					["<C-m>"] = "delete_buffer",
+					["<C-]>"] = "delete_buffer",
 				},
 			},
 		},
@@ -103,8 +103,8 @@ vim.api.nvim_create_user_command("Maps", "Telescope keymaps", {})
 nnoremap("<C-p>", ":lua require('telescope.builtin').find_files({ hidden = true, prompt_title = 'Hidden Files' })<CR>")
 nnoremap("<C-\\>", ":lua require('telescope.builtin').commands()<CR>")
 nnoremap("<leader>fc", ":lua require('telescope.builtin').command_history()<CR>")
--- nnoremap("<leader>fs", ":lua require('telescope.builtin').live_grep()<CR>")
-nnoremap("<leader>fs", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+nnoremap("<leader>fs", ":lua require('telescope.builtin').live_grep()<CR>")
+-- nnoremap("<leader>fs", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 nnoremap("<leader>ff", ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
 nnoremap("<leader>fb", ":lua require('telescope.builtin').buffers()<CR>")
 nnoremap("<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>")
