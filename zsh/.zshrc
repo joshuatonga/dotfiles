@@ -12,6 +12,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/scripts/
+# export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH=$PATH:/var/lib/flatpack/exports/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -164,3 +166,4 @@ export AWS_PAGER=""
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

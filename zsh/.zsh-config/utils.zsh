@@ -1,3 +1,36 @@
+get_pod_node_architecture() {
+    local NAMESPACE="$1"
+
+    for POD in $(kubectl get pods -n $NAMESPACE -o=jsonpath='{.items[*].metadata.name}'); do
+        NODE=$(kubectl get pod $POD -n $NAMESPACE -o=jsonpath='{.spec.nodeName}')
+        ARCH=$(kubectl get node $NODE -o=jsonpath='{.status.nodeInfo.architecture}')
+        echo "Pod: $POD - Node: $NODE - Architecture: $ARCH"
+    done
+}
+
+get_namespace_logs() {
+    local NAMESPACE="$1"
+    local LINES="$2"
+
+    for POD in $(kubectl get pods -n $NAMESPACE -o=jsonpath='{.items[*].metadata.name}'); do
+      echo "Logs for Pod: $POD"
+      kubectl logs --tail=$LINES -n $NAMESPACE $POD
+      echo "------------------------"
+    done
+}
+
+NAMESPACE="your-namespace"
+
+# Get a list of pod names in the specified namespace
+PODS=$(kubectl get pods -n $NAMESPACE --no-headers -o custom-columns=":metadata.name")
+
+# Loop through each pod and fetch the last 100 log lines
+for POD in $PODS; do
+  echo "Logs for Pod: $POD"
+  kubectl logs --tail=100 -n $NAMESPACE $POD
+  echo "------------------------"
+done
+
 # Ref: https://polothy.github.io/post/2019-08-19-fzf-git-checkout/
 fzf-git-branch() {
     git rev-parse HEAD > /dev/null 2>&1 || return

@@ -22,6 +22,7 @@ alias k=kubectl
 alias kc="kubectx"
 alias kn="kubens"
 alias kt=kubetail
+alias kdebug="kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot -- /bin/bash"
 
 alias alert="afplay /System/Library/Sounds/Submarine.aiff"
 
