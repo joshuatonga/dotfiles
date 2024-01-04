@@ -304,6 +304,9 @@ focus_follows_mouse no
 bindsym Print exec --no-startup-id flameshot full
 bindsym Shift+Print exec --no-startup-id flameshot gui
 
+bindsym $mod+Shift+a move container to output left; focus output $out_main
+bindsym $mod+Shift+s move container to output right; focus output $out_second
+
 # bind right alt for back and forth workspace switcher
 bindsym Alt_R workspace back_and_forth
 
