@@ -13,3 +13,5 @@ make install
 - alacritty (for Linux)
 - stow
 - commitizen
+
+test
