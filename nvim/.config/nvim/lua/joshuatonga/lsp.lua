@@ -88,6 +88,14 @@ for _, server in pairs(servers) do
 	lsp[server].setup(default_server_setup)
 end
 
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = ".env",
+	group = vim.api.nvim_create_augroup("__env", { clear = true }),
+	callback = function(args)
+		vim.diagnostic.disable(args.buf)
+	end,
+})
+
 lsp.lua_ls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,

@@ -23,7 +23,6 @@ null_ls.setup({
 		require("typescript.extensions.null-ls.code-actions"),
 		-- shell
 		null_ls.builtins.formatting.shfmt,
-		null_ls.builtins.diagnostics.shellcheck,
 		null_ls.builtins.code_actions.shellcheck,
 		-- markdown
 		null_ls.builtins.diagnostics.write_good,
