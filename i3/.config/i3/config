@@ -68,7 +68,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+Shift+Return exec --no-startup-id qutebrowser
+bindsym $mod+Shift+Return exec --no-startup-id xfce4-appfinder
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -331,7 +331,7 @@ assign [window_role="GtkFileChooserDialog"] output $out_main
 for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1200px 800px, move to position center
 for_window [title="Lock Screen — 1Password"] floating enable, resize set 800px 600px, move to position center
 for_window [window_role="pop-up"] floating enable, resize set 1200px 800px, move to position center
-for_window [class="xpad"] floating enable
+for_window [class="Xfce4-appfinder"] floating enable, resize set 1200px 800px, move to position center
 
 
 exec --no-startup-id "i3-msg 'workspace number 6; append_layout ~/.config/i3/workspace-6-new.json'"
