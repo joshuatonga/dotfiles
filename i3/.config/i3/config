@@ -340,7 +340,7 @@ exec --no-startup-id alacritty --class CmusTerm --command cmus
 exec --no-startup-id mousepad ~/notes/distractions-scratch.txt
 # exec --no-startup-id gtimelog
 # exec --no-startup-id alacritty --class TermDownTerm
-exec --no-startup-id vlc ~/Videos/working/space-girl-music.mp4
+# exec --no-startup-id vlc ~/Videos/working/space-girl-music.mp4
 
 exec --no-startup-id clipmenud
 exec --no-startup-id google-chrome-stable
