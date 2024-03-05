@@ -1,7 +1,7 @@
 (
     // Maximum number of notifications to show at any one time.
     // A value of 0 means that there is no limit.
-    max_notifications: 5,
+    max_notifications: 16,
 
     // The default timeout, in miliseconds, for notifications that don't have an initial timeout set.
     // 1000ms = 1s.
@@ -94,25 +94,26 @@
                 background_color: Color(hex: "#000000"),
                 border_color: Color(hex: "#04cc04"),
                 //border_color_low: Color(hex: "#282828"),
-                border_color_critical: Color(hex: "#ff0000"),
+                //border_color_critical: Color(hex: "#ff0000"),
                 //border_color_paused: Color(hex: "#fabd2f"),
 
-                gap: Vec2(x: 0, y: -1),
-                notification_hook: Hook(parent_anchor: BL, self_anchor: TL),
+                gap: Vec2(x: 0, y: -2),
+                notification_hook: Hook(parent_anchor: BR, self_anchor: TR),
             )),
         ),
 
         (
             name: "summary",
             parent: "root",
-            hook: Hook(parent_anchor: TL, self_anchor: TL),
+            hook: Hook(parent_anchor: TR, self_anchor: TL),
             offset: Vec2(x: 0.0, y: 0.0),
             // https://github.com/Toqozz/wired-notify/wiki/TextBlock
             params: TextBlock((
-                text: "%s",
+                //text: "%s",
+                text: "<span underline='low'>%s</span>",
                 font: "monospace bold 10",
                 ellipsize: Middle,
-                color: Color(hex: "#04cc04"),
+                color: Color(hex: "#00bf00"),
                 color_hovered: Color(hex: "#05f005"),
                 padding: Padding(left: 25.0, right: 25.0, top: 10.0, bottom: 2.0),
                 dimensions: (width: (min: 50, max: 350), height: (min: 0, max: 0)),
@@ -127,12 +128,12 @@
             // https://github.com/Toqozz/wired-notify/wiki/ScrollingTextBlock
             params: ScrollingTextBlock((
                 text: " %b ",
-                font: "monospace bold 10",
+                font: "monospace 10",
                 color: Color(hex: "#05b505"),
-                color_hovered: Color(hex: "#00a600"),
+                color_hovered: Color(hex: "#05f005"),
                 padding: Padding(left: 25.0, right: 25.0, top: 1.0, bottom: 10.0),
                 width: (min: 150, max: 370),
-                scroll_speed: 0.35,
+                scroll_speed: 0.30,
                 lhs_dist: 35.0,
                 rhs_dist: 35.0,
                 scroll_t: 1.0,
