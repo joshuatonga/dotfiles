@@ -72,6 +72,20 @@ local default_server_setup = {
 	capabilities = capabilities,
 }
 
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "*.tf", "*.tfvars" },
+	callback = function()
+		vim.opt_local.filetype = "terraform"
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	pattern = { "*.tf", "*.tfvars" },
+	callback = function()
+		vim.lsp.buf.format()
+	end,
+})
+
 local servers = {
 	"gopls",
 	"ansiblels",
@@ -154,13 +168,6 @@ require("typescript").setup({
 	server = { -- pass options to lspconfig's setup method
 		on_attach = on_attach,
 	},
-})
-
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = { "*.tf", "*.tfvars" },
-	callback = function()
-		vim.opt_local.filetype = "terraform"
-	end,
 })
 
 local rt = require("rust-tools")
