@@ -19,17 +19,6 @@ get_namespace_logs() {
     done
 }
 
-NAMESPACE="your-namespace"
-
-# Get a list of pod names in the specified namespace
-PODS=$(kubectl get pods -n $NAMESPACE --no-headers -o custom-columns=":metadata.name")
-
-# Loop through each pod and fetch the last 100 log lines
-for POD in $PODS; do
-  echo "Logs for Pod: $POD"
-  kubectl logs --tail=100 -n $NAMESPACE $POD
-  echo "------------------------"
-done
 
 # Ref: https://polothy.github.io/post/2019-08-19-fzf-git-checkout/
 fzf-git-branch() {

@@ -7,7 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:~/bin/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebrew/opt/influxdb@1/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.ebcli-virtual-env/executables
+export PATH=$HOME/bin:~/biv/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebrew/opt/influxdb@1/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.ebcli-virtual-env/executables
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export PATH=$PATH:$HOME/.local/bin
@@ -81,13 +81,15 @@ setopt EXTENDED_HISTORY
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh-config/custom
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws ag zsh-autosuggestions)
+plugins=(zsh-nvm git aws ag zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,17 +125,6 @@ source ~/$ZSH_FOLDER/vendor/powerlevel10k/powerlevel10k.zsh-theme
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# NVM installation (https://tecadmin.net/install-nvm-macos-with-homebrew/)
-export NVM_DIR=~/.nvm
-if [[ $OSTYPE == darwin* ]]; then
-	source $(brew --prefix nvm)/nvm.sh
-
-	# Created by `pipx` on 2022-04-27 18:08:22
-	export PATH="$PATH:~/.local/bin"
-	eval "$(register-python-argcomplete pipx)"
-fi
-
-source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
@@ -154,8 +145,6 @@ fpath=($fpath ~/$ZSH_FOLDER/completion)
 
 export CONFIG_DIR="$HOME/.config/lazygit"
 
-eval "$(thefuck --alias)"
-
 # add persistent rehash. see https://wiki.archlinux.org/title/zsh#Persistent_rehash
 zstyle ':completion:*' rehash true
 
@@ -166,4 +155,5 @@ export AWS_PAGER=""
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
+export PATH=~/.rvm/gems/ruby-3.0.5/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
