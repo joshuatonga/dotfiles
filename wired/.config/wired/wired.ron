@@ -5,7 +5,7 @@
 
     // The default timeout, in miliseconds, for notifications that don't have an initial timeout set.
     // 1000ms = 1s.
-    timeout: 20000,
+    timeout: 5000,
 
     // `poll_interval` decides decides how often (in milliseconds) Wired checks for new notifications, events,
     // draws notifications (if necessary), etc.
@@ -23,7 +23,7 @@
 
     // Notifications will spawn paused, and have to be manually unpaused or cleared by the user,
     // unless `unpause_on_input` is also set.
-    notifications_spawn_paused: true,
+    notifications_spawn_paused: false,
 
     // Unpause notifications when we receive any input after being idle for longer than 1 second.
     // Note that no distinction is made between manually paused notifications and idle paused/spawned notifications.
@@ -87,7 +87,7 @@
             //render_criteria: [HintImage],
             // https://github.com/Toqozz/wired-notify/wiki/NotificationBlock
             params: NotificationBlock((
-                monitor: -1,
+                monitor: 1,
                 border_width: 2.0,
                 border_rounding: 0.0,
                 //background_color: Color(r: 0.15686, g: 0.15686, b: 0.15686, a: 1.0),
