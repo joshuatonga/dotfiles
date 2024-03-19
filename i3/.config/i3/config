@@ -251,8 +251,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x focus output right
 bindsym $mod+Shift+x [urgent=latest] focus
 
-default_border pixel 5
-hide_edge_borders none
+default_border normal 5
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #13a10e #13A10E #000000 #13a10e   #13a10e
