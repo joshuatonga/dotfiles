@@ -100,6 +100,7 @@ return require("packer").startup(function(use)
 	use("https://github.com/mrjosh/helm-ls")
 
 	-- Debugging
+	use("nvim-neotest/nvim-nio")
 	use("mfussenegger/nvim-dap")
 	use("jay-babu/mason-nvim-dap.nvim")
 	use("theHamsta/nvim-dap-virtual-text")
