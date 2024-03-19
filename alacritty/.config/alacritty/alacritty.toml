@@ -26,22 +26,23 @@ foreground = "0xcccccc"
 TERM = "xterm-256color"
 
 [font]
-size = 12.0
+size = 16.0
 
 [font.bold]
-family = "monospace"
+# family = "monospace"
 style = "Bold"
 
 [font.bold_italic]
-family = "monospace"
+# family = "monospace"
 style = "Bold Italic"
 
 [font.italic]
-family = "monospace"
+# family = "monospace"
 style = "Italic"
 
 [font.normal]
-family = "monospace"
+family = "Anonymous Pro"
+# family = "monospace"
 style = "Regular"
 
 [hints]
