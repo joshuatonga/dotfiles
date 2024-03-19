@@ -1,3 +1,7 @@
+service() {
+  systemctl $2 $1
+}
+
 get_pod_node_architecture() {
     local NAMESPACE="$1"
 

@@ -138,7 +138,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
 # For commit signing in MacOS
 export GPG_TTY=$TTY
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+# complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 
 fpath=($fpath ~/$ZSH_FOLDER/completion)
