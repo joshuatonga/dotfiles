@@ -60,4 +60,4 @@ alias sreg="s -p regex"
 alias ss="s -p stackoverflow"
 alias sy="s -p youtube"
 
-alias svc=service
+# alias svc=service
