@@ -356,7 +356,7 @@ exec --no-startup-id mousepad ~/notes/distractions-scratch.txt
 
 exec --no-startup-id clipmenud
 exec --no-startup-id google-chrome-stable
-# exec --no-startup-id thunderbird
+exec --no-startup-id thunderbird
 exec --no-startup-id calibre
 exec --no-startup-id alacritty --class MainTerm --command tmux
 exec --no-startup-id xscreensaver -no-splash
@@ -364,6 +364,7 @@ exec --no-startup-id spotify
 exec --no-startup-id slack
 # exec --no-startup-id pidgin
 exec --no-startup-id deluge
+exec --no-startup-id indicator-sound-switcher
 # exec --no-startup-id mechvibes --in-process-gpu
 exec --no-startup-id 1password --silent
 # exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
