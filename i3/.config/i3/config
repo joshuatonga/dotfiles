@@ -290,8 +290,7 @@ bar {
     position top
     output DP-3
     tray_output none
-    # status_command i3status -c ~/.config/i3status/primaryi3conf
-    status_command i3status -c ~/.config/i3status/secondary
+    status_command i3blocks -c ~/.config/i3blocks/secondary
     colors {
         background #dcdad5
         statusline #000000
