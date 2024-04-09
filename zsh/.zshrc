@@ -152,8 +152,11 @@ zstyle ':completion:*' rehash true
 export AWS_PAGER=""
 
 # add color to man
-export MANPAGER="less -R --use-color -Dd+r -Du+b"
+#export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANPAGER='nvim +Man!'
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
 export PATH=~/.rvm/gems/ruby-3.0.5/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export BROWSER=google-chrome
