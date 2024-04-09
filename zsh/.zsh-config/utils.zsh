@@ -109,3 +109,19 @@ conv-mp4-to-mp3() {
   fi
   ffmpeg -i $1 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 $2
 }
+
+watch-api() {
+  if [[ -z "$1" ]]; then
+    echo "provide url as 1st argument"
+    exit 1
+  fi
+
+  sleepTimer="${2:-1}"
+
+  echo "URL: $1"
+  echo "Interval: ${sleepTimer}s"
+
+  while true; do
+    echo "$(date) - code: $(curl -s -o /dev/null -w "%{http_code}" $1 -m $sleepTimer)"; sleep $sleepTimer;
+  done
+}
