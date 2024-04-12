@@ -157,7 +157,7 @@ lsp.helm_ls.setup({
 	cmd = { "helm_ls", "serve" },
 })
 
--- lsp.yamlls.setup(require("yaml-companion").setup())
+lsp.yamlls.setup(require("yaml-companion").setup())
 
 require("typescript").setup({
 	disable_commands = false, -- prevent the plugin from creating Vim commands
