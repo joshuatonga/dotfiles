@@ -16,7 +16,7 @@ set $mod Mod4
 #font pango:DejaVu Sans Mono 10
 # font pango:DejaVu Sans Mono, "Font Awesome 6 Free Solid" 14, "Noto Fonts" 14
 # font pango:monospace 14
-font pango:Anonymous Pro 16
+font pango:Anonymous Pro 20
 # font pango:monospace 18
 # font pango:Noto Sans 14
 # font pango:Source Code Pro 14
