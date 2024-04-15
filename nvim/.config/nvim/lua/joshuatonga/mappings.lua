@@ -49,8 +49,8 @@ nnoremap("Q", ":copen<CR>", opts)
 nnoremap("qc", ":cexpr []<CR>", opts)
 nnoremap("]q", ":cnext<CR>", opts)
 nnoremap("[q", ":cprev<CR>", opts)
-nnoremap("]Q", ":cfirst<CR>", opts)
-nnoremap("[Q", ":clast<CR>", opts)
+nnoremap("[Q", ":cfirst<CR>", opts)
+nnoremap("]Q", ":clast<CR>", opts)
 
 -- Locationlist mappings
 nnoremap("]l", ":lnext<CR>", opts)
