@@ -156,7 +156,7 @@ export AWS_PAGER=""
 export MANPAGER='nvim +Man!'
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
-export PATH=~/.rvm/gems/ruby-3.0.5/bin:$PATH
+export PATH=~/.rvm/gems/ruby-3.3.0/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export BROWSER=google-chrome
