@@ -14,7 +14,7 @@ return require("packer").startup(function(use)
 	use("p00f/nvim-ts-rainbow") -- for parenthesis colors
 	use("leafOfTree/vim-matchtag")
 	use("ntpeters/vim-better-whitespace")
-	use("cohama/lexima.vim")
+	-- use("cohama/lexima.vim")
 	use("scrooloose/nerdcommenter") -- For commenting
 	use("chaoren/vim-wordmotion")
 
