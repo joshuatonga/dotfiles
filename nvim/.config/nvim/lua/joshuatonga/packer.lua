@@ -16,7 +16,7 @@ return require("packer").startup(function(use)
 	use("ntpeters/vim-better-whitespace")
 	-- use("cohama/lexima.vim")
 	use("scrooloose/nerdcommenter") -- For commenting
-	use("chaoren/vim-wordmotion")
+	-- use("chaoren/vim-wordmotion")
 
 	-- UI
 	use("nvim-lualine/lualine.nvim")
