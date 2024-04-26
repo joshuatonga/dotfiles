@@ -11,7 +11,7 @@ export PATH=$HOME/bin:~/biv/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebre
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/scripts/
+export PATH=$PATH:$HOME/scripts
 export PATH="$PATH:$HOME/.rvm/bin"
 # export PATH=$PATH:/var/lib/flatpack/exports/bin
 

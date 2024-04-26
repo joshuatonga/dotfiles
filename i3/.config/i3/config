@@ -312,6 +312,9 @@ focus_follows_mouse no
 bindsym Print exec --no-startup-id flameshot full
 bindsym Shift+Print exec --no-startup-id flameshot gui
 
+
+bindsym $mod+t exec alacritty -T 'Open directory' -o 'font.size=14' --class fzf-fm --command ~/scripts/fzf-fm.sh
+
 # for delux split kb
 bindsym F12 exec --no-startup-id flameshot full
 bindsym Shift+F12 exec --no-startup-id flameshot gui
@@ -344,6 +347,7 @@ for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1200
 for_window [class="1Password"] floating enable, resize set 1200px 800px, move to position center
 for_window [window_role="pop-up"] floating enable, resize set 1200px 800px, move to position center
 for_window [class="Xfce4-appfinder"] floating enable, resize set 1200px 800px, move to position center
+for_window [class="fzf-fm"] floating enable, resize set 1000px 600px, move to position center
 
 
 exec --no-startup-id "i3-msg 'workspace number 6; append_layout ~/.config/i3/workspace-6-new.json'"
