@@ -9,7 +9,7 @@ return require("packer").startup(function(use)
 
 	-- Text/Movement
 	use("tpope/vim-surround") -- CRUD of surrounding pairs makes easy
-	use("phaazon/hop.nvim") -- For easy movement
+	-- use("phaazon/hop.nvim") -- For easy movement
 	-- use("mg979/vim-visual-multi")
 	use("p00f/nvim-ts-rainbow") -- for parenthesis colors
 	use("leafOfTree/vim-matchtag")
