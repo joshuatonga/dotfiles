@@ -13,13 +13,3 @@ label=DNS:
 command=sensors 2>/dev/null | awk '/^Tctl:/{gsub(/[^0-9.]/,"",$2); print $2 "°C"}'
 interval=10
 label=CPU Temp: 
-
-# Block for displaying UTC time
-[tztime_utc]
-command=date -u '+UTC %Y/%m/%d %H:%M'
-interval=5
-
-# Block for displaying local time
-[tztime_local]
-command=date '+UTC+8 %Y/%m/%d %H:%M'
-interval=5

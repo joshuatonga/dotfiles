@@ -27,7 +27,10 @@ font pango:Anonymous Pro 16
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec_always --no-startup-id xrandr --output HDMI-0 --primary --rate 144 --mode 1920x1080 --pos 1920x0 --rotate normal --left-of DP-3 --output DP-3 --mode 1920x1080 --pos 0x0 --rotate left && feh --bg-scale ~/wallpapers/tux.jpeg
+# exec_always --no-startup-id xrandr --output HDMI-0 --primary --rate 144 --mode 1920x1080 --pos 1920x0 --rotate normal --left-of DP-3 --output DP-3 --mode 1920x1080 --pos 0x0 --rotate left && feh --bg-scale ~/wallpapers/tux.jpeg
+# exec_always --no-startup-id xrandr --output HDMI-0 --primary --rate 144 --mode 1920x1080 --pos 1920x0 --rotate normal --left-of DP-3 --output DP-3 --mode 1920x1080 --pos 0x0 --rotate left --output DP-1 --left-of HDMI-0 --rotate left && feh --bg-scale ~/wallpapers/tux.jpeg
+exec_always --no-startup-id ~/.screenlayout/triple.sh && feh --bg-scale ~/wallpapers/tux.jpeg
+
 # hori orient
 # exec_always --no-startup-id xrandr --output HDMI-0 --primary --rate 144 --mode 1920x1080 --pos 1920x0 --rotate normal --left-of DP-3 --output DP-3 --mode 1920x1080 --pos 0x0 --rotate normal && feh --bg-scale ~/wallpapers/tux.jpeg
 # exec_always --no-startup-id xrandr --output DP-3 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --left-of HDMI-0 --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal && feh --bg-scale ~/wallpapers/tux.jpeg
@@ -149,6 +152,7 @@ bindsym $mod+a focus parent
 
 set $out_main HDMI-0
 set $out_second DP-3
+set $out_third DP-1
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -162,39 +166,38 @@ set $ws7 "7: more stuff"
 set $ws8 "8: email"
 set $ws9 "9: music"
 set $ws10 "10: chat"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
 
 workspace $ws1 output $out_main
-workspace $ws2 output $out_main
+workspace $ws2 output $out_second
 workspace $ws3 output $out_main
 workspace $ws4 output $out_main
 workspace $ws5 output $out_main
-# workspace $ws6 output $out_main
-# workspace $ws7 output $out_main
-# workspace $ws8 output $out_main
-# workspace $ws9 output $out_main
-# workspace $ws10 output $out_main
 workspace $ws6 output $out_second
-workspace $ws7 output $out_second
+workspace $ws7 output $out_main
 workspace $ws8 output $out_second
 workspace $ws9 output $out_second
 workspace $ws10 output $out_second
+workspace $ws11 output $out_third
+workspace $ws12 output $out_third
+workspace $ws13 output $out_third
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
-bindsym $mod+7 workspace number $ws2
+bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
-bindsym $mod+2 workspace number $ws7
+bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+Control+1 workspace number $ws6
-bindsym $mod+Control+2 workspace number $ws7
-bindsym $mod+Control+3 workspace number $ws8
-bindsym $mod+Control+4 workspace number $ws9
-bindsym $mod+Control+5 workspace number $ws10
+bindsym $mod+Control+1 workspace number $ws11
+bindsym $mod+Control+2 workspace number $ws12
+bindsym $mod+Control+3 workspace number $ws13
 
 # mx keys keypad
 bindsym KP_Home workspace number $ws7
@@ -210,15 +213,18 @@ bindsym KP_Next exec --no-startup-id calibre
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws7
+bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws2
+bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+Control+1 move container to workspace number $ws11
+bindsym $mod+Shift+Control+2 move container to workspace number $ws12
+bindsym $mod+Shift+Control+3 move container to workspace number $ws13
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -271,8 +277,8 @@ client.background       #ffffff
 bar {
     position top
     status_command i3status -c ~/.config/i3status/primary
-    tray_output HDMI-0
-    output HDMI-0
+    tray_output $out_main
+    output $out_main
     colors {
         background #dcdad5
         statusline #000000
@@ -288,9 +294,27 @@ bar {
 
 bar {
     position top
-    output DP-3
+    output $out_second
     tray_output none
-    status_command i3blocks -c ~/.config/i3blocks/secondary
+    status_command i3blocks -c ~/.config/i3blocks/second
+    colors {
+        background #dcdad5
+        statusline #000000
+        separator #666666
+
+        focused_workspace  #585959 #0000FF #d7dbdb
+        active_workspace   #333333 #5f676a #000000
+        inactive_workspace #000000 #c9c8c3 #3e3f40
+        urgent_workspace   #2f343a #fc0303 #ffffff
+        binding_mode       #2f343a #fc0303 #ffffff
+    }
+}
+
+bar {
+    position top
+    output $out_third
+    tray_output none
+    status_command i3blocks -c ~/.config/i3blocks/third
     colors {
         background #dcdad5
         statusline #000000

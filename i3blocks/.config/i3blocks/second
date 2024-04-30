@@ -1,0 +1,9 @@
+# Block for displaying UTC time
+[tztime_utc]
+command=date -u '+UTC %Y/%m/%d %H:%M'
+interval=5
+
+# Block for displaying local time
+[tztime_local]
+command=date '+UTC+8 %Y/%m/%d %H:%M'
+interval=5
