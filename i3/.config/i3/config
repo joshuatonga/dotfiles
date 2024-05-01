@@ -368,30 +368,14 @@ for_window [class="Xfce4-appfinder"] floating enable, resize set 1200px 800px, m
 for_window [class="fzf-fm"] floating enable, resize set 1000px 600px, move to position center
 
 
-exec --no-startup-id "i3-msg 'workspace number 6; append_layout ~/.config/i3/workspace-6-new.json'"
-# exec --no-startup-id alacritty --class WeeChatTerm --command weechat
-exec --no-startup-id alacritty --class CmusTerm --command cmus
-exec --no-startup-id mousepad ~/notes/distractions-scratch.txt
-# exec --no-startup-id gtimelog
-# exec --no-startup-id alacritty --class TermDownTerm
-# exec --no-startup-id vlc ~/Videos/working/space-girl-music.mp4
-
 exec --no-startup-id clipmenud
-exec --no-startup-id google-chrome-stable
 exec --no-startup-id thunderbird
-exec --no-startup-id calibre
 exec --no-startup-id alacritty --class MainTerm --command tmux
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id spotify
 exec --no-startup-id slack
-# exec --no-startup-id pidgin
-exec --no-startup-id deluge
 exec --no-startup-id indicator-sound-switcher
-# exec --no-startup-id mechvibes --in-process-gpu
 exec --no-startup-id 1password --silent
-# exec --no-startup-id ~/code/mouse-feedback/mouse-sound.py
- # notification-daemon
 exec --no-startup-id wired
 exec --no-startup-id gromit-mpx
- # notification daemon for volume adjustment
 exec --no-startup-id volnoti
