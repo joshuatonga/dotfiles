@@ -72,8 +72,8 @@ bindsym $mod+Shift+Return exec --no-startup-id xfce4-appfinder
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'DejaVu Sans Mono-14' -h 26 -nb '#a31002' -nf white -sb red -sf white
-bindsym $mod+c exec --no-startup-id clipmenu -fn 'DejaVu Sans Mono-14' -h 26 -nb '#a31002' -nf white -sb red -sf white
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Anonymous Pro-16' -h 26 -nb '#a31002' -nf white -sb red -sf white
+bindsym $mod+c exec --no-startup-id clipmenu -fn 'Anonymous Pro-16' -h 26 -nb '#a31002' -nf white -sb red -sf white
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shippina
