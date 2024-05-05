@@ -12,8 +12,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/scripts
-export PATH="$PATH:$HOME/.rvm/bin"
-# export PATH=$PATH:/var/lib/flatpack/exports/bin
+export PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:$HOME/.dotfiles-personal/scripts
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
