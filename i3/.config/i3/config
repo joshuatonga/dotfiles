@@ -256,7 +256,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x focus output right
 bindsym $mod+Shift+x [urgent=latest] focus
 
-default_border normal 3
+default_border normal 5
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #13a10e #13A10E #000000 #13a10e   #13a10e
@@ -362,7 +362,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 assign [window_role="GtkFileChooserDialog"] output $out_main
 for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1200px 800px, move to position center
-for_window [class="1Password"] floating enable, resize set 1000px 800px, move to position center
+# for_window [class="1Password"] floating enable, resize set 1000px 800px, move to position center
 for_window [window_role="pop-up"] floating enable, resize set 1000px 800px, move to position center
 for_window [class="Xfce4-appfinder"] floating enable, resize set 1200px 800px, move to position center
 for_window [class="fzf-fm"] floating enable, resize set 1000px 600px, move to position center
