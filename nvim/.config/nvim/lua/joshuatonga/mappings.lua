@@ -32,11 +32,6 @@ xnoremap("gy", '"+y', { desc = "Copy to system clipboard" })
 nnoremap("gp", '"+p', { desc = "Paste from system clipboard" })
 xnoremap("gp", '"+P', { desc = "Paste from system clipboard" })
 
--- Custom utilities
-nnoremap("<C-f>", function()
-	vim.cmd("silent !tmux neww tmux-sessionizer")
-end)
-
 -- Ref: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
 xnoremap("<Leader>p", '"_dP')
 nnoremap("J", "mzJ`z")
