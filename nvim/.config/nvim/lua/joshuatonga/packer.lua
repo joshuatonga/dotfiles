@@ -54,7 +54,6 @@ return require("packer").startup(function(use)
 	use("skywind3000/asyncrun.vim")
 	use("vimwiki/vimwiki")
 	use("phelipetls/jsonpath.nvim")
-	use("ThePrimeagen/harpoon")
 
 	-- LSP
 	use("nvim-lua/popup.nvim")
