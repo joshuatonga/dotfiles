@@ -60,18 +60,6 @@ local on_attach = function(_, bufnr)
 	end, bufopts)
 end
 
-local lsp_flags = {
-	-- This is the default in Nvim 0.7+
-	debounce_text_changes = 150,
-}
-local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-local default_server_setup = {
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-}
-
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = { "*.tf", "*.tfvars" },
 	callback = function()
@@ -96,6 +84,19 @@ local servers = {
 	"html",
 	"cssls",
 	"emmet_ls",
+	"solargraph",
+}
+
+local lsp_flags = {
+	-- This is the default in Nvim 0.7+
+	debounce_text_changes = 150,
+}
+local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+local default_server_setup = {
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
 }
 
 for _, server in pairs(servers) do
