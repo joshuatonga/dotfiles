@@ -7,8 +7,8 @@
 -- Black background
 -- vim.cmd("colorscheme eldar")
 -- vim.cmd("colorscheme default")
--- vim.cmd("colorscheme industry")
-vim.cmd("colorscheme cinnabar")
+vim.cmd("colorscheme industry")
+-- vim.cmd("colorscheme cinnabar")
 
 -- Example config in Lua
 -- require("github-theme").setup({
@@ -20,3 +20,6 @@ vim.cmd("colorscheme cinnabar")
 --   -- Change the "hint" color to the "orange" color, and make the "error" color bright red
 --   colors = { hint = "orange", error = "#ff0000" },
 -- })
+
+vim.cmd("highlight Folded guibg=green guifg=white")
+vim.cmd("highlight CursorLine guibg=#212121")
