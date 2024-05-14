@@ -7,8 +7,8 @@
 -- Black background
 -- vim.cmd("colorscheme eldar")
 -- vim.cmd("colorscheme default")
-vim.cmd("colorscheme industry")
--- vim.cmd("colorscheme cinnabar")
+-- vim.cmd("colorscheme industry")
+vim.cmd("colorscheme cinnabar")
 
 -- Example config in Lua
 -- require("github-theme").setup({
