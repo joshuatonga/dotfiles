@@ -10,13 +10,9 @@ return require("packer").startup(function(use)
 	-- Text/Movement
 	use("tpope/vim-surround") -- CRUD of surrounding pairs makes easy
 	use("tpope/vim-rhubarb")
-	-- use("phaazon/hop.nvim") -- For easy movement
-	-- use("mg979/vim-visual-multi")
 	use("p00f/nvim-ts-rainbow") -- for parenthesis colors
 	use("leafOfTree/vim-matchtag")
 	use("ntpeters/vim-better-whitespace")
-	-- use("cohama/lexima.vim")
-	-- use("chaoren/vim-wordmotion")
 
 	-- UI
 	use("nvim-lualine/lualine.nvim")
@@ -36,7 +32,6 @@ return require("packer").startup(function(use)
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-	-- use("danilamihailov/beacon.nvim")
 
 	-- Tools
 	use("lambdalisue/suda.vim")
@@ -96,8 +91,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("simrat39/rust-tools.nvim")
-	use("https://github.com/towolf/vim-helm")
-	use("https://github.com/mrjosh/helm-ls")
 
 	-- Debugging
 	use("nvim-neotest/nvim-nio")
