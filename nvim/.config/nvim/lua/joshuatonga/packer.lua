@@ -116,12 +116,8 @@ return require("packer").startup(function(use)
 	use("leoluz/nvim-dap-go")
 
 	-- Themes
-	use("EdenEast/nightfox.nvim")
-	use("folke/tokyonight.nvim")
-	use("ellisonleao/gruvbox.nvim")
 	use("vimoxide/vim-cinnabar")
 	use("agude/vim-eldar")
-	use({ "projekt0n/github-nvim-theme", tag = "v0.0.7" })
 
 	-- Games
 	use("joshuatonga/vim-game-snake-god-mode")
