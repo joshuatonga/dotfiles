@@ -34,5 +34,7 @@ vim.opt.foldnestmax = 10
 vim.opt.foldenable = false -- don't fold when opening a file
 vim.opt.shada = "!,'300,<50,@100,s10,h"
 vim.opt.mouse = "" -- disable mouse
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 vim.g.python3_host_prog = "/usr/bin/python"
