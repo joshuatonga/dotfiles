@@ -16,7 +16,6 @@ return require("packer").startup(function(use)
 	use("leafOfTree/vim-matchtag")
 	use("ntpeters/vim-better-whitespace")
 	-- use("cohama/lexima.vim")
-	use("scrooloose/nerdcommenter") -- For commenting
 	-- use("chaoren/vim-wordmotion")
 
 	-- UI
