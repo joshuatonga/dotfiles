@@ -19,8 +19,6 @@ require("lsp_signature").setup({
 })
 
 nnoremap("<Space>e", vim.diagnostic.open_float)
-nnoremap("[d", vim.diagnostic.goto_prev)
-nnoremap("]d", vim.diagnostic.goto_next)
 nnoremap("<Space>q", vim.diagnostic.setloclist)
 
 vim.diagnostic.config({
