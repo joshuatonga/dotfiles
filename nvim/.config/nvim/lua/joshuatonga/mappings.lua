@@ -18,12 +18,6 @@ inoremap("<C-e>", "<C-o>de") -- delete word forward in insert mode. C-w to delet
 
 nnoremap("<Leader>sv", ":source %<CR>")
 
--- Pane navigations
-nnoremap("<C-j>", "<C-w><C-j>")
-nnoremap("<C-k>", "<C-w><C-k>")
-nnoremap("<C-l>", "<C-w><C-l>")
-nnoremap("<C-h>", "<C-w><C-h>")
-
 -- Copy/paste with system clipboard
 -- ref: https://github.com/echasnovski/mini.basics/blob/d6b0ee8630adb8b9b42fdd6b6923e9b384419d72/lua/mini/basics.lua#L575-L579
 nnoremap("gy", '"+y', { desc = "Copy to system clipboard" })
