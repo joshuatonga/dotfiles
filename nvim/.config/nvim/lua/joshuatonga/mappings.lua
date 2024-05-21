@@ -4,7 +4,8 @@ local inoremap = keymap.inoremap
 local vnoremap = keymap.vnoremap
 local xnoremap = keymap.xnoremap
 
-vim.g.mapleader = ","
+-- use \ default leader key
+vim.g.mapleader = "\\"
 
 local opts = { silent = true }
 
