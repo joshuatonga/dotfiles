@@ -46,8 +46,9 @@ nnoremap("<C-w>>", ":vertical resize +10<CR>", opts)
 nnoremap("<C-w><", ":vertical resize -10<CR>", opts)
 
 -- Quickfix mappings
-nnoremap("Q", ":copen<CR>", opts)
-nnoremap("qc", ":cexpr []<CR>", opts)
+nnoremap("<Leader>q", ":copen<CR>", opts)
+nnoremap("<Leader>Q", ":cclose<CR>", opts)
+nnoremap("<Leader>qc", ":cexpr []<CR>", opts)
 nnoremap("]q", ":cnext<CR>", opts)
 nnoremap("[q", ":cprev<CR>", opts)
 nnoremap("[Q", ":cfirst<CR>", opts)
