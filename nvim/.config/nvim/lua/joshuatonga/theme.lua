@@ -46,7 +46,7 @@ require("cyberdream").setup({
 			-- grey = "#7b8496",
 			grey = "#166b01",
 			blue = "#1717ff",
-			green = "#33FF00",
+			green = "#2ad100",
 			cyan = "#5ef1ff",
 			red = "#f21616",
 			yellow = "#f1ff5e",
