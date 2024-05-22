@@ -106,15 +106,12 @@ require("typescript").setup({
 	},
 })
 
--- TODO: migrate to rustaceanvim
-local rt = require("rust-tools")
-rt.setup({
+vim.g.rustaceanvim = {
 	server = {
 		on_attach = function(_, bufnr)
-			-- Hover actions
-			vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
-			-- Code action groups
-			vim.keymap.set("n", "<Space>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
+			vim.keymap.set("n", "<leader>ca", function()
+				vim.cmd.RustLsp("codeAction")
+			end, { silent = true, buffer = bufnr })
 		end,
 	},
-})
+}

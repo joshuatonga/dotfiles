@@ -90,7 +90,7 @@ return require("packer").startup(function(use)
 			require("telescope").load_extension("yaml_schema")
 		end,
 	})
-	use("simrat39/rust-tools.nvim")
+	use("mrcjkb/rustaceanvim")
 
 	-- Debugging
 	use("nvim-neotest/nvim-nio")
