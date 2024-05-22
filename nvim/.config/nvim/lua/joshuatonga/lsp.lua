@@ -26,32 +26,33 @@ vim.diagnostic.config({
 	},
 })
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
-	-- Mappings.
-	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	nnoremap("gD", vim.lsp.buf.declaration, bufopts)
-	nnoremap("gd", vim.lsp.buf.definition, bufopts)
-	nnoremap("gI", vim.lsp.buf.implementation, bufopts)
-	nnoremap("<C-k>", vim.lsp.buf.signature_help, bufopts)
-	nnoremap("<Space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-	nnoremap("<Space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-	nnoremap("<Space>wl", function()
-		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, bufopts)
-	nnoremap("<Space>D", vim.lsp.buf.type_definition, bufopts)
-	nnoremap("<Space>rn", vim.lsp.buf.rename, bufopts)
-	nnoremap("<Space>ca", vim.lsp.buf.code_action, bufopts)
-	nnoremap("gr", vim.lsp.buf.references, bufopts)
-	nnoremap("<Space>f", function()
-		vim.lsp.buf.format({ async = true })
-	end, bufopts)
-	inoremap("<C-g>f", function()
-		vim.lsp.buf.format({ async = true })
-	end, bufopts)
-end
+vim.api.nvim_create_autocmd("LspAttach", {
+	desc = "LSP Mappings",
+	callback = function(ev)
+		-- Mappings.
+		-- See `:help vim.lsp.*` for documentation on any of the below functions
+		local bufopts = { noremap = true, silent = true, buffer = ev.buf }
+		nnoremap("gD", vim.lsp.buf.declaration, bufopts)
+		nnoremap("gd", vim.lsp.buf.definition, bufopts)
+		nnoremap("gI", vim.lsp.buf.implementation, bufopts)
+		nnoremap("<C-k>", vim.lsp.buf.signature_help, bufopts)
+		nnoremap("<Space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+		nnoremap("<Space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+		nnoremap("<Space>wl", function()
+			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+		end, bufopts)
+		nnoremap("<Space>D", vim.lsp.buf.type_definition, bufopts)
+		nnoremap("<Space>rn", vim.lsp.buf.rename, bufopts)
+		nnoremap("<Space>ca", vim.lsp.buf.code_action, bufopts)
+		nnoremap("gr", vim.lsp.buf.references, bufopts)
+		nnoremap("<Space>f", function()
+			vim.lsp.buf.format({ async = true })
+		end, bufopts)
+		inoremap("<C-g>f", function()
+			vim.lsp.buf.format({ async = true })
+		end, bufopts)
+	end,
+})
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = { "*.tf", "*.tfvars" },
@@ -87,7 +88,6 @@ local lsp_flags = {
 local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local default_server_setup = {
-	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
 }
@@ -105,7 +105,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 lsp.lua_ls.setup({
-	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
 	settings = {
@@ -158,9 +157,6 @@ require("typescript").setup({
 	debug = false, -- enable debug logging for commands
 	go_to_source_definition = {
 		fallback = true, -- fall back to standard LSP definition on failure
-	},
-	server = { -- pass options to lspconfig's setup method
-		on_attach = on_attach,
 	},
 })
 
