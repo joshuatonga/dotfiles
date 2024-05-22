@@ -35,10 +35,31 @@ vim.opt.background = "dark"
 
 require("cyberdream").setup({
 	borderless_telescope = false,
+
+	theme = {
+		variant = "default",
+		colors = {
+			bg = "#050505",
+			bgAlt = "#1e2124",
+			bgHighlight = "#3c4048",
+			fg = "#ffffff",
+			-- grey = "#7b8496",
+			grey = "#166b01",
+			blue = "#1717ff",
+			green = "#33FF00",
+			cyan = "#5ef1ff",
+			red = "#f21616",
+			yellow = "#f1ff5e",
+			magenta = "#ff5ef1",
+			pink = "#d91414",
+			orange = "#ed5615",
+			purple = "#b80404",
+		},
+	},
 })
 vim.cmd("colorscheme cyberdream")
 
-vim.cmd("highlight Normal guibg=black")
+-- vim.cmd("highlight Normal guibg=black")
 
 -- show a visual indicator when yanking
 local augroup = vim.api.nvim_create_augroup
