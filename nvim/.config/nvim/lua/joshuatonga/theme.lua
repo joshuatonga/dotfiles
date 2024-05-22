@@ -78,4 +78,4 @@ autocmd("TextYankPost", {
 })
 
 vim.cmd("highlight Folded guibg=green guifg=white")
-vim.cmd("highlight CursorLine guibg=#212121")
+-- vim.cmd("highlight CursorLine guibg=#212121")
