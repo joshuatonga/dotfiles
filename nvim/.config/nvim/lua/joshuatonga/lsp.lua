@@ -9,13 +9,6 @@ local keymap = require("joshuatonga.core.keymap")
 local nnoremap = keymap.nnoremap
 local inoremap = keymap.inoremap
 
-require("lsp_signature").setup({
-	hint_enable = false,
-	handler_opts = {
-		border = "none",
-	},
-})
-
 vim.diagnostic.config({
 	float = {
 		source = true,
