@@ -3,8 +3,6 @@ require("neodev").setup({
 })
 
 local lsp = require("lspconfig")
-local configs = require("lspconfig.configs")
-local util = require("lspconfig.util")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local keymap = require("joshuatonga.core.keymap")
 
@@ -18,13 +16,13 @@ require("lsp_signature").setup({
 	},
 })
 
-nnoremap("<Space>q", vim.diagnostic.setloclist)
-
 vim.diagnostic.config({
 	float = {
 		source = true,
 	},
 })
+
+nnoremap("<Space>q", vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP Mappings",
@@ -54,31 +52,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = { "*.tf", "*.tfvars" },
-	callback = function()
-		vim.opt_local.filetype = "terraform"
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	pattern = { "*.tf", "*.tfvars" },
-	callback = function()
-		vim.lsp.buf.format()
-	end,
-})
-
 local servers = {
-	"gopls",
 	"ansiblels",
 	"bashls",
-	"terraformls",
-	"pyright",
-	"dockerls",
-	"html",
 	"cssls",
+	"dockerls",
 	"emmet_ls",
+	"gopls",
+	"helm_ls",
+	"html",
+	"pyright",
 	"solargraph",
+	"terraformls",
 }
 
 local lsp_flags = {
@@ -95,14 +80,6 @@ local default_server_setup = {
 for _, server in pairs(servers) do
 	lsp[server].setup(default_server_setup)
 end
-
-vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = ".env",
-	group = vim.api.nvim_create_augroup("__env", { clear = true }),
-	callback = function()
-		vim.diagnostic.enable(false)
-	end,
-})
 
 lsp.lua_ls.setup({
 	flags = lsp_flags,
@@ -133,23 +110,6 @@ lsp.lua_ls.setup({
 	},
 })
 
-if not configs.helm_ls then
-	configs.helm_ls = {
-		default_config = {
-			cmd = { "helm_ls", "serve" },
-			filetypes = { "helm" },
-			root_dir = function(fname)
-				return util.root_pattern("Chart.yaml")(fname)
-			end,
-		},
-	}
-end
-
-lsp.helm_ls.setup({
-	filetypes = { "helm" },
-	cmd = { "helm_ls", "serve" },
-})
-
 lsp.yamlls.setup(require("yaml-companion").setup())
 
 require("typescript").setup({
@@ -160,6 +120,7 @@ require("typescript").setup({
 	},
 })
 
+-- TODO: migrate to rustaceanvim
 local rt = require("rust-tools")
 rt.setup({
 	server = {
