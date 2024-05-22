@@ -1,6 +1,3 @@
-local keymap = require("joshuatonga.core.keymap")
-local nnoremap = keymap.nnoremap
-
 local actions = require("telescope.actions")
 local actions_layout = require("telescope.actions.layout")
 local lga_actions = require("telescope-live-grep-args.actions")
@@ -100,18 +97,21 @@ require("telescope").load_extension("live_grep_args")
 vim.api.nvim_create_user_command("Tel", "Telescope <args>", { nargs = "*" })
 vim.api.nvim_create_user_command("Maps", "Telescope keymaps", {})
 
-nnoremap("<C-p>", ":lua require('telescope.builtin').find_files({ hidden = true, prompt_title = 'Hidden Files' })<CR>")
-nnoremap("<C-\\>", ":lua require('telescope.builtin').commands()<CR>")
-nnoremap("<leader>fc", ":lua require('telescope.builtin').command_history()<CR>")
-nnoremap("<leader>fs", ":lua require('telescope.builtin').live_grep()<CR>")
--- nnoremap("<leader>fs", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-nnoremap("<leader>ff", ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
-nnoremap("<leader>fb", ":lua require('telescope.builtin').buffers()<CR>")
-nnoremap("<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>")
-nnoremap("<leader>fm", ":lua require('telescope.builtin').man_pages()<CR>")
-nnoremap("<leader>fr", ":lua require('telescope.builtin').oldfiles()<CR>")
-nnoremap("<leader>fk", ":lua require('telescope.builtin').keymaps()<CR>")
-nnoremap("<leader>fa", ":lua require('telescope.builtin').builtin()<CR>")
-nnoremap("<leader>fgs", ":lua require('telescope.builtin').git_status()<CR>")
-nnoremap("<leader>fgc", ":lua require('telescope.builtin').git_bcommits()<CR>")
-nnoremap("<leader>fy", ":Telescope yaml_schema<CR>")
+vim.keymap.set(
+	"n",
+	"<C-p>",
+	":lua require('telescope.builtin').find_files({ hidden = true, prompt_title = 'Hidden Files' })<CR>"
+)
+vim.keymap.set("n", "<C-\\>", ":lua require('telescope.builtin').commands()<CR>")
+vim.keymap.set("n", "<leader>fc", ":lua require('telescope.builtin').command_history()<CR>")
+vim.keymap.set("n", "<leader>fs", ":lua require('telescope.builtin').live_grep()<CR>")
+vim.keymap.set("n", "<leader>ff", ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
+vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers()<CR>")
+vim.keymap.set("n", "<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>")
+vim.keymap.set("n", "<leader>fm", ":lua require('telescope.builtin').man_pages()<CR>")
+vim.keymap.set("n", "<leader>fr", ":lua require('telescope.builtin').oldfiles()<CR>")
+vim.keymap.set("n", "<leader>fk", ":lua require('telescope.builtin').keymaps()<CR>")
+vim.keymap.set("n", "<leader>fa", ":lua require('telescope.builtin').builtin()<CR>")
+vim.keymap.set("n", "<leader>fgs", ":lua require('telescope.builtin').git_status()<CR>")
+vim.keymap.set("n", "<leader>fgc", ":lua require('telescope.builtin').git_bcommits()<CR>")
+vim.keymap.set("n", "<leader>fy", ":Telescope yaml_schema<CR>")

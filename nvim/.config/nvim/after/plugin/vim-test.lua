@@ -1,11 +1,7 @@
-local keymap = require("joshuatonga.core.keymap")
-local nnoremap = keymap.nnoremap
-
 vim.g["test#strategy"] = "make"
 
-local opts = { silent = true }
-nnoremap("<Leader>gt", ":TestNearest<CR>", opts)
-nnoremap("<Leader>gT", ":TestFile<CR>", opts)
-nnoremap("<Leader>gs", ":TestSuite<CR>", opts)
-nnoremap("<Leader>gl", ":TestLast<CR>", opts)
-nnoremap("<Leader>gL", ":TestVisit<CR>", opts)
+vim.keymap.set("n", "<Leader>gt", ":TestNearest<CR>")
+vim.keymap.set("n", "<Leader>gT", ":TestFile<CR>")
+vim.keymap.set("n", "<Leader>gs", ":TestSuite<CR>")
+vim.keymap.set("n", "<Leader>gl", ":TestLast<CR>")
+vim.keymap.set("n", "<Leader>gL", ":TestVisit<CR>")

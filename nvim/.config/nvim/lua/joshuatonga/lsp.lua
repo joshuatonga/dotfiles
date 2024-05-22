@@ -4,10 +4,6 @@ require("neodev").setup({
 
 local lsp = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
-local keymap = require("joshuatonga.core.keymap")
-
-local nnoremap = keymap.nnoremap
-local inoremap = keymap.inoremap
 
 vim.diagnostic.config({
 	float = {
@@ -15,7 +11,7 @@ vim.diagnostic.config({
 	},
 })
 
-nnoremap("<Space>q", vim.diagnostic.setloclist)
+vim.keymap.set("n", "<Space>q", vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP Mappings",
@@ -23,23 +19,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- Mappings.
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
 		local bufopts = { noremap = true, silent = true, buffer = ev.buf }
-		nnoremap("gD", vim.lsp.buf.declaration, bufopts)
-		nnoremap("gd", vim.lsp.buf.definition, bufopts)
-		nnoremap("gI", vim.lsp.buf.implementation, bufopts)
-		nnoremap("<C-k>", vim.lsp.buf.signature_help, bufopts)
-		nnoremap("<Space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-		nnoremap("<Space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-		nnoremap("<Space>wl", function()
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+		vim.keymap.set("n", "gI", vim.lsp.buf.implementation, bufopts)
+		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+		vim.keymap.set("n", "<Space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+		vim.keymap.set("n", "<Space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+		vim.keymap.set("n", "<Space>wl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 		end, bufopts)
-		nnoremap("<Space>D", vim.lsp.buf.type_definition, bufopts)
-		nnoremap("<Space>rn", vim.lsp.buf.rename, bufopts)
-		nnoremap("<Space>ca", vim.lsp.buf.code_action, bufopts)
-		nnoremap("gr", vim.lsp.buf.references, bufopts)
-		nnoremap("<Space>f", function()
-			vim.lsp.buf.format({ async = true })
-		end, bufopts)
-		inoremap("<C-g>f", function()
+		vim.keymap.set("n", "<Space>D", vim.lsp.buf.type_definition, bufopts)
+		vim.keymap.set("n", "<Space>rn", vim.lsp.buf.rename, bufopts)
+		vim.keymap.set("n", "<Space>ca", vim.lsp.buf.code_action, bufopts)
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+		vim.keymap.set("n", "<Space>f", function()
 			vim.lsp.buf.format({ async = true })
 		end, bufopts)
 	end,

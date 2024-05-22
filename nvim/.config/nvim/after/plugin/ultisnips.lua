@@ -1,6 +1,3 @@
-local keymap = require("joshuatonga.core.keymap")
-local nnoremap = keymap.nnoremap
-
 vim.cmd([[
 augroup ultisnips_no_auto_expansion
     au!
@@ -11,4 +8,4 @@ augroup END
 vim.g.UltiSnipsEditSplit = "vertical"
 vim.g.UltiSnipsSnippetDirectories = { "ultisnips" }
 
-nnoremap("<Leader>use", ":UltiSnipsEdit<CR>")
+vim.keymap.set("n", "<Leader>use", ":UltiSnipsEdit<CR>")
