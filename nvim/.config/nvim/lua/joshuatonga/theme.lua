@@ -2,9 +2,10 @@ vim.opt.background = "dark"
 
 -- vim.cmd("colorscheme eldar")
 -- vim.cmd("colorscheme default")
-vim.cmd("colorscheme industry")
+-- vim.cmd("colorscheme industry")
 -- vim.cmd("colorscheme ron")
 -- vim.cmd("colorscheme cinnabar")
+
 -- require("gruvbox").setup({
 -- 	terminal_colors = true, -- add neovim terminal colors
 -- 	undercurl = false,
@@ -31,7 +32,13 @@ vim.cmd("colorscheme industry")
 -- })
 -- vim.opt.background = "dark"
 -- vim.cmd("colorscheme gruvbox")
--- vim.cmd("highlight Normal guibg=black")
+
+require("cyberdream").setup({
+	borderless_telescope = false,
+})
+vim.cmd("colorscheme cyberdream")
+
+vim.cmd("highlight Normal guibg=black")
 
 -- show a visual indicator when yanking
 local augroup = vim.api.nvim_create_augroup

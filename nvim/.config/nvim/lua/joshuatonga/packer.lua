@@ -110,6 +110,8 @@ return require("packer").startup(function(use)
 	-- Themes
 	use("vimoxide/vim-cinnabar")
 	use("agude/vim-eldar")
+	use("morhetz/gruvbox")
+	use("scottmckendry/cyberdream.nvim")
 
 	-- Games
 	use("joshuatonga/vim-game-snake-god-mode")
