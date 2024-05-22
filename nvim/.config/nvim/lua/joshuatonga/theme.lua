@@ -39,14 +39,13 @@ require("cyberdream").setup({
 	theme = {
 		variant = "default",
 		colors = {
-			bg = "#050505",
+			bg = "#0C0C0C",
 			bgAlt = "#1e2124",
 			bgHighlight = "#3c4048",
 			fg = "#ffffff",
-			-- grey = "#7b8496",
 			grey = "#166b01",
-			blue = "#1717ff",
-			green = "#2ad100",
+			blue = "#00FFFF",
+			green = "#00FB00",
 			cyan = "#5ef1ff",
 			red = "#f21616",
 			yellow = "#f1ff5e",
