@@ -1,6 +1,3 @@
--- use \ default leader key
-vim.g.mapleader = "\\"
-
 vim.keymap.set("n", "<Leader>pe", vim.cmd.Ex)
 vim.keymap.set("n", "<Leader>pv", ":Vex!<CR>")
 vim.keymap.set("n", "<Leader>ph", vim.cmd.Hex)
