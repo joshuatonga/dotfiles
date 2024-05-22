@@ -11,19 +11,15 @@ null_ls.setup({
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.usort,
 		-- null_ls.builtins.diagnostics.ruff,
-		-- Rust
-		null_ls.builtins.formatting.rustfmt,
 		-- Go
 		null_ls.builtins.formatting.gofmt,
 		null_ls.builtins.formatting.goimports_reviser,
 		null_ls.builtins.code_actions.gomodifytags,
 		-- TypeScript/JavaScript
 		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.formatting.fixjson,
 		require("typescript.extensions.null-ls.code-actions"),
 		-- shell
 		null_ls.builtins.formatting.shfmt,
-		null_ls.builtins.code_actions.shellcheck,
 		-- markdown
 		null_ls.builtins.diagnostics.write_good,
 		-- others
