@@ -61,12 +61,8 @@ vim.cmd("colorscheme cyberdream")
 -- vim.cmd("highlight Normal guibg=black")
 
 -- show a visual indicator when yanking
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup("HighlightYank", {})
-
-autocmd("TextYankPost", {
-	group = yank_group,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
 	pattern = "*",
 	callback = function()
 		vim.highlight.on_yank({
