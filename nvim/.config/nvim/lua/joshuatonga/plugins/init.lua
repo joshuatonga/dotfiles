@@ -37,7 +37,7 @@ return {
 					"rust",
 					"go",
 				},
-				ignore_install = { "diff" },
+				-- ignore_install = { "diff" },
 				-- Install parsers synchronously (only applied to `ensure_installed`)
 				sync_install = false,
 				-- Automatically install missing parsers when entering buffer
