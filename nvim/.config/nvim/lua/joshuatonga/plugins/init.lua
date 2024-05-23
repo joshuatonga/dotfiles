@@ -9,7 +9,13 @@ return {
 	"nvim-lualine/lualine.nvim",
 	"lewis6991/gitsigns.nvim",
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
-	"norcalli/nvim-colorizer.lua",
+	{
+		"norcalli/nvim-colorizer.lua",
+		event = "BufReadPost",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
