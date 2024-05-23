@@ -7,9 +7,13 @@ local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 vim.diagnostic.config({
 	float = {
+		border = "single",
 		source = true,
 	},
 })
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 
 vim.keymap.set("n", "<Space>q", vim.diagnostic.setloclist)
 
