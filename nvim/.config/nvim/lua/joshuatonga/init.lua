@@ -16,7 +16,7 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup("joshuatonga.plugins")
-require("joshuatonga.general")
+require("joshuatonga.settings")
 require("joshuatonga.mappings")
 require("joshuatonga.theme")
 require("joshuatonga.lsp")
