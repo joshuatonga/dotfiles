@@ -1,3 +1,4 @@
+-- TODO: check if there's a need to integrate with which-key
 vim.keymap.set("n", "<Leader>pe", vim.cmd.Ex)
 vim.keymap.set("n", "<Leader>pv", ":Vex!<CR>")
 vim.keymap.set("n", "<Leader>ph", vim.cmd.Hex)
@@ -41,8 +42,8 @@ vim.keymap.set("n", "]L", ":lfirst<CR>")
 vim.keymap.set("n", "[L", ":llast<CR>")
 
 -- Stay in visual mode when indenting. Ref: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/keymaps.lua
-vim.keymap.set("n", "<", "<gv")
-vim.keymap.set("n", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Visual block moving
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
