@@ -7,6 +7,8 @@ return {
 		wk.register({
 			mode = { "n" },
 			["<leader>f"] = { name = "+file" },
+			["<leader>p"] = { name = "+explorer" },
+			["<leader>s"] = { name = "+stuff" },
 			["<leader>fg"] = { name = "+git" },
 		})
 	end,

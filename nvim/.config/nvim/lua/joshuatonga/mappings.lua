@@ -1,11 +1,11 @@
 -- TODO: check if there's a need to integrate with which-key
-vim.keymap.set("n", "<Leader>pe", vim.cmd.Ex)
-vim.keymap.set("n", "<Leader>pv", ":Vex!<CR>")
-vim.keymap.set("n", "<Leader>ph", vim.cmd.Hex)
+vim.keymap.set("n", "<Leader>pe", vim.cmd.Ex, { desc = "netrw in current buffer" })
+vim.keymap.set("n", "<Leader>pv", ":Vex!<CR>", { desc = "netrw in vertical split" })
+vim.keymap.set("n", "<Leader>ph", vim.cmd.Hex, { desc = "netrw in horizontal split" })
 
 vim.keymap.set("i", "<C-e>", "<C-o>de") -- delete word forward in insert mode. C-w to delete backward
 
-vim.keymap.set("n", "<Leader>sv", ":source %<CR>")
+vim.keymap.set("n", "<Leader>sv", ":source %<CR>", { desc = "source current buffer" })
 
 -- Copy/paste with system clipboard
 -- ref: https://github.com/echasnovski/mini.basics/blob/d6b0ee8630adb8b9b42fdd6b6923e9b384419d72/lua/mini/basics.lua#L575-L579
@@ -27,13 +27,13 @@ vim.keymap.set("n", "<C-w>>", ":vertical resize +10<CR>")
 vim.keymap.set("n", "<C-w><", ":vertical resize -10<CR>")
 
 -- Quickfix mappings
-vim.keymap.set("n", "<Leader>q", ":copen<CR>")
-vim.keymap.set("n", "<Leader>Q", ":cclose<CR>")
-vim.keymap.set("n", "<Leader>qc", ":cexpr []<CR>")
-vim.keymap.set("n", "]q", ":cnext<CR>")
-vim.keymap.set("n", "[q", ":cprev<CR>")
-vim.keymap.set("n", "[Q", ":cfirst<CR>")
-vim.keymap.set("n", "]Q", ":clast<CR>")
+vim.keymap.set("n", "<Leader>q", ":copen<CR>", { desc = "open quickfix window" })
+vim.keymap.set("n", "<Leader>Q", ":cclose<CR>", { desc = "close quickfix window" })
+vim.keymap.set("n", "<Leader>qc", ":cexpr []<CR>", { desc = "clear quickfix list" })
+vim.keymap.set("n", "]q", ":cnext<CR>", { desc = "next item in quickfix" })
+vim.keymap.set("n", "[q", ":cprev<CR>", { desc = "previous item in quickfix" })
+vim.keymap.set("n", "[Q", ":cfirst<CR>", { desc = "first item in quickfix" })
+vim.keymap.set("n", "]Q", ":clast<CR>", { desc = "last item in quickfix" })
 
 -- Locationlist mappings
 vim.keymap.set("n", "]l", ":lnext<CR>")
