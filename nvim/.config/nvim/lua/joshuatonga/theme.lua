@@ -38,6 +38,9 @@ require("cyberdream").setup({
 
 	theme = {
 		variant = "default",
+		highlights = {
+			LspInlayHint = { fg = "#176101" },
+		},
 		colors = {
 			bg = "#0C0C0C",
 			bgAlt = "#1e2124",

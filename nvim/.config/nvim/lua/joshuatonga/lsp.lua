@@ -19,10 +19,18 @@ vim.keymap.set("n", "<Space>q", vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP Mappings",
-	callback = function(ev)
+	callback = function(args)
+		local bufnr = args.buf
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+		if client and client.server_capabilities.inlayHintProvider then
+			vim.g.inlay_hints_visible = true
+			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+		end
+
 		-- Mappings.
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		local bufopts = { noremap = true, silent = true, buffer = ev.buf }
+		local bufopts = { noremap = true, silent = true, buffer = bufnr }
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 		vim.keymap.set("n", "gI", vim.lsp.buf.implementation, bufopts)
