@@ -17,7 +17,7 @@ return {
 
 	-- Tools
 	"lambdalisue/suda.vim",
-	{ "folke/which-key.nvim", event = "VeryLazy" },
+
 	"Einenlum/yaml-revealer",
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
