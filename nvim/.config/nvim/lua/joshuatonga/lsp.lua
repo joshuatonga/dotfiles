@@ -15,7 +15,7 @@ vim.diagnostic.config({
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 
-vim.keymap.set("n", "<Space>q", vim.diagnostic.setloclist)
+vim.keymap.set("n", "<Space>q", vim.diagnostic.setloclist, { desc = "send diagnostics to locationlist" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP Mappings",
@@ -31,22 +31,30 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- Mappings.
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
 		local bufopts = { noremap = true, silent = true, buffer = bufnr }
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-		vim.keymap.set("n", "gI", vim.lsp.buf.implementation, bufopts)
-		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
-		vim.keymap.set("n", "<Space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-		vim.keymap.set("n", "<Space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+		local add_desc = function(opts, desc)
+			return vim.tbl_deep_extend("force", opts, { desc = desc })
+		end
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, add_desc(bufopts, "go to declaration"))
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, add_desc(bufopts, "go to definition"))
+		vim.keymap.set("n", "gI", vim.lsp.buf.implementation, add_desc(bufopts, "go to implementation"))
+		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, add_desc(bufopts, "show signature"))
+		vim.keymap.set("n", "<Space>wa", vim.lsp.buf.add_workspace_folder, add_desc(bufopts, "add workspace folder"))
+		vim.keymap.set(
+			"n",
+			"<Space>wr",
+			vim.lsp.buf.remove_workspace_folder,
+			add_desc(bufopts, "remove workspace folder")
+		)
 		vim.keymap.set("n", "<Space>wl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, bufopts)
-		vim.keymap.set("n", "<Space>D", vim.lsp.buf.type_definition, bufopts)
-		vim.keymap.set("n", "<Space>rn", vim.lsp.buf.rename, bufopts)
-		vim.keymap.set("n", "<Space>ca", vim.lsp.buf.code_action, bufopts)
-		vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+		end, add_desc(bufopts, "list workspace folders"))
+		vim.keymap.set("n", "<Space>D", vim.lsp.buf.type_definition, add_desc(bufopts, "go to type definition"))
+		vim.keymap.set("n", "<Space>rn", vim.lsp.buf.rename, add_desc(bufopts, "rename word"))
+		vim.keymap.set("n", "<Space>ca", vim.lsp.buf.code_action, add_desc(bufopts, "view code actions"))
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, add_desc(bufopts, "find references"))
 		vim.keymap.set("n", "<Space>f", function()
 			vim.lsp.buf.format({ async = true })
-		end, bufopts)
+		end, add_desc(bufopts, "format"))
 	end,
 })
 
