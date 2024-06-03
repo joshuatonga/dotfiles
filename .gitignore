@@ -3,3 +3,6 @@ lazygit/.config/lazygit/state.yml
 nvim/.config/nvim/plugin/packer_compiled.lua
 .DS_Store
 *.uuid*
+
+.dotter/local.toml
+.dotter/cache.toml

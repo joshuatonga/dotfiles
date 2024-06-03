@@ -1,0 +1,27 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+"ag/.ignore" = "~/.ignore"
+alacritty = "~/.config/alacritty"
+"commitizen/.cz-config" = "~/.cz-config"
+"commitizen/.czrc" = "~/.czrc"
+general = ""
+git = ""
+gvim = ""
+i3 = ""
+i3blocks = ""
+i3status = ""
+lazygit = ""
+nvim = ""
+paymongo = ""
+personal = ""
+powerlevel10k = ""
+s = ""
+tmux = ""
+wired = ""
+zsh = ""
+
+[default.variables]
