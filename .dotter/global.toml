@@ -1,0 +1,32 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+"ag/.ignore" = "~/.ignore"
+alacritty = "~/.config/alacritty"
+"commitizen/.cz-config.js" = "~/.cz-config.js"
+"commitizen/.czrc" = "~/.czrc"
+"general/.fonts" = { target = "~/.fonts", type = "symbolic" }
+"general/bin" = "~/bin"
+"general/scripts" = "~/scripts"
+"git/.gitconfig" = "~/.gitconfig"
+"git/.gitignore-global" = "~/.gitignore-global"
+"gvim/.gvimrc" = "~/.gvimrc"
+i3 = "~/.config/i3"
+i3blocks = "~/.config/i3blocks"
+i3status = "~/.config/i3status"
+lazygit = "~/.config/lazygit"
+nvim = "~/.config/nvim"
+paymongo = "~/.dotfiles-paymongo"
+personal = "~/.dotfiles-personal"
+"powerlevel10k/.p10k.zsh" = "~/.p10k.sh"
+s = "~/.config/s"
+"tmux/.tmux-startup.sh" = "~/.tmux-startup.sh"
+"tmux/.tmux.conf" = "~/.tmux.conf"
+wired = "~/.config/wired"
+"zsh/.zsh-config" = { target = "~/.zsh-config", type = "symbolic" }
+"zsh/.zshrc" = "~/.zshrc"
+
+[default.variables]
