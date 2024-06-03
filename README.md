@@ -7,5 +7,5 @@ make install
 
 ### Programs/Tools
 - alacritty (for Linux)
-- stow
+- dotter
 - commitizen

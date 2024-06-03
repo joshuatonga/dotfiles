@@ -1,5 +1,5 @@
 install:
-	stow --verbose --target=$$HOME --restow */
+	dotter deploy
 
 uninstall:
-	stow --verbose --target=$$HOME --delete */
+	dotter undeploy
