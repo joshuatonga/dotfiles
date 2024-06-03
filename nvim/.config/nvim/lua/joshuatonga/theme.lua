@@ -60,6 +60,17 @@ require("cyberdream").setup({
 	},
 })
 vim.cmd("colorscheme cyberdream")
+require("nightfox").setup({
+	palettes = {
+		carbonfox = {
+			bg1 = "#000000",
+			bg0 = "#1d1d2b",
+			bg3 = "#121820", -- 55% darkened from stock
+			sel0 = "#131b24", -- 55% darkened from stock
+		},
+	},
+})
+-- vim.cmd("colorscheme carbonfox")
 
 -- vim.cmd("highlight Normal guibg=black")
 
@@ -75,5 +86,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.cmd("highlight Folded guibg=green guifg=white")
+-- vim.cmd("highlight Folded guibg=green guifg=white")
 -- vim.cmd("highlight CursorLine guibg=#212121")
