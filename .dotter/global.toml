@@ -28,5 +28,6 @@ s = "~/.config/s"
 wired = "~/.config/wired"
 "zsh/.zsh-config" = { target = "~/.zsh-config", type = "symbolic" }
 "zsh/.zshrc" = "~/.zshrc"
+"wallpapers" = { target = "~/Pictures/wallpapers", type = "symbolic" }
 
 [default.variables]
