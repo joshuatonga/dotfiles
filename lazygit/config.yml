@@ -1,7 +1,7 @@
 gui:
   scrollHeight: 10
 os:
-  editCommand: "gvim"
+  edit: "gvim"
 customCommands:
   - key: "K"
     command: "git cz"
