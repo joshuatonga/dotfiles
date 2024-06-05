@@ -273,9 +273,9 @@ bar {
         statusline #000000
         separator #666666
 
-        focused_workspace  #585959 #0000FF #d7dbdb
+        focused_workspace  #585959 #5e5e5e #d7dbdb
         active_workspace   #333333 #5f676a #000000
-        inactive_workspace #000000 #c9c8c3 #3e3f40
+        inactive_workspace #8f8e8d #c9c8c3 #3e3f40
         urgent_workspace   #2f343a #fc0303 #ffffff
         binding_mode       #2f343a #fc0303 #ffffff
     }
@@ -291,9 +291,9 @@ bar {
         statusline #000000
         separator #666666
 
-        focused_workspace  #585959 #0000FF #d7dbdb
+        focused_workspace  #585959 #5e5e5e #d7dbdb
         active_workspace   #333333 #5f676a #000000
-        inactive_workspace #000000 #c9c8c3 #3e3f40
+        inactive_workspace #8f8e8d #c9c8c3 #3e3f40
         urgent_workspace   #2f343a #fc0303 #ffffff
         binding_mode       #2f343a #fc0303 #ffffff
     }
@@ -309,9 +309,9 @@ bar {
         statusline #000000
         separator #666666
 
-        focused_workspace  #585959 #0000FF #d7dbdb
+        focused_workspace  #585959 #5e5e5e #d7dbdb
         active_workspace   #333333 #5f676a #000000
-        inactive_workspace #000000 #c9c8c3 #3e3f40
+        inactive_workspace #8f8e8d #c9c8c3 #3e3f40
         urgent_workspace   #2f343a #fc0303 #ffffff
         binding_mode       #2f343a #fc0303 #ffffff
     }
