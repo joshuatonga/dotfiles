@@ -42,7 +42,8 @@ require("cyberdream").setup({
 			LspInlayHint = { fg = "#176101" },
 		},
 		colors = {
-			bg = "#0C0C0C",
+			-- bg = "#0C0C0C",
+			bg = "#000000",
 			bgAlt = "#1e2124",
 			bgHighlight = "#3c4048",
 			fg = "#ffffff",
