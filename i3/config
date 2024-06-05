@@ -363,13 +363,14 @@ for_window [class="Xfce4-appfinder"] floating enable, resize set 1200px 800px, m
 for_window [title="Save screenshot"] floating enable, resize set 800px 600px, move to position center
 
 
-exec --no-startup-id thunderbird
-exec --no-startup-id alacritty --class MainTerm --command tmux
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id spotify
-exec --no-startup-id slack
+exec --no-startup-id volnoti
 exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id 1password --silent
 exec --no-startup-id wired
 exec --no-startup-id gromit-mpx
-exec --no-startup-id volnoti
+exec --no-startup-id lxpolkit
+exec --no-startup-id thunderbird
+exec --no-startup-id alacritty --class MainTerm --command tmux
+# exec --no-startup-id spotify
+# exec --no-startup-id slack
