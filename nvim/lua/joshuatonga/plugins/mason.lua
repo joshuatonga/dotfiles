@@ -11,7 +11,16 @@ return {
 		require("mason-nvim-dap").setup()
 
 		require("mason-lspconfig").setup({
-			ensure_installed = { "pyright", "terraformls", "lua_ls", "gopls", "tsserver", "rust_analyzer" },
+			ensure_installed = {
+				"pyright",
+				"terraformls",
+				"lua_ls",
+				"gopls",
+				"tsserver",
+				"rust_analyzer",
+				"bashls",
+				"yamlls",
+			},
 		})
 	end,
 }
