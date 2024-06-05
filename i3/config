@@ -326,7 +326,7 @@ bindsym Print exec --no-startup-id flameshot full
 bindsym Shift+Print exec --no-startup-id flameshot gui
 
 
-bindsym $mod+t exec --no-startup-id ~/scripts/fm.sh
+bindsym $mod+t exec --no-startup-id thunar
 
 # for delux split kb
 bindsym F12 exec --no-startup-id flameshot full
