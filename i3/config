@@ -360,6 +360,7 @@ for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1200
 # for_window [class="1Password"] floating enable, resize set 1000px 800px, move to position center
 for_window [window_role="pop-up"] floating enable, resize set 1000px 800px, move to position center
 for_window [class="Xfce4-appfinder"] floating enable, resize set 1200px 800px, move to position center
+for_window [title="Save screenshot"] floating enable, resize set 800px 600px, move to position center
 
 
 exec --no-startup-id thunderbird
