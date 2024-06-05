@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Anonymous Pro 16
+font pango:Anonymous Pro {{font_size}}
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -21,7 +21,7 @@ font pango:Anonymous Pro 16
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec_always --no-startup-id ~/.screenlayout/triple.sh && feh --bg-fill ~/wallpapers/tux.jpeg
+exec_always --no-startup-id ~/.screenlayout/{{screenlayout}} && feh --bg-fill ~/Pictures/wallpapers/{{wallpaper}}
 
 exec --no-startup-id dex --autostart --environment i3
 
@@ -140,12 +140,13 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 
-set $out_main HDMI-0
-set $out_second DP-3
-set $out_third DP-1
+set $out_main {{display_main}}
+set $out_second {{display_second}}
+set $out_third {{display_third}}
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
+{{#if enable_ws_names}}
 set $ws1 "1: www"
 set $ws2 "2: others"
 set $ws3 "3: term"
@@ -159,6 +160,21 @@ set $ws10 "10: chat"
 set $ws11 "11"
 set $ws12 "12"
 set $ws13 "13"
+{{else}}
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+{{/if}}
 
 workspace $ws1 output $out_main
 workspace $ws2 output $out_second

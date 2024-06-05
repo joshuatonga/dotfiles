@@ -1,11 +1,8 @@
-[helpers]
-
 [default]
 depends = []
 
 [default.files]
 "ag/.ignore" = "~/.ignore"
-alacritty = "~/.config/alacritty"
 "commitizen/.cz-config.js" = "~/.cz-config.js"
 "commitizen/.czrc" = "~/.czrc"
 "general/.fonts" = { target = "~/.fonts", type = "symbolic" }
@@ -14,21 +11,46 @@ alacritty = "~/.config/alacritty"
 "git/.gitconfig" = "~/.gitconfig"
 "git/.gitignore-global" = "~/.gitignore-global"
 "gvim/.gvimrc" = "~/.gvimrc"
+lazygit = "~/.config/lazygit"
+paymongo = "~/.dotfiles-paymongo"
+personal = "~/.dotfiles-personal"
+s = "~/.config/s"
+"wallpapers" = { target = "~/Pictures/wallpapers", type = "symbolic" }
+
+[i3]
+depends = ["graphics"]
+
+[i3.files]
 i3 = "~/.config/i3"
 i3blocks = "~/.config/i3blocks"
 i3status = "~/.config/i3status"
-lazygit = "~/.config/lazygit"
-nvim = "~/.config/nvim"
-paymongo = "~/.dotfiles-paymongo"
-personal = "~/.dotfiles-personal"
+wired = "~/.config/wired"
 rofi = "~/.config/rofi"
-"powerlevel10k/.p10k.zsh" = "~/.p10k.zsh"
-s = "~/.config/s"
+
+[i3.variables]
+enable_bar_wlan = false
+enable_bar_eth = true
+enable_bar_battery = false
+enable_ws_names = true
+notif_top_pos = 45.0
+notif_font_size = 10
+
+[term]
+depends = ["graphics"]
+
+[term.files]
+alacritty = "~/.config/alacritty"
 "tmux/.tmux-startup.sh" = "~/.tmux-startup.sh"
 "tmux/.tmux.conf" = "~/.tmux.conf"
-wired = "~/.config/wired"
 "zsh/.zsh-config" = { target = "~/.zsh-config", type = "symbolic" }
 "zsh/.zshrc" = "~/.zshrc"
-"wallpapers" = { target = "~/Pictures/wallpapers", type = "symbolic" }
+nvim = "~/.config/nvim"
+"powerlevel10k/.p10k.zsh" = "~/.p10k.zsh"
 
-[default.variables]
+[graphics.variables]
+font_size = 16
+screenlayout = "default.sh"
+display_main = "HDMI-0"
+display_second = "DP-3"
+display_third = "DP-1"
+wallpaper = "tux.jpeg"

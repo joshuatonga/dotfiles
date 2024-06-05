@@ -83,7 +83,7 @@
             name: "root",
             parent: "",
             hook: Hook(parent_anchor: TR, self_anchor: TR),
-            offset: Vec2(x: -15.0, y: 45.0),
+            offset: Vec2(x: -15.0, y: {{notif_top_pos}}),
             //render_criteria: [HintImage],
             // https://github.com/Toqozz/wired-notify/wiki/NotificationBlock
             params: NotificationBlock((
@@ -111,7 +111,7 @@
             params: TextBlock((
                 //text: "%s",
                 text: "<span underline='low'>%s</span>",
-                font: "monospace bold 10",
+                font: "monospace bold {{notif_font_size}}",
                 ellipsize: Middle,
                 color: Color(hex: "#00bf00"),
                 color_hovered: Color(hex: "#05f005"),
@@ -128,7 +128,7 @@
             // https://github.com/Toqozz/wired-notify/wiki/ScrollingTextBlock
             params: ScrollingTextBlock((
                 text: " %b ",
-                font: "monospace 10",
+                font: "monospace {{notif_font_size}}",
                 color: Color(hex: "#05b505"),
                 color_hovered: Color(hex: "#05f005"),
                 padding: Padding(left: 25.0, right: 25.0, top: 1.0, bottom: 10.0),
