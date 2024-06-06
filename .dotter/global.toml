@@ -5,7 +5,7 @@ depends = []
 "ag/.ignore" = "~/.ignore"
 "commitizen/.cz-config.js" = "~/.cz-config.js"
 "commitizen/.czrc" = "~/.czrc"
-"general/.fonts" = { target = "~/.fonts", type = "symbolic" }
+"general/fonts" = { target = "~/.local/share/fonts", type = "symbolic" }
 "general/bin" = "~/bin"
 "general/scripts" = "~/scripts"
 "git/.gitconfig" = "~/.gitconfig"
@@ -48,6 +48,7 @@ nvim = "~/.config/nvim"
 "powerlevel10k/.p10k.zsh" = "~/.p10k.zsh"
 
 [graphics.variables]
+font_name = "Anonymous Pro"
 font_size = 16
 screenlayout = "default.sh"
 display_main = "HDMI-0"

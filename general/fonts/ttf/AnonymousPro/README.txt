@@ -37,7 +37,7 @@ Linux:
 From all reports, Anonymous Pro displays well on Linux systems. Here are installation instructions, kindly provided by a Linux user:
 
 Copy the *.ttf files to a font directory such as
-~/.fonts or /usr/share/fonts/ttf. The exact location depends on your
+~/.local/share/fonts/ or /usr/share/fonts/ttf. The exact location depends on your
 distribution. See /etc/fonts/fonts.conf for details if unsure.
 
 Run fc-cache using the command: 'sudo fc-cache -f'

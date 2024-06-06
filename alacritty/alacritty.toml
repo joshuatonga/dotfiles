@@ -41,7 +41,7 @@ style = "Bold Italic"
 style = "Italic"
 
 [font.normal]
-family = "Anonymous Pro"
+family = "{{font_name}}"
 # family = "Glass TTY VT220"
 # family = "monospace"
 style = "Regular"
