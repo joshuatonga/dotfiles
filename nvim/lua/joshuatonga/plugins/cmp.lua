@@ -6,7 +6,6 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-nvim-lsp-document-symbol",
-		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"quangnguyen30192/cmp-nvim-ultisnips",
 		"davidsierradz/cmp-conventionalcommits",
 	},
@@ -87,7 +86,6 @@ return {
 				end,
 			},
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
 				{ name = "ultisnips" },
 				{ name = "path" },

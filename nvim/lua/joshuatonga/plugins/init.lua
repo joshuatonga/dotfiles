@@ -35,6 +35,16 @@ return {
 	"jose-elias-alvarez/typescript.nvim",
 	"fatih/vim-go",
 	"mrcjkb/rustaceanvim",
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		opts = {
+			hint_enable = false,
+		},
+		config = function(_, opts)
+			require("lsp_signature").setup(opts)
+		end,
+	},
 
 	-- Debugging
 	"nvim-neotest/nvim-nio", -- TODO: find which plugin is using this and refactor
