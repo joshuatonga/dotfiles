@@ -14,6 +14,7 @@ return {
 		end,
 	},
 	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
+	{ "tris203/precognition.nvim", event = "VeryLazy", config = true },
 
 	-- Tools
 	"lambdalisue/suda.vim",
