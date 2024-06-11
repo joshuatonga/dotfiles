@@ -57,3 +57,4 @@ display_main = "HDMI-0"
 display_second = "DP-3"
 display_third = "DP-1"
 wallpaper = "tux.jpeg"
+dpi = 100
