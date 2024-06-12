@@ -388,8 +388,5 @@ exec --no-startup-id gromit-mpx
 exec --no-startup-id lxpolkit
 exec --no-startup-id thunderbird
 exec --no-startup-id alacritty --class MainTerm --command tmux
-{{#if enable_power}}
-exec --no-startup-id xfce4-power-manager
-{{/if}}
 # exec --no-startup-id spotify
 # exec --no-startup-id slack

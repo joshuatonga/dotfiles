@@ -32,7 +32,6 @@ rofi = "~/.config/rofi"
 enable_bar_wlan = false
 enable_bar_eth = true
 enable_bar_battery = false
-enable_power = false
 enable_ws_names = true
 notif_top_pos = 45.0
 notif_font_size = 10
