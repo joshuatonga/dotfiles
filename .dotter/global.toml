@@ -7,6 +7,7 @@ depends = []
 "commitizen/.czrc" = "~/.czrc"
 "general/fonts" = { target = "~/.local/share/fonts", type = "symbolic" }
 "general/bin" = "~/bin"
+"general/.Xresources" = "~/.Xresources"
 "general/scripts" = "~/scripts"
 "git/.gitconfig" = "~/.gitconfig"
 "git/.gitignore-global" = "~/.gitignore-global"
@@ -57,3 +58,4 @@ display_second = "DP-3"
 display_third = "DP-1"
 wallpaper = "tux.jpeg"
 dpi = 100
+cursor_size = 36

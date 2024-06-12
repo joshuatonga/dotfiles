@@ -1,0 +1,3 @@
+*dpi: {{dpi}}
+Xft.dpi: {{dpi}}
+Xcursor.size: {{cursor_size}}
