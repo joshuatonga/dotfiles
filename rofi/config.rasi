@@ -1,1 +1,4 @@
-@theme "/usr/share/rofi/themes/fancy.rasi"
+configuration {
+  font: "mono {{math font_size "+" 2}}";
+}
+@theme "fancy"
