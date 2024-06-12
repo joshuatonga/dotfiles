@@ -1,4 +1,4 @@
 configuration {
-  font: "mono {{math font_size "+" 2}}";
+  font: "mono {{font_size}}";
 }
 @theme "fancy"
