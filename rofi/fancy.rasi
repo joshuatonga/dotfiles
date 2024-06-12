@@ -60,7 +60,7 @@ pad {
 icon-left {
     expand: false;
     filename: "go-previous";
-    size: 30;
+    size: 28;
     vertical-align: 0.5;
     action: "kb-page-prev";
 }
@@ -68,7 +68,7 @@ icon-left {
 icon-right {
     expand: false;
     filename: "go-next";
-    size: 30;
+    size: 28;
     vertical-align: 0.5;
     action: "kb-page-next";
 }
@@ -89,7 +89,7 @@ icon-ms-ic2 {
     filename: "go-next";
 }
 icon-ms-ic1,icon-ms-ic2 {
-    size: 30;
+    size: 28;
     vertical-align: 0.8;
     expand:        false;
     border:       0px 0px 2px ;
