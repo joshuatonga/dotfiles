@@ -379,6 +379,7 @@ for_window [title="Save screenshot"] floating enable, resize set 800px 600px, mo
 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id picom -b
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id volnoti
 exec --no-startup-id indicator-sound-switcher

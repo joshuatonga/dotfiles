@@ -28,6 +28,7 @@ i3blocks = "~/.config/i3blocks"
 i3status = "~/.config/i3status"
 wired = "~/.config/wired"
 rofi = "~/.config/rofi"
+picom = "~/.config/picom"
 
 [i3.variables]
 enable_bar_wlan = false
