@@ -33,11 +33,11 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     # os_icon               # os identifier
+    dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n
     context
-    dir                     # current directory
     prompt_char             # prompt symbol
   )
 
@@ -60,8 +60,8 @@
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     # node_version          # node.js version
-    # go_version            # go version (https://golang.org)
-    # rust_version          # rustc version (https://www.rust-lang.org)
+    go_version            # go version (https://golang.org)
+    rust_version          # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
     # php_version           # php version (https://www.php.net/)
     # laravel_version       # laravel php framework version (https://laravel.com/)
