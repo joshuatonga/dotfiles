@@ -138,8 +138,13 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
 
 # For commit signing in MacOS
 export GPG_TTY=$TTY
-autoload -U +X bashcompinit && bashcompinit
-# complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
+
+complete -o nospace -C /usr/bin/terraform terraform
+complete -o nospace -C /usr/bin/tofu tofu
 
 
 fpath=($fpath ~/$ZSH_FOLDER/completion)
@@ -161,3 +166,4 @@ export PATH=~/.rvm/gems/ruby-3.3.0/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export BROWSER=google-chrome
+
