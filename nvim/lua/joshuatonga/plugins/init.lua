@@ -1,7 +1,6 @@
 return {
 	-- Text/Movement
 	"tpope/vim-surround", -- CRUD of surrounding pairs makes easy
-	"leafOfTree/vim-matchtag",
 	"ntpeters/vim-better-whitespace",
 
 	-- UI
