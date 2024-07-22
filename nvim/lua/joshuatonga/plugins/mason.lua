@@ -20,6 +20,11 @@ return {
 				"rust_analyzer",
 				"bashls",
 				"yamlls",
+				"helm_ls",
+				"html",
+				"emmet_ls",
+				"cssls",
+				"dockerls",
 			},
 		})
 	end,
