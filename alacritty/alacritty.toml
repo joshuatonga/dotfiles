@@ -63,7 +63,7 @@ mods = "Control|Shift"
 enabled = true
 mods = "None"
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/zsh"
 
 [window]
