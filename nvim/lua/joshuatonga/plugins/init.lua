@@ -34,6 +34,7 @@ return {
 	"pearofducks/ansible-vim",
 	"jose-elias-alvarez/typescript.nvim",
 	"fatih/vim-go",
+	"towolf/vim-helm",
 	"mrcjkb/rustaceanvim",
 	{
 		"ray-x/lsp_signature.nvim",

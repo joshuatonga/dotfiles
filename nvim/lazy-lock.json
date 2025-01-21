@@ -58,6 +58,7 @@
   "vim-game-snake-god-mode": { "branch": "master", "commit": "5ec393e000754f26c9c3bc4c4ee75b05960f49b5" },
   "vim-go": { "branch": "master", "commit": "6adc82bfef7f9a4b0db78065ae51b8ebb145c355" },
   "vim-grepper": { "branch": "master", "commit": "f1b441c23f0227b28c36be383b562ab47dbecec4" },
+  "vim-helm": { "branch": "master", "commit": "ae1ebc160d2b9b90108477ab10df7a4fc501e358" },
   "vim-rhubarb": { "branch": "master", "commit": "ee69335de176d9325267b0fd2597a22901d927b1" },
   "vim-snippets": { "branch": "master", "commit": "f0a3184d9f90b96b044d5914625a25c554d7f301" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
