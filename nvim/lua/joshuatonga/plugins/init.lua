@@ -36,7 +36,6 @@ return {
 	"fatih/vim-go",
 	"towolf/vim-helm",
 	"mrcjkb/rustaceanvim",
-	"github/copilot.vim",
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "VeryLazy",
