@@ -23,7 +23,7 @@ return {
 	"tpope/vim-rhubarb",
 	"mhinz/vim-grepper",
 	"tpope/vim-dispatch",
-	"vimwiki/vimwiki",
+	-- "vimwiki/vimwiki",
 	"phelipetls/jsonpath.nvim",
 
 	-- LSP
