@@ -81,8 +81,11 @@ setopt EXTENDED_HISTORY
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh-config/custom
+
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
