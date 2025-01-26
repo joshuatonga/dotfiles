@@ -22,7 +22,13 @@ return {
 			"zbirenbaum/copilot.lua",
 			cmd = "Copilot",
 			event = "InsertEnter",
-			config = true,
+			config = function()
+				require("copilot").setup({
+					suggestion = {
+						auto_trigger = true,
+					},
+				})
+			end,
 		},
 		{
 			-- support for image pasting
