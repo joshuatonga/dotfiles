@@ -6,6 +6,7 @@ local lsp = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 vim.diagnostic.config({
+	virtual_text = false,
 	float = {
 		border = "single",
 		source = true,
