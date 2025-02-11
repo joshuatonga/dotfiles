@@ -118,7 +118,7 @@ lsp.lua_ls.setup({
 	},
 })
 
-lsp.yamlls.setup(require("yaml-companion").setup())
+-- lsp.yamlls.setup(require("yaml-companion").setup())
 
 vim.g.rustaceanvim = {
 	server = {
