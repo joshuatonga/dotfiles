@@ -8,7 +8,10 @@ return {
 		{
 			"<leader><space>",
 			function()
-				Snacks.picker.smart()
+				Snacks.picker.files({
+					exclude = { "node_modules", ".git" },
+					hidden = true,
+				})
 			end,
 			desc = "Smart Find Files",
 		},
@@ -60,7 +63,9 @@ return {
 			-- "<leader>ff",
 			"<C-p>",
 			function()
-				Snacks.picker.files()
+				Snacks.picker.files({
+					exclude = { "node_modules", ".git" },
+				})
 			end,
 			desc = "Find Files",
 		},
@@ -153,7 +158,9 @@ return {
 		{
 			"<leader>sg",
 			function()
-				Snacks.picker.grep()
+				Snacks.picker.grep({
+					exclude = { "node_modules", ".git" },
+				})
 			end,
 			desc = "Grep",
 		},
