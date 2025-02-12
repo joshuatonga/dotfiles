@@ -5,6 +5,7 @@ require("neodev").setup({
 local lsp = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+-- <C-w>d to open diagnostic float
 vim.diagnostic.config({
 	virtual_text = false,
 	float = {
