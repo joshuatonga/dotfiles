@@ -37,4 +37,3 @@ vim.opt.mouse = "" -- disable mouse
 vim.opt.spelllang = "en_us"
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 vim.g.python3_host_prog = "/usr/bin/python"
-vim.opt.laststatus = 3 -- for avante
