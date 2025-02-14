@@ -34,31 +34,28 @@ vim.opt.background = "dark"
 -- vim.cmd("colorscheme gruvbox")
 
 require("cyberdream").setup({
-	borderless_telescope = false,
+	borderless_pickers = false,
 
-	theme = {
-		variant = "default",
-		highlights = {
-			LspInlayHint = { fg = "#176101" },
-		},
-		colors = {
-			-- bg = "#0C0C0C",
-			bg = "#000000",
-			bgAlt = "#1e2124",
-			bgHighlight = "#3c4048",
-			fg = "#ffffff",
-			-- grey = "#808080",
-			grey = "#ffffff",
-			blue = "#00afaf",
-			green = "#27c400",
-			cyan = "#0000E7",
-			red = "#f21616",
-			yellow = "#f1ff5e",
-			magenta = "#e81010",
-			pink = "#e81010",
-			orange = "#ed5615",
-			purple = "#ff8503",
-		},
+	variant = "default",
+	highlights = {
+		LspInlayHint = { fg = "#176101" },
+	},
+	colors = {
+		-- bg = "#0C0C0C",
+		bg = "#000000",
+		bgAlt = "#1e2124",
+		bgHighlight = "#3c4048",
+		fg = "#ffffff",
+		grey = "#808080",
+		blue = "#00afaf",
+		green = "#27c400",
+		cyan = "#0000E7",
+		red = "#f21616",
+		yellow = "#f1ff5e",
+		magenta = "#e81010",
+		pink = "#e81010",
+		orange = "#ed5615",
+		purple = "#ff8503",
 	},
 })
 vim.cmd("colorscheme cyberdream")
