@@ -37,6 +37,11 @@ return {
 	"mrcjkb/rustaceanvim",
 	"github/copilot.vim",
 	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	},
+	{
 		"ray-x/lsp_signature.nvim",
 		event = "VeryLazy",
 		opts = {

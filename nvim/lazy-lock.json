@@ -46,7 +46,7 @@
   "scratch.vim": { "branch": "master", "commit": "adf826b1ac067cdb4168cb6066431cff3a2d37a3" },
   "snacks.nvim": { "branch": "main", "commit": "72ffb3d1a2812671bb3487e490a3b1dd380bc234" },
   "suda.vim": { "branch": "master", "commit": "9adda7d195222d4e2854efb2a88005a120296c47" },
-  "typescript.nvim": { "branch": "main", "commit": "4de85ef699d7e6010528dcfbddc2ed4c2c421467" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "35e397ce467bedbbbb5bfcd0aa79727b59a08d4a" },
   "ultisnips": { "branch": "master", "commit": "35252b3327bf0cb55136399dfe615637093a8291" },
   "vim-better-whitespace": { "branch": "master", "commit": "86a0579b330b133b8181b8e088943e81c26a809e" },
   "vim-cinnabar": { "branch": "master", "commit": "02a4aa73f538f56a90d8f0af25bfc909e4c6dbd1" },

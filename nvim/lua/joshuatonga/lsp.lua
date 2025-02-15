@@ -72,7 +72,6 @@ local servers = {
 	"pyright",
 	"solargraph",
 	"terraformls",
-	"ts_ls",
 }
 
 local lsp_flags = {
