@@ -32,7 +32,6 @@ return {
 	"neovim/nvim-lspconfig",
 	"folke/neodev.nvim",
 	"pearofducks/ansible-vim",
-	"jose-elias-alvarez/typescript.nvim",
 	"fatih/vim-go",
 	"towolf/vim-helm",
 	"mrcjkb/rustaceanvim",
