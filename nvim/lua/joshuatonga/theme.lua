@@ -39,6 +39,9 @@ require("cyberdream").setup({
 	variant = "default",
 	highlights = {
 		LspInlayHint = { fg = "#176101" },
+		Comment = { fg = "#B2727B" },
+		LineNr = { fg = "#88C9F2" },
+		CursorLineNr = { fg = "#B2727B" },
 	},
 	colors = {
 		-- bg = "#0C0C0C",
@@ -47,7 +50,9 @@ require("cyberdream").setup({
 		bgHighlight = "#3c4048",
 		fg = "#ffffff",
 		grey = "#808080",
-		blue = "#00afaf",
+		-- blue = "#00afaf",
+		-- blue = "#77BEBC",
+		blue = "#88C9F2",
 		green = "#27c400",
 		cyan = "#0000E7",
 		red = "#f21616",
@@ -55,7 +60,8 @@ require("cyberdream").setup({
 		magenta = "#e81010",
 		pink = "#e81010",
 		orange = "#ed5615",
-		purple = "#ff8503",
+		-- purple = "#ff8503",
+		purple = "#52E2DD",
 	},
 })
 vim.cmd("colorscheme cyberdream")
