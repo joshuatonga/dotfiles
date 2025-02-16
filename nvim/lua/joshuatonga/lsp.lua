@@ -1,7 +1,6 @@
 require("neodev").setup({
 	library = { plugins = { "nvim-dap-ui" }, types = true },
 })
-
 local lsp = require("lspconfig")
 
 -- <C-w>d to open diagnostic float
@@ -63,62 +62,51 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 local servers = {
-	"ansiblels",
-	"bashls",
-	"cssls",
-	"dockerls",
-	"emmet_ls",
-	"gopls",
-	"helm_ls",
-	"html",
-	"pyright",
-	"solargraph",
-	"terraformls",
-}
+	ansiblels = {},
+	bashls = {},
+	cssls = {},
+	dockerls = {},
+	emmet_ls = {},
+	gopls = {},
+	helm_ls = {},
+	html = {},
+	pyright = {},
+	solargraph = {},
+	terraformls = {},
 
-local lsp_flags = {
-	-- This is the default in Nvim 0.7+
-	-- debounce_text_changes = 150,
-}
-local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-local default_server_setup = {
-	flags = lsp_flags,
-	capabilities = capabilities,
-}
-
-for _, server in pairs(servers) do
-	lsp[server].setup(default_server_setup)
-end
-
-lsp.lua_ls.setup({
-	flags = lsp_flags,
-	capabilities = capabilities,
-	settings = {
-		Lua = {
-			runtime = {
-				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = "LuaJIT",
-			},
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = { "vim" },
-			},
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
-				checkThirdParty = false,
-			},
-			-- Do not send telemetry data containing a randomized but unique identifier
-			telemetry = {
-				enable = false,
-			},
-			format = {
-				enable = false,
+	lua_ls = {
+		settings = {
+			Lua = {
+				runtime = {
+					-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+					version = "LuaJIT",
+				},
+				diagnostics = {
+					-- Get the language server to recognize the `vim` global
+					globals = { "vim" },
+				},
+				workspace = {
+					-- Make the server aware of Neovim runtime files
+					library = vim.api.nvim_get_runtime_file("", true),
+					checkThirdParty = false,
+				},
+				-- Do not send telemetry data containing a randomized but unique identifier
+				telemetry = {
+					enable = false,
+				},
+				format = {
+					enable = false,
+				},
 			},
 		},
 	},
-})
+}
+
+for server, config in pairs(servers) do
+	local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
+	capabilities.textDocument.completion.completionItem.snippetSupport = true
+	lsp[server].setup(config)
+end
 
 -- lsp.yamlls.setup(require("yaml-companion").setup())
 
