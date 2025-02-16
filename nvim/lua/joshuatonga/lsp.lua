@@ -3,7 +3,6 @@ require("neodev").setup({
 })
 
 local lsp = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 -- <C-w>d to open diagnostic float
 vim.diagnostic.config({
@@ -78,7 +77,7 @@ local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
 }
-local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local default_server_setup = {
 	flags = lsp_flags,
