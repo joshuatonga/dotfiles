@@ -56,16 +56,8 @@ return {
 	"nvim-neotest/nvim-nio", -- TODO: find which plugin is using this and refactor
 
 	-- Themes
-	{ "vimoxide/vim-cinnabar", lazy = true },
-	{ "agude/vim-eldar", lazy = true },
-	{ "ellisonleao/gruvbox.nvim", lazy = true },
 	{
 		"scottmckendry/cyberdream.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
-		"EdenEast/nightfox.nvim",
 		lazy = false,
 		priority = 1000,
 	},
