@@ -2,11 +2,11 @@ return {
 	"vim-test/vim-test",
 
 	keys = {
-		{ "<Leader>gt", ":TestNearest<CR>" },
-		{ "<Leader>gT", ":TestFile<CR>" },
-		{ "<Leader>gs", ":TestSuite<CR>" },
-		{ "<Leader>gl", ":TestLast<CR>" },
-		{ "<Leader>gL", ":TestVisit<CR>" },
+		{ "<Leader>tt", ":TestNearest<CR>" },
+		{ "<Leader>tT", ":TestFile<CR>" },
+		{ "<Leader>ts", ":TestSuite<CR>" },
+		{ "<Leader>tl", ":TestLast<CR>" },
+		{ "<Leader>tL", ":TestVisit<CR>" },
 	},
 
 	init = function()
