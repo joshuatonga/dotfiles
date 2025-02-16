@@ -389,7 +389,7 @@ exec --no-startup-id 1password --silent
 exec --no-startup-id wired
 exec --no-startup-id gromit-mpx
 exec --no-startup-id lxpolkit
-exec --no-startup-id thunderbird
+# exec --no-startup-id thunderbird
 exec --no-startup-id alacritty --class MainTerm --command tmux
 # exec --no-startup-id spotify
 # exec --no-startup-id slack
