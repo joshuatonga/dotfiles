@@ -24,6 +24,7 @@ return {
 				"html",
 				"emmet_ls",
 				"cssls",
+				"tailwindcss",
 				"dockerls",
 			},
 		})

@@ -42,6 +42,16 @@ return {
 		opts = {},
 	},
 	{
+		"luckasRanarison/tailwind-tools.nvim",
+		name = "tailwind-tools",
+		build = ":UpdateRemotePlugins",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"neovim/nvim-lspconfig",
+		},
+		opts = {},
+	},
+	{
 		"ray-x/lsp_signature.nvim",
 		event = "VeryLazy",
 		opts = {
