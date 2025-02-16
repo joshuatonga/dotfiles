@@ -15,6 +15,9 @@ vim.diagnostic.config({
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
+-- don't display diagnostics while typing. so annoying
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { update_in_insert = false })
 
 vim.keymap.set("n", "<Space>q", vim.diagnostic.setloclist, { desc = "send diagnostics to locationlist" })
 
@@ -75,7 +78,7 @@ local servers = {
 
 local lsp_flags = {
 	-- This is the default in Nvim 0.7+
-	debounce_text_changes = 150,
+	-- debounce_text_changes = 150,
 }
 local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
