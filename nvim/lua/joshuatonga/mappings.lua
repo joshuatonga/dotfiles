@@ -13,6 +13,7 @@ vim.keymap.set({ "n", "x" }, "gy", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set({ "n", "x" }, "gp", '"+p', { desc = "Paste from system clipboard" })
 
 -- Ref: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("x", "<Leader>p", '"_dP')
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
