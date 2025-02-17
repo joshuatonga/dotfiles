@@ -12,8 +12,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/scripts
-export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$HOME/.dotfiles-personal/scripts
+eval "$(rbenv init -)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -165,8 +165,6 @@ export AWS_PAGER=""
 export MANPAGER='nvim +Man!'
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
-export PATH=~/.rvm/gems/ruby-3.3.0/bin:$PATH
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export BROWSER=google-chrome
 
