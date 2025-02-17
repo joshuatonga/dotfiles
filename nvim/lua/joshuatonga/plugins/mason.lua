@@ -26,6 +26,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"dockerls",
+				"solargraph",
 			},
 		})
 	end,
