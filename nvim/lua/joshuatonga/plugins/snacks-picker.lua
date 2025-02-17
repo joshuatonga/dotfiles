@@ -360,7 +360,9 @@ return {
 		{
 			"<leader>ss",
 			function()
-				Snacks.picker.lsp_symbols()
+				Snacks.picker.lsp_symbols({
+					layout = "left",
+				})
 			end,
 			desc = "LSP Symbols",
 		},
