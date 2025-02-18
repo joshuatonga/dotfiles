@@ -5,7 +5,7 @@ local lsp = require("lspconfig")
 
 -- <C-w>d to open diagnostic float
 vim.diagnostic.config({
-	virtual_text = false,
+	virtual_text = true,
 	float = {
 		border = "single",
 		source = true,
