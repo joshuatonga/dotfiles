@@ -28,6 +28,8 @@ return {
 				-- others
 				null_ls.builtins.diagnostics.ansiblelint,
 				-- null_ls.builtins.diagnostics.yamllint,
+				--
+				null_ls.builtins.formatting.terraform_fmt,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
