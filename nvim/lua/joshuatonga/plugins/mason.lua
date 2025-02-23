@@ -22,7 +22,6 @@ return {
 				"yamlls",
 				"helm_ls",
 				"html",
-				"emmet_ls",
 				"cssls",
 				"tailwindcss",
 				"dockerls",

@@ -68,7 +68,6 @@ local servers = {
 		settings = { css = { lint = { unknownAtRules = "ignore" } } },
 	},
 	dockerls = {},
-	emmet_ls = {},
 	gopls = {},
 	helm_ls = {},
 	html = {},

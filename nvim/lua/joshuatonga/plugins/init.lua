@@ -37,6 +37,12 @@ return {
 	"mrcjkb/rustaceanvim",
 	"github/copilot.vim",
 	{
+		"mattn/emmet-vim",
+		init = function()
+			vim.g.user_emmet_leader_key = "<C-z>"
+		end,
+	},
+	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
