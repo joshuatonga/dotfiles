@@ -18,7 +18,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
 	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { update_in_insert = false })
 
-vim.keymap.set("n", "<Space>q", vim.diagnostic.setloclist, { desc = "send diagnostics to locationlist" })
+vim.keymap.set("n", "<Space>q", vim.diagnostic.setqflist, { desc = "send diagnostics to quickfix" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP Mappings",
