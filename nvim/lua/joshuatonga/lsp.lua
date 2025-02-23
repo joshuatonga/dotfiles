@@ -73,6 +73,7 @@ local servers = {
 	pyright = {},
 	solargraph = {},
 	terraformls = {},
+	astro = {},
 
 	lua_ls = {
 		settings = {
@@ -103,8 +104,7 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
-	local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
-	capabilities.textDocument.completion.completionItem.snippetSupport = true
+	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 	lsp[server].setup(config)
 end
 
