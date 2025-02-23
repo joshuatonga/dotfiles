@@ -64,7 +64,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 local servers = {
 	ansiblels = {},
 	bashls = {},
-	cssls = {},
+	cssls = {
+		settings = { css = { lint = { unknownAtRules = "ignore" } } },
+	},
 	dockerls = {},
 	emmet_ls = {},
 	gopls = {},
