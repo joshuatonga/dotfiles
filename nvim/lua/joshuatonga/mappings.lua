@@ -3,6 +3,8 @@ vim.keymap.set("n", "<Leader>pe", vim.cmd.Ex, { desc = "netrw in current buffer"
 vim.keymap.set("n", "<Leader>pv", ":Vex!<CR>", { desc = "netrw in vertical split" })
 vim.keymap.set("n", "<Leader>ph", vim.cmd.Hex, { desc = "netrw in horizontal split" })
 
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "save file" })
+
 vim.keymap.set("i", "<C-e>", "<C-o>de") -- delete word forward in insert mode. C-w to delete backward
 
 vim.keymap.set("n", "<Leader>sv", ":source %<CR>", { desc = "source current buffer" })
