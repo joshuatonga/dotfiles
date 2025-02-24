@@ -3,6 +3,7 @@ return {
 	opts = {
 		picker = { enabled = true, layout = "ivy" },
 		explorer = { enabled = true },
+		lazygit = { enabled = true },
 	},
 	keys = {
 		-- Top Pickers & Explorer
@@ -373,6 +374,13 @@ return {
 				Snacks.picker.lsp_workspace_symbols()
 			end,
 			desc = "LSP Workspace Symbols",
+		},
+		{
+			"<leader>gg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
 		},
 	},
 }
