@@ -2,7 +2,7 @@ return {
 	"folke/snacks.nvim",
 	opts = {
 		picker = { enabled = true, layout = "ivy" },
-		explorer = {},
+		explorer = { enabled = true },
 	},
 	keys = {
 		-- Top Pickers & Explorer
