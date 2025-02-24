@@ -375,6 +375,23 @@ return {
 			end,
 			desc = "LSP Workspace Symbols",
 		},
+
+		-- Other
+		{
+			"<leader>cR",
+			function()
+				Snacks.rename.rename_file()
+			end,
+			desc = "Rename File",
+		},
+		{
+			"<leader>gB",
+			function()
+				Snacks.gitbrowse()
+			end,
+			desc = "Git Browse",
+			mode = { "n", "v" },
+		},
 		{
 			"<leader>gg",
 			function()
