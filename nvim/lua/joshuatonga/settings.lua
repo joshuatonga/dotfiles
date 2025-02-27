@@ -2,7 +2,7 @@ vim.opt.confirm = true
 vim.opt.shortmess = vim.opt.shortmess + { A = true, c = true } -- disable swap message
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.termguicolors = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true -- :noh to clear search
 vim.opt.autoread = true -- set to auto read when a file is changed from the outside
 vim.opt.timeout = true
 vim.opt.ttimeout = true
