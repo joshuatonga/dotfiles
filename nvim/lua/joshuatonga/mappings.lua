@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>ph", vim.cmd.Hex, { desc = "netrw in horizontal spl
 
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "save file" })
 
-vim.keymap.set("i", "<C-e>", "<C-o>de") -- delete word forward in insert mode. C-w to delete backward
+-- vim.keymap.set("i", "<C-e>", "<C-o>de") -- delete word forward in insert mode. C-w to delete backward
 
 vim.keymap.set("n", "<leader>sv", ":source %<CR>", { desc = "source current buffer" })
 
@@ -18,8 +18,8 @@ vim.keymap.set({ "n", "x" }, "gp", '"+p', { desc = "Paste from system clipboard"
 vim.keymap.set("n", "<leader><C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("x", "<leader>p", '"_dP')
 vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
