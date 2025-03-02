@@ -364,6 +364,7 @@ bindsym KP_Subtract exec pacmd set-default-sink "bluez_sink.1C_E6_1D_E0_B0_D3.a2
 
 for_window [class="Mechvibes"] move to workspace $ws7
 for_window [class="thunderbird"] move to workspace $ws8
+for_window [class="protonmail-bridge"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Slack"] move to workspace $ws10
 for_window [class="Pidgin"] move to workspace $ws7
@@ -388,7 +389,8 @@ exec --no-startup-id 1password --silent
 exec --no-startup-id wired
 exec --no-startup-id gromit-mpx
 exec --no-startup-id lxpolkit
-# exec --no-startup-id thunderbird
+exec --no-startup-id protonmail-bridge
+exec --no-startup-id thunderbird
 {{#if enable_mechivibes}}
 exec --no-startup-id mechvibes {{#if enable_mechivibes_gpu}}--in-process-gpu{{/if}}
 {{/if}}
