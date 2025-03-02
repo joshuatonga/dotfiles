@@ -392,6 +392,9 @@ exec --no-startup-id lxpolkit
 {{#if enable_mechivibes}}
 exec --no-startup-id mechvibes {{#if enable_mechivibes_gpu}}--in-process-gpu{{/if}}
 {{/if}}
+{{#if enable_vpn}}
+exec --no-startup-id mullvad connect && mullvad-vpn
+{{/if}}
 exec --no-startup-id alacritty --class MainTerm --command tmux
 # exec --no-startup-id spotify
 # exec --no-startup-id slack
