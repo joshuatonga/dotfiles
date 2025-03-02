@@ -384,7 +384,6 @@ exec --no-startup-id sleep 5 && picom -b
 exec --no-startup-id playerctld daemon
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id volnoti
-exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id 1password --silent
 exec --no-startup-id wired
 exec --no-startup-id gromit-mpx
