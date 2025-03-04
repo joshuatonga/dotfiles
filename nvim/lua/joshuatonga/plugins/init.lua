@@ -36,6 +36,7 @@ return {
 	"towolf/vim-helm",
 	"mrcjkb/rustaceanvim",
 	"github/copilot.vim",
+	"b0o/schemastore.nvim",
 	{
 		"mattn/emmet-vim",
 		init = function()

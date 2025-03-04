@@ -20,6 +20,7 @@ return {
 				"rust_analyzer",
 				"bashls",
 				"yamlls",
+				"jsonls",
 				"helm_ls",
 				"html",
 				"cssls",

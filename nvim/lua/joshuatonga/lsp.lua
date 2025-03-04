@@ -75,11 +75,47 @@ local servers = {
 	solargraph = {},
 	terraformls = {},
 	astro = {},
+	jsonls = {
+		settings = {
+			json = {
+				schemas = require("schemastore").json.schemas(),
+				validate = { enable = true },
+			},
+		},
+	},
 	yamlls = {
 		settings = {
 			yaml = {
 				format = {
 					enable = false,
+				},
+				validate = true,
+				hover = true,
+				completion = true,
+				schemaStore = {
+					enable = false,
+					url = "",
+				},
+				schemas = require("schemastore").yaml.schemas(),
+				customTags = {
+					"!fn",
+					"!And",
+					"!If",
+					"!Not",
+					"!Equals",
+					"!Or",
+					"!FindInMap sequence",
+					"!Base64",
+					"!Cidr",
+					"!Ref",
+					"!Ref Scalar",
+					"!Sub",
+					"!GetAtt",
+					"!GetAZs",
+					"!ImportValue",
+					"!Select",
+					"!Split",
+					"!Join sequence",
 				},
 			},
 		},
