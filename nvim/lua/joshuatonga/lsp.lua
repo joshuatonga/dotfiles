@@ -75,6 +75,15 @@ local servers = {
 	solargraph = {},
 	terraformls = {},
 	astro = {},
+	yamlls = {
+		settings = {
+			yaml = {
+				format = {
+					enable = false,
+				},
+			},
+		},
+	},
 
 	lua_ls = {
 		settings = {
@@ -108,8 +117,6 @@ for server, config in pairs(servers) do
 	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 	lsp[server].setup(config)
 end
-
--- lsp.yamlls.setup(require("yaml-companion").setup())
 
 vim.g.rustaceanvim = {
 	server = {
