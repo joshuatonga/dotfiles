@@ -2,7 +2,7 @@ return {
 	"folke/snacks.nvim",
 	opts = {
 		picker = { enabled = true, layout = "ivy" },
-		explorer = { enabled = true },
+		explorer = { enabled = true, replace_netrw = false },
 		lazygit = { enabled = true },
 	},
 	keys = {
