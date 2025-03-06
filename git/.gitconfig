@@ -54,3 +54,6 @@
 
 [difftool "vimdiff"]
   cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[credential]
+	helper = store
