@@ -35,7 +35,6 @@ return {
 	"fatih/vim-go",
 	"towolf/vim-helm",
 	"mrcjkb/rustaceanvim",
-	"github/copilot.vim",
 	"b0o/schemastore.nvim",
 	{
 		"mattn/emmet-vim",

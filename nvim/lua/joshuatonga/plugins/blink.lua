@@ -1,6 +1,9 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = "rafamadriz/friendly-snippets",
+	dependencies = {
+		"rafamadriz/friendly-snippets",
+		"Kaiser-Yang/blink-cmp-avante",
+	},
 
 	version = "*",
 	opts = {
@@ -23,7 +26,13 @@ return {
 		signature = { enabled = false },
 
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "avante", "lsp", "path", "snippets", "buffer" },
+			providers = {
+				avante = {
+					module = "blink-cmp-avante",
+					name = "Avante",
+				},
+			},
 		},
 	},
 	opts_extend = { "sources.default" },
