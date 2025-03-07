@@ -41,6 +41,14 @@ enable_vpn = true
 enable_ws_names = true
 notif_top_pos = 45.0
 notif_font_size = 10
+poly_font_name = "Terminus"
+poly_font_size = 18
+i3_font_name = "Terminus Bold"
+i3_font_size = 14
+rofi_font_name = "Terminus Bold"
+rofi_font_size = 22
+notif_font_name = "Terminus"
+notif_font_size = 14 # FIXME - not working
 
 [term]
 depends = ["graphics"]
@@ -55,8 +63,8 @@ nvim = "~/.config/nvim"
 "powerlevel10k/.p10k.zsh" = "~/.p10k.zsh"
 
 [graphics.variables]
-font_name = "Anonymous Pro"
-font_size = 16
+term_font_name = "Anonymous Pro"
+term_font_size = 16
 screenlayout = "default.sh"
 display_main = "HDMI-0"
 display_second = "DP-3"

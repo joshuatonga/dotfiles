@@ -111,7 +111,7 @@
             params: TextBlock((
                 //text: "%s",
                 text: "<span underline='low'>%s</span>",
-                font: "monospace bold {{notif_font_size}}",
+                font: "{{notif_font_name}} bold {{notif_font_size}}",
                 ellipsize: Middle,
                 color: Color(hex: "#00bf00"),
                 color_hovered: Color(hex: "#05f005"),
@@ -128,7 +128,7 @@
             // https://github.com/Toqozz/wired-notify/wiki/ScrollingTextBlock
             params: ScrollingTextBlock((
                 text: " %b ",
-                font: "monospace {{notif_font_size}}",
+                font: "{{notif_font_name}} {{notif_font_size}}",
                 color: Color(hex: "#05b505"),
                 color_hovered: Color(hex: "#05f005"),
                 padding: Padding(left: 25.0, right: 25.0, top: 1.0, bottom: 10.0),

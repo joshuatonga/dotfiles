@@ -26,22 +26,22 @@ foreground = "0xcccccc"
 TERM = "xterm-256color"
 
 [font]
-size = {{font_size}}
+size = {{term_font_size}}
 
 [font.bold]
-# family = "monospace"
+family = "{{term_font_name}}"
 style = "Bold"
 
 [font.bold_italic]
-# family = "monospace"
+family = "{{term_font_name}}"
 style = "Bold Italic"
 
 [font.italic]
-# family = "monospace"
+family = "{{term_font_name}}"
 style = "Italic"
 
 [font.normal]
-family = "{{font_name}}"
+family = "{{term_font_name}}"
 # family = "Glass TTY VT220"
 # family = "monospace"
 style = "Regular"

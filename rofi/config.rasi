@@ -1,4 +1,4 @@
 configuration {
-  font: "mono {{font_size}}";
+  font: "{{rofi_font_name}} {{rofi_font_size}}";
 }
 @theme "fancy"
