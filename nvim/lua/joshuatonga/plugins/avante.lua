@@ -15,6 +15,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 		"nvim-tree/nvim-web-devicons",
+		"folke/snacks.nvim",
 		{
 			"zbirenbaum/copilot.lua",
 			cmd = "Copilot",
