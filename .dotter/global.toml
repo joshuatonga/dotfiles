@@ -48,7 +48,7 @@ i3_font_size = 14
 rofi_font_name = "Terminus Bold"
 rofi_font_size = 22
 notif_font_name = "Terminus"
-notif_font_size = 14 # FIXME - not working
+notif_font_size = 14
 
 [term]
 depends = ["graphics"]
