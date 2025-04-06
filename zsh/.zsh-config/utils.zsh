@@ -126,11 +126,27 @@ watch-api() {
   done
 }
 
-function y() {
+y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+mkproj() {
+  local name="$*"
+  # local date_prefix
+  # date_prefix=$(date +%m-%d)  # mm-dd format
+  # date_prefix=$(date +%F) # yyyy-mm-dd
+  # local year=$(date +%Y)  # Get the year
+
+  local dir="$HOME/projects/${name// /-}"
+  mkdir -p "$dir"
+
+  echo "# Notes for $name" > "$dir/notes.md"
+  touch "$dir/scratch.md"
+
+  echo "created project folder $dir"
 }
