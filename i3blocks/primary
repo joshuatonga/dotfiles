@@ -1,0 +1,26 @@
+interval=5
+
+[time]
+command=./scripts/time
+interval=1
+STRFTIME_FORMAT=%Y-%m-%d %R
+TZONES=$DEFAULT_TZ,UTC,Australia/Melbourne
+TZ_LABELS=MNL,UTC,AU
+
+[calendar]
+command=./scripts/calendar
+interval=1
+LABEL= 
+DATEFMT=+%H:%M:%S
+# SHORTFMT=+%H:%M:%S
+HEIGHT=180
+WIDTH=220
+
+{{#if enable_bar_battery}}
+[battery]
+command=./scripts/battery
+interval=30
+LABEL=BAT
+#LABEL=⚡
+#BAT_NUMBER=0
+{{/if}}

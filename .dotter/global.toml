@@ -26,7 +26,6 @@ i3 = "~/.config/i3"
 polybar = "~/.config/polybar"
 "polybar/scripts" = { target = "~/.config/polybar/scripts", type = "symbolic" }
 i3blocks = "~/.config/i3blocks"
-i3status = "~/.config/i3status"
 wired = "~/.config/wired"
 rofi = "~/.config/rofi"
 picom = "~/.config/picom"
