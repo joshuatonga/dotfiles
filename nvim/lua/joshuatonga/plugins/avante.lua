@@ -1,7 +1,8 @@
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
-	tag = "v0.0.21",
+	-- tag = "v0.0.23",
+	version = false,
 	opts = {
 		provider = "copilot",
 		file_selector = {
