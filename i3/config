@@ -393,6 +393,9 @@ exec --no-startup-id gromit-mpx
 exec --no-startup-id lxpolkit
 exec --no-startup-id protonmail-bridge
 exec --no-startup-id thunderbird
+{{#if enable_razer}}
+exec --no-startup-id polychromatic-tray-applet
+{{/if}}
 {{#if enable_mechivibes}}
 exec --no-startup-id mechvibes{{#if enable_mechivibes_gpu}} --in-process-gpu{{/if}}
 {{/if}}
