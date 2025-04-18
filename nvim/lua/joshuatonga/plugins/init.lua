@@ -18,7 +18,6 @@ return {
 	-- Tools
 	"lambdalisue/suda.vim",
 
-	"Einenlum/yaml-revealer",
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
 	"mhinz/vim-grepper",
