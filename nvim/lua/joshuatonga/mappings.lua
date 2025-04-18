@@ -1,6 +1,6 @@
 -- TODO: check if there's a need to integrate with which-key
 vim.keymap.set("n", "<leader>pe", vim.cmd.Ex, { desc = "netrw in current buffer" })
-vim.keymap.set("n", "<leader>pv", ":Vex!<CR>", { desc = "netrw in vertical split" })
+vim.keymap.set("n", "<leader>pv", ":Vex<CR>", { desc = "netrw in vertical split" })
 vim.keymap.set("n", "<leader>ph", vim.cmd.Hex, { desc = "netrw in horizontal split" })
 
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "save file" })
