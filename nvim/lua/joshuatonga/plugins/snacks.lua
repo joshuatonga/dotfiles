@@ -1,7 +1,11 @@
 return {
 	"folke/snacks.nvim",
 	opts = {
-		picker = { enabled = true, layout = "ivy" },
+		picker = {
+			enabled = true,
+			layout = { preset = "ivy", preview = false },
+			formatters = { file = { truncate = 100, filename_first = false } },
+		},
 		explorer = { enabled = true, replace_netrw = false },
 		lazygit = { enabled = true },
 	},
