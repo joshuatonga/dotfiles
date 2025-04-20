@@ -5,14 +5,6 @@ return {
 		"rcarriga/nvim-dap-ui",
 		"mxsdev/nvim-dap-vscode-js",
 		"leoluz/nvim-dap-go",
-
-		{
-			"microsoft/vscode-js-debug",
-			tag = "v1.89.0",
-			pin = true,
-			lazy = true,
-			build = "npm install --legacy-peer-deps && npm run compile",
-		},
 	},
 
 	event = { "BufReadPost" },
