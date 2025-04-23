@@ -166,5 +166,5 @@ export MANPAGER='nvim +Man!'
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
 
-export BROWSER=google-chrome
+export BROWSER=firefox-developer-edition
 
