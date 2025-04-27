@@ -210,9 +210,10 @@ return {
 		{
 			"<leader>sc",
 			function()
-				Snacks.picker.command_history()
+				-- just use <leader>: for commands history
+				Snacks.picker.commands()
 			end,
-			desc = "Command History",
+			desc = "Command",
 		},
 		{
 			"<leader>sC",
