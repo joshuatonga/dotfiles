@@ -20,7 +20,14 @@ return {
 
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
-	"mhinz/vim-grepper",
+	{
+		"mhinz/vim-grepper",
+		keys = {
+			{ "<leader>gr", ":Grepper -tool git<CR>", desc = "Grepper git grep" },
+			{ "<leader>gR", ":Grepper -tool rg<CR>", desc = "Grepper ripgrep" },
+			{ "<leader>gw", "<plug>(GrepperOperator)", mode = { "n", "x" }, desc = "Grepper operator" },
+		},
+	},
 	"tpope/vim-dispatch",
 	-- "vimwiki/vimwiki",
 	"phelipetls/jsonpath.nvim",
