@@ -58,7 +58,12 @@ return {
 	"towolf/vim-helm",
 	"mrcjkb/rustaceanvim",
 	"b0o/schemastore.nvim",
-	"mattn/emmet-vim", -- use default mapping <C-y> i.e. <C-y>,
+	{
+		"mattn/emmet-vim",
+		init = function()
+			vim.g.user_emmet_leader_key = "<C-e>"
+		end,
+	},
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
