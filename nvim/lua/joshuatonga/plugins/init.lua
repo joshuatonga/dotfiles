@@ -54,7 +54,12 @@ return {
 	"neovim/nvim-lspconfig",
 	"folke/neodev.nvim",
 	"pearofducks/ansible-vim",
-	"fatih/vim-go",
+	{
+		"fatih/vim-go",
+		init = function()
+			vim.g.go_template_autocreate = 0
+		end,
+	},
 	"towolf/vim-helm",
 	"mrcjkb/rustaceanvim",
 	"b0o/schemastore.nvim",
