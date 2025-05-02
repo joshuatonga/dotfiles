@@ -52,7 +52,12 @@ return {
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	"neovim/nvim-lspconfig",
-	"folke/neodev.nvim",
+	{
+		"folke/lazydev.nvim",
+		opts = {
+			library = { "nvim-dap-ui" },
+		},
+	},
 	"pearofducks/ansible-vim",
 	{
 		"fatih/vim-go",

@@ -1,6 +1,3 @@
-require("neodev").setup({
-	library = { plugins = { "nvim-dap-ui" }, types = true },
-})
 local lsp = require("lspconfig")
 
 -- <C-w>d to open diagnostic float
