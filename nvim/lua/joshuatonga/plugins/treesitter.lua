@@ -148,14 +148,5 @@ return {
 		vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
 		vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
 		vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
-
-		-- Workaround when using treesitter with folds. See: https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
-		vim.api.nvim_create_autocmd({ "BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter" }, {
-			group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
-			callback = function()
-				vim.opt.foldmethod = "expr"
-				vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-			end,
-		})
 	end,
 }
