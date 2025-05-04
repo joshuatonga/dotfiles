@@ -22,7 +22,7 @@ return {
 			documentation = { auto_show = true, auto_show_delay_ms = 150 },
 		},
 
-		signature = { enabled = false },
+		signature = { enabled = true },
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
