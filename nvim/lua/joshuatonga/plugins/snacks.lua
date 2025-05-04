@@ -16,7 +16,6 @@ return {
 			function()
 				Snacks.picker.files({
 					exclude = { "node_modules", ".git" },
-					hidden = true,
 				})
 			end,
 			desc = "Smart Find Files",
@@ -71,6 +70,7 @@ return {
 			function()
 				Snacks.picker.files({
 					exclude = { "node_modules", ".git" },
+					hidden = true,
 				})
 			end,
 			desc = "Find Files",
