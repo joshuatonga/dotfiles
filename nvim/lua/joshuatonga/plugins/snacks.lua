@@ -9,6 +9,12 @@ return {
 			},
 			explorer = { enabled = true, replace_netrw = false },
 			lazygit = { enabled = true },
+			styles = {
+				lazygit = {
+					height = 0,
+					width = 0,
+				},
+			},
 		},
     -- stylua: ignore
 		keys = {
