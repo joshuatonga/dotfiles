@@ -32,6 +32,11 @@ return {
 	-- "vimwiki/vimwiki",
 	"phelipetls/jsonpath.nvim",
 	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
+	},
+	{
 		"cuducos/yaml.nvim",
 		ft = { "yaml" },
 		dependencies = {
