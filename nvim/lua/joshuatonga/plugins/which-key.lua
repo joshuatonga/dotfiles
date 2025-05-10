@@ -8,6 +8,7 @@ return {
 			{ "<leader>p", group = "explorer" },
 			{ "<leader>s", group = "stuff" },
 			{ "<leader>fg", group = "git" },
+			{ "<leader>dv", group = "diffview" },
 		})
 	end,
 }
