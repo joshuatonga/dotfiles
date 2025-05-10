@@ -12,4 +12,8 @@ return {
 	init = function()
 		vim.cmd([[cab diff DiffviewOpen]])
 	end,
+
+	opts = {
+		use_icons = false,
+	},
 }
