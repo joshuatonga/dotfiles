@@ -6,7 +6,8 @@ return {
 		{ "<leader>dvh", "<cmd>DiffviewHistory<CR>", desc = "Diffview History" },
 		{ "<leader>dvt", "<cmd>DiffviewToggleFiles<CR>", desc = "Diffview Toggle File Panel" },
 		{ "<leader>dvf", "<cmd>DiffviewFocusFiles<CR>", desc = "Diffview Focus File Panel" },
-		{ "<leader>dvm", "<cmd>DiffviewOpen origin/main..HEAD<CR>", desc = "Diffview Compare Main" },
+		{ "<leader>dvn", "<cmd>DiffviewOpen origin/main..HEAD<CR>", desc = "Diffview Compare Origin Main" },
+		{ "<leader>dvm", "<cmd>DiffviewOpen main..HEAD<CR>", desc = "Diffview Compare Main" },
 	},
 
 	init = function()
