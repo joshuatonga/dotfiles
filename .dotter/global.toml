@@ -7,6 +7,7 @@ depends = []
 "commitizen/.czrc" = "~/.czrc"
 "general/fonts" = { target = "~/.local/share/fonts", type = "symbolic" }
 "general/bin" = "~/bin"
+"general/assets" = { target = "~/.config/assets", type = "symbolic" }
 "general/.Xresources" = "~/.Xresources"
 "general/scripts" = "~/scripts"
 "git/.gitconfig" = "~/.gitconfig"
@@ -17,6 +18,8 @@ paymongo = "~/.dotfiles-paymongo"
 personal = "~/.dotfiles-personal"
 s = "~/.config/s"
 "wallpapers" = { target = "~/Pictures/wallpapers", type = "symbolic" }
+[default.variables]
+notif_default_sound = "confident.mp3"
 
 [i3]
 depends = ["graphics"]
