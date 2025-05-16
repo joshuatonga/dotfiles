@@ -21,6 +21,10 @@ return {
 		on_attach = function(bufnr)
 			local gitsigns = require("gitsigns")
 
+			if vim.bo[bufnr].filetype == "netrw" then
+				return false
+			end
+
 			-- TODO: add mapping descriptions
 			local function map(mode, l, r, opts)
 				opts = opts or {}
