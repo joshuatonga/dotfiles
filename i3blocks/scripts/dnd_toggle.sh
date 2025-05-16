@@ -16,6 +16,10 @@ esac
 
 if [[ -f "$DND_FILE" ]]; then
   echo "🔕 DND ON "
+  echo
+  echo \#FF0000
 else
   echo "🔔 DND OFF "
+  echo
+  echo \#000000
 fi

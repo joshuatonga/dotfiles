@@ -3,7 +3,6 @@ interval=5
 [DND]
 command=./scripts/dnd_toggle.sh
 interval=1
-color=#FF0000
 
 [time]
 command=./scripts/time
