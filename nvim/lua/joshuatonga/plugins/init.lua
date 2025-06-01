@@ -4,7 +4,7 @@ return {
 	"ntpeters/vim-better-whitespace",
 
 	-- UI
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{
 		"norcalli/nvim-colorizer.lua",
 		event = "BufReadPost",
