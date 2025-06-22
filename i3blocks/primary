@@ -21,9 +21,7 @@ HEIGHT=180
 WIDTH=220
 
 {{#if enable_bar_battery}}
-[battery-plus]
+[battery]
 command=./scripts/battery
-markup=pango
-instance=BAT0
-interval=30
+interval=5
 {{/if}}
