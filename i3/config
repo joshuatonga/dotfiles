@@ -298,23 +298,23 @@ bar {
     }
 }
 
-# bar {
-#     position top
-#     output $out_second
-#     tray_output none
-#     status_command i3blocks -c ~/.config/i3blocks/second
-#     colors {
-#         background #dcdad5
-#         statusline #000000
-#         separator #666666
-#
-#         focused_workspace  #585959 #5e5e5e #d7dbdb
-#         active_workspace   #333333 #5f676a #000000
-#         inactive_workspace #8f8e8d #c9c8c3 #3e3f40
-#         urgent_workspace   #2f343a #fc0303 #ffffff
-#         binding_mode       #2f343a #fc0303 #ffffff
-#     }
-# }
+bar {
+    position top
+    output $out_second
+    tray_output none
+    status_command i3blocks -c ~/.config/i3blocks/second
+    colors {
+        background #dcdad5
+        statusline #000000
+        separator #666666
+
+        focused_workspace  #585959 #5e5e5e #d7dbdb
+        active_workspace   #333333 #5f676a #000000
+        inactive_workspace #8f8e8d #c9c8c3 #3e3f40
+        urgent_workspace   #2f343a #fc0303 #ffffff
+        binding_mode       #2f343a #fc0303 #ffffff
+    }
+}
 
 # bar {
 #     position top
