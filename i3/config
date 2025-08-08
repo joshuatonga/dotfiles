@@ -339,15 +339,15 @@ focus_follows_mouse no
 # workspace_auto_back_and_forth yes
 
 # custom bindings
-bindsym Print exec --no-startup-id flameshot full
-bindsym Shift+Print exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id ksnip -m
+bindsym Shift+Print exec --no-startup-id ksnip -r
 
 
 bindsym $mod+t exec --no-startup-id thunar
 
 # for delux split kb
-bindsym F12 exec --no-startup-id flameshot full
-bindsym Shift+F12 exec --no-startup-id flameshot gui
+bindsym F12 exec --no-startup-id ksnip -m
+bindsym Shift+F12 exec --no-startup-id ksnip -r
 
 bindsym $mod+Shift+a move container to output left; focus output $out_main
 bindsym $mod+Shift+s move container to output right; focus output $out_second
