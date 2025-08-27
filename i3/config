@@ -392,7 +392,7 @@ exec --no-startup-id wired
 exec --no-startup-id gromit-mpx
 exec --no-startup-id lxpolkit
 exec --no-startup-id protonmail-bridge
-exec --no-startup-id thunderbird
+# exec --no-startup-id thunderbird
 exec --no-startup-id $HOME/scripts/notify_sounds.sh
 {{#if enable_razer}}
 exec --no-startup-id polychromatic-tray-applet
