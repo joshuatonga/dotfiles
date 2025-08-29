@@ -50,7 +50,11 @@ style = "Regular"
 alphabet = "jfkdls;ahgurieowpq"
 
 [[hints.enabled]]
+{{#if dotter.macos}}
+command = "open"
+{{else}}
 command = "xdg-open"
+{{/if}}
 hyperlinks = true
 post_processing = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
@@ -64,7 +68,9 @@ enabled = true
 mods = "None"
 
 [terminal.shell]
-program = "/usr/bin/zsh"
+program = "zsh"
 
 [window]
 dynamic_title = true
+option_as_alt = "Both"
+dimensions = { columns = 90, lines = 30 }

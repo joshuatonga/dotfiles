@@ -1,5 +1,7 @@
 ZSH_FOLDER=.zsh-config
 
+[[ -r ~/.zprofile ]] && source ~/.zprofile
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -9,7 +11,8 @@ fi
 
 export PATH=$HOME/bin:~/biv/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebrew/opt/influxdb@1/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.ebcli-virtual-env/executables
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.dotfiles-personal/scripts
@@ -122,15 +125,21 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # yay -S --noconfirm zsh-theme-powerlevel10k-git
+{{#if dotter.macos}}
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+{{else}}
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+{{/if}}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+#source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 source $HOME/$ZSH_FOLDER/aliases.zsh
 source $HOME/$ZSH_FOLDER/utils.zsh
@@ -138,9 +147,6 @@ source $HOME/$ZSH_FOLDER/mappings.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
-
-# For commit signing in MacOS
-export GPG_TTY=$TTY
 
 autoload -Uz compinit bashcompinit
 compinit
@@ -166,5 +172,11 @@ export MANPAGER='nvim +Man!'
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
 
-export BROWSER=firefox-developer-edition
+{{#if dotter.macos}}
+alias ls="ls -G"
 
+# For commit signing in MacOS
+export GPG_TTY=$TTY
+{{else}}
+export BROWSER=firefox-developer-edition
+{{/if}}
