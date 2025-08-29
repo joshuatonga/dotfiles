@@ -8,3 +8,6 @@ customCommands:
     context: "files"
     loadingText: "opening commitizen commit tool"
     output: terminal
+
+git:
+    overrideGpg: true
