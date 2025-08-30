@@ -9,5 +9,6 @@ customCommands:
     loadingText: "opening commitizen commit tool"
     output: terminal
 
+# for macos
 git:
-    overrideGpg: true
+  overrideGpg: true

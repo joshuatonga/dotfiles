@@ -9,6 +9,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export GOPATH=$HOME/go
+
 export PATH=$HOME/bin:~/biv/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebrew/opt/influxdb@1/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.ebcli-virtual-env/executables
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/usr/local/go/bin
@@ -136,8 +138,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-#source /usr/share/fzf/key-bindings.zsh
-#source /usr/share/fzf/completion.zsh
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
