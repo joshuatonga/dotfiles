@@ -20,7 +20,7 @@ yellow = "0xc19c00"
 
 [colors.primary]
 background = "#000000"
-foreground = "0xcccccc"
+foreground = "#ffffff"
 
 [env]
 TERM = "xterm-256color"
