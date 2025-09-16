@@ -122,10 +122,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus floating enable, resize set 1600px 1000px, move to position center, move scratchpad
+bindsym $mod+Shift+grave floating enable, resize set 1600px 1000px, move to position center, move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+grave scratchpad show
 # bindsym $mod+m [class="thunar"] scratchpad show; move position center
 
 # toggle tiling / floating
