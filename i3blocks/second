@@ -1,3 +1,9 @@
+[task]
+command=./scripts/task.sh
+min_width=1300
+align=center
+interval=5
+
 # Block for displaying UTC time
 [tztime_utc]
 command=date -u '+UTC %Y/%m/%d %H:%M'

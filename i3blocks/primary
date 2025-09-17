@@ -1,5 +1,11 @@
 interval=5
 
+[task]
+command=./scripts/task.sh
+min_width=1460
+align=center
+interval=5
+
 [DND]
 command=./scripts/dnd_toggle.sh
 interval=1
