@@ -12,6 +12,9 @@ case "$BLOCK_BUTTON" in
     touch "$DND_FILE"
   fi
   ;;
+3)
+  wired --show 5
+  ;;
 esac
 
 if [[ -f "$DND_FILE" ]]; then
