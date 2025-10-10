@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, add_desc(bufopts, "go to declaration"))
 		-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, add_desc(bufopts, "go to definition"))
 		-- vim.keymap.set("n", "gI", vim.lsp.buf.implementation, add_desc(bufopts, "go to implementation"))
-		-- vim.keymap.set("n", "<Space>D", vim.lsp.buf.type_definition, add_desc(bufopts, "go to type definition"))
+		-- vim.keymap.set("n", "<Space>D", vim.lsp.buf.type_definition, add_desc(bufopts, "go to type definition")) - grt default
 		-- vim.keymap.set("n", "gr", vim.lsp.buf.references, add_desc(bufopts, "find references"))
 		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, add_desc(bufopts, "show signature"))
 		vim.keymap.set("n", "<Space>wa", vim.lsp.buf.add_workspace_folder, add_desc(bufopts, "add workspace folder"))
