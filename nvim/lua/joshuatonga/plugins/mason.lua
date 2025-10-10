@@ -16,7 +16,6 @@ return {
 				"terraformls",
 				"lua_ls",
 				"gopls",
-				"ts_ls",
 				"rust_analyzer",
 				"bashls",
 				"yamlls",
