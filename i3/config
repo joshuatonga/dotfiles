@@ -341,6 +341,7 @@ focus_follows_mouse no
 # custom bindings
 bindsym Print exec --no-startup-id flameshot full
 bindsym Shift+Print exec --no-startup-id flameshot gui
+bindsym Control+Mod1+4 exec --no-startup-id flameshot gui
 
 
 bindsym $mod+t exec --no-startup-id thunar
