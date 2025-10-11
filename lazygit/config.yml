@@ -4,7 +4,7 @@ os:
   editPreset: "nvim"
 customCommands:
   - key: "K"
-    command: "git cz"
+    command: "git cz commit"
     context: "files"
     loadingText: "opening commitizen commit tool"
     output: terminal
