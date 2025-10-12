@@ -103,6 +103,11 @@ return {
 		},
 		opts = {},
 	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
 
 	-- Debugging
 	"nvim-neotest/nvim-nio", -- TODO: find which plugin is using this and refactor
