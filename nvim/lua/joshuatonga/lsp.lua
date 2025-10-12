@@ -1,5 +1,3 @@
-local lsp = require("lspconfig")
-
 -- <C-w>d to open diagnostic float
 vim.diagnostic.config({
 	virtual_text = true,
@@ -122,8 +120,8 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
-	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-	lsp[server].setup(config)
+	vim.lsp.config(server, config)
+	vim.lsp.enable(server)
 end
 
 vim.g.rustaceanvim = {
