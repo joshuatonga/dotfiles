@@ -108,6 +108,7 @@ return {
 		event = "InsertEnter",
 		config = true,
 	},
+	"RRethy/nvim-treesitter-endwise",
 
 	-- Debugging
 	"nvim-neotest/nvim-nio", -- TODO: find which plugin is using this and refactor
