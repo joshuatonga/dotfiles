@@ -1,20 +1,28 @@
 return {
 	"sindrets/diffview.nvim",
-	keys = {
-		{ "<leader>dvo", "<cmd>DiffviewOpen<CR>", desc = "Diffview Open" },
-		{ "<leader>dvc", "<cmd>DiffviewClose<CR>", desc = "Diffview Close" },
-		{ "<leader>dvh", "<cmd>DiffviewHistory<CR>", desc = "Diffview History" },
-		{ "<leader>dvt", "<cmd>DiffviewToggleFiles<CR>", desc = "Diffview Toggle File Panel" },
-		{ "<leader>dvf", "<cmd>DiffviewFocusFiles<CR>", desc = "Diffview Focus File Panel" },
-		{ "<leader>dvn", "<cmd>DiffviewOpen origin/main..HEAD<CR>", desc = "Diffview Compare Origin Main" },
-		{ "<leader>dvm", "<cmd>DiffviewOpen main..HEAD<CR>", desc = "Diffview Compare Main" },
-	},
-
-	init = function()
-		vim.cmd([[cab diff DiffviewOpen]])
-	end,
-
 	opts = {
 		use_icons = false,
 	},
+
+	config = function(_, opts)
+		require("diffview").setup(opts)
+		vim.cmd([[cab diff DiffviewOpen]])
+
+		vim.keymap.set("n", "<leader>dvo", "<cmd>DiffviewOpen<CR>", { desc = "Diffview Open" })
+		vim.keymap.set("n", "<leader>dvc", "<cmd>DiffviewClose<CR>", { desc = "Diffview Close" })
+		vim.keymap.set("n", "<leader>dvf", "<cmd>DiffviewFileHistory<CR>", { desc = "Diffview File History" })
+		vim.keymap.set(
+			"n",
+			"<leader>dvn",
+			"<cmd>DiffviewOpen origin/main..HEAD<CR>",
+			{ desc = "Diffview Compare Origin Main" }
+		)
+		vim.keymap.set("n", "<leader>dvm", "<cmd>DiffviewOpen main..HEAD<CR>", { desc = "Diffview Compare Main" })
+
+		-- <leader>b to toggle the file panel
+		-- vim.keymap.set("n", "<leader>dvt", "<cmd>DiffviewToggleFiles<CR>", { desc = "Diffview Toggle File Panel" })
+
+		-- <leader>e to focus the file panel
+		-- vim.keymap.set("n", "<leader>dvf", "<cmd>DiffviewFocusFiles<CR>", { desc = "Diffview Focus File Panel" })
+	end,
 }
