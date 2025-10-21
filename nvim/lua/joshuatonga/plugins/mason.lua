@@ -11,6 +11,7 @@ return {
 		require("mason-nvim-dap").setup()
 
 		require("mason-lspconfig").setup({
+			automatic_enable = false,
 			ensure_installed = {
 				"pyright",
 				"terraformls",
@@ -25,6 +26,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"dockerls",
+				"ts_ls",
 			},
 		})
 	end,
