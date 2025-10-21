@@ -4,6 +4,7 @@
   "asynctasks.vim": { "branch": "master", "commit": "f1460492579831dfd4df85513ca0b41622c1a0c8" },
   "blink.cmp": { "branch": "main", "commit": "327fff91fe6af358e990be7be1ec8b78037d2138" },
   "cloak.nvim": { "branch": "main", "commit": "648aca6d33ec011dc3166e7af3b38820d01a71e4" },
+  "codecompanion.nvim": { "branch": "main", "commit": "b1937ad400305860558c0adf6bd10ae7892fff26" },
   "copilot.vim": { "branch": "release", "commit": "da369d90cfd6c396b1d0ec259836a1c7222fb2ea" },
   "cyberdream.nvim": { "branch": "main", "commit": "eba11f590026e74915e13d12a53cdbdc9b98d9f9" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
