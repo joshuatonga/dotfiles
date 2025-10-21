@@ -4,7 +4,7 @@ return {
 		opts = {
 			picker = {
 				enabled = true,
-				layout = { preset = "ivy", preview = false },
+				layout = { preset = "ivy", preview = true },
 				formatters = { file = { truncate = 100, filename_first = false } },
 			},
 			explorer = { enabled = true, replace_netrw = false },
