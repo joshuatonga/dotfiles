@@ -12,6 +12,7 @@ depends = []
 "general/scripts" = "~/scripts"
 "git/.gitconfig" = "~/.gitconfig"
 "git/.gitignore-global" = "~/.gitignore-global"
+"git/template" = "~/.git-template"
 "gvim/.gvimrc" = "~/.gvimrc"
 lazygit = "~/.config/lazygit"
 paymongo = "~/.dotfiles-paymongo"

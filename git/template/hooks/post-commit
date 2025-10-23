@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ $? -eq 0 ]; then
+  paplay ~/.config/assets/notifications/commit-success.ogg 2>/dev/null
+else
+  paplay ~/.config/assets/notifications/error.ogg 2>/dev/null
+fi
