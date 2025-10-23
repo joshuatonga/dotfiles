@@ -51,3 +51,28 @@ vim.keymap.set("v", ">", ">gv")
 -- Visual block moving
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
+
+vim.keymap.set("n", "<leader>cp", function()
+	vim.fn.setreg("+", vim.fn.expand("%:p"))
+	print("Copied: " .. vim.fn.expand("%:p"))
+end, { desc = "Copy full file path" })
+
+vim.keymap.set("n", "<leader>crp", function()
+	local abs_path = vim.fn.expand("%:p")
+	local rel_path = vim.fn.fnamemodify(abs_path, ":.")
+	vim.fn.setreg("+", rel_path)
+	print("Copied relative path: " .. rel_path)
+end, { desc = "Copy file path relative to cwd" })
+
+vim.keymap.set("n", "<leader>cd", function()
+	local dir = vim.fn.expand("%:p:h")
+	vim.fn.setreg("+", dir)
+	print("Copied dir: " .. dir)
+end, { desc = "Copy buffer directory path" })
+
+vim.keymap.set("n", "<leader>crd", function()
+	local abs_dir = vim.fn.expand("%:p:h")
+	local rel_dir = vim.fn.fnamemodify(abs_dir, ":.")
+	vim.fn.setreg("+", rel_dir)
+	print("Copied relative dir: " .. rel_dir)
+end, { desc = "Copy buffer directory relative to cwd" })
