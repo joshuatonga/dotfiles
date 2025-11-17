@@ -5,7 +5,7 @@
 
     // The default timeout, in miliseconds, for notifications that don't have an initial timeout set.
     // 1000ms = 1s.
-    timeout: 5000,
+    timeout: 10000,
 
     // `poll_interval` decides decides how often (in milliseconds) Wired checks for new notifications, events,
     // draws notifications (if necessary), etc.
@@ -97,7 +97,7 @@
                 //border_color_critical: Color(hex: "#ff0000"),
                 //border_color_paused: Color(hex: "#fabd2f"),
 
-                gap: Vec2(x: 0, y: -2),
+                gap: Vec2(x: 0, y: 10),
                 notification_hook: Hook(parent_anchor: BR, self_anchor: TR),
             )),
         ),
@@ -112,10 +112,10 @@
                 //text: "%s",
                 text: "<span underline='low'>%s</span>",
                 font: "{{notif_font_name}} bold {{notif_font_size}}",
-                ellipsize: Middle,
+                ellipsize: End,
                 color: Color(hex: "#00bf00"),
                 color_hovered: Color(hex: "#05f005"),
-                padding: Padding(left: 25.0, right: 25.0, top: 10.0, bottom: 2.0),
+                padding: Padding(left: 15.0, right: 15.0, top: 10.0, bottom: 2.0),
                 dimensions: (width: (min: 50, max: 350), height: (min: 0, max: 0)),
             )),
         ),
@@ -126,17 +126,26 @@
             hook: Hook(parent_anchor: BL, self_anchor: TL),
             offset: Vec2(x: 0.0, y: 0.0),
             // https://github.com/Toqozz/wired-notify/wiki/ScrollingTextBlock
-            params: ScrollingTextBlock((
-                text: " %b ",
+            // params: ScrollingTextBlock((
+            //     text: " %b ",
+            //     font: "{{notif_font_name}} {{notif_font_size}}",
+            //     color: Color(hex: "#05b505"),
+            //     color_hovered: Color(hex: "#05f005"),
+            //     padding: Padding(left: 25.0, right: 25.0, top: 1.0, bottom: 10.0),
+            //     width: (min: 150, max: 370),
+            //     scroll_speed: 0.30,
+            //     lhs_dist: 35.0,
+            //     rhs_dist: 35.0,
+            //     scroll_t: 1.0,
+            // )),
+            params: TextBlock((
+                text: "%b",
                 font: "{{notif_font_name}} {{notif_font_size}}",
-                color: Color(hex: "#05b505"),
+                ellipsize: End,
+                color: Color(hex: "#fbfaf2"),
                 color_hovered: Color(hex: "#05f005"),
-                padding: Padding(left: 25.0, right: 25.0, top: 1.0, bottom: 10.0),
-                width: (min: 150, max: 370),
-                scroll_speed: 0.30,
-                lhs_dist: 35.0,
-                rhs_dist: 35.0,
-                scroll_t: 1.0,
+                padding: Padding(left: 15, right: 15, top: 8, bottom: 10),
+                dimensions: (width: (min: 50, max: 400), height: (min: 0, max: 84)),
             )),
         ),
     ],
