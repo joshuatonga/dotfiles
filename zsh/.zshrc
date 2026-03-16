@@ -18,6 +18,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.dotfiles-personal/scripts
+export PATH=$PATH:$HOME/.local/share/nvim/mason/bin
 eval "$(rbenv init -)"
 
 # Path to your oh-my-zsh installation.
