@@ -24,7 +24,7 @@ return {
 				-- shell
 				null_ls.builtins.formatting.shfmt,
 				-- markdown
-				null_ls.builtins.diagnostics.write_good,
+				-- null_ls.builtins.diagnostics.write_good,
 				-- others
 				null_ls.builtins.diagnostics.ansiblelint,
 				-- null_ls.builtins.diagnostics.yamllint,
