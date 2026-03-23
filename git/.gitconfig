@@ -15,6 +15,9 @@
   last = log -1 HEAD --stat
   gl = config --global -l
   pro = pull --rebase origin main
+  dlog = -c diff.external=difft log --ext-diff
+  dshow = -c diff.external=difft show --ext-diff
+  ddiff = -c diff.external=difft diff
 
 [init]
 	defaultBranch = main
@@ -33,8 +36,9 @@
   path = ~/.dotfiles-personal/.gitconfig
 
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+	; diff = diff-so-fancy | less --tabs=4 -RFX
+	; show = diff-so-fancy | less --tabs=4 -RFX
+  ;difftool = true
 
 [advice]
 	addEmptyPathspec = false
