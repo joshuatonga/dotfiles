@@ -156,6 +156,10 @@ bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 complete -o nospace -C /usr/bin/tofu tofu
 
+# Sort completions by most recently modified
+_fzf_compgen_path() {
+  rg --files --sortr=modified -- "$1" 2>/dev/null || find "$1" -type f
+}
 
 fpath=($fpath ~/$ZSH_FOLDER/completion)
 
