@@ -2,6 +2,7 @@ vim.opt.confirm = true
 vim.opt.shortmess = vim.opt.shortmess + { A = true, c = true } -- disable swap message
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.termguicolors = true
+vim.opt.guicursor = ""
 vim.opt.hlsearch = false -- :noh to clear search
 vim.opt.autoread = true -- set to auto read when a file is changed from the outside
 vim.opt.timeout = true
@@ -33,6 +34,9 @@ vim.opt.foldenable = true
 vim.opt.shada = "!,'300,<50,@100,s10,h"
 vim.opt.mouse = "" -- disable mouse
 vim.opt.spelllang = "en_us"
+vim.opt.wrap = false
+vim.opt.updatetime = 50
+vim.opt.scrolloff = 8
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 vim.g.python3_host_prog = "/usr/bin/python"
 vim.o.winborder = "single"
