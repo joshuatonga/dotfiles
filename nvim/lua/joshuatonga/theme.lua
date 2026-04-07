@@ -33,6 +33,7 @@ vim.cmd("colorscheme cyberdream")
 -- vim.cmd("colorscheme industry")
 -- vim.cmd("colorscheme ron")
 -- vim.cmd("colorscheme cinnabar")
+vim.cmd("colorscheme github_light_default")
 
 -- show a visual indicator when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
