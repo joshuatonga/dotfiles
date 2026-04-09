@@ -1,26 +1,26 @@
-[colors.bright]
-black = "0x767676"
-blue = "0x3b78ff"
-cyan = "0x61d6d6"
-green = "0x16c60c"
-magenta = "0xb4009e"
-red = "0xe74856"
-white = "0xf2f2f2"
-yellow = "0xf9f1a5"
-
-[colors.normal]
-black = "0x0c0c0c"
-blue = "0x0037da"
-cyan = "0x3a96dd"
-green = "0x13a10e"
-magenta = "0x881798"
-red = "0xc50f1f"
-white = "0xcccccc"
-yellow = "0xc19c00"
-
-[colors.primary]
-background = "#000000"
-foreground = "#ffffff"
+# [colors.bright]
+# black = "0x767676"
+# blue = "0x3b78ff"
+# cyan = "0x61d6d6"
+# green = "0x16c60c"
+# magenta = "0xb4009e"
+# red = "0xe74856"
+# white = "0xf2f2f2"
+# yellow = "0xf9f1a5"
+#
+# [colors.normal]
+# black = "0x0c0c0c"
+# blue = "0x0037da"
+# cyan = "0x3a96dd"
+# green = "0x13a10e"
+# magenta = "0x881798"
+# red = "0xc50f1f"
+# white = "0xcccccc"
+# yellow = "0xc19c00"
+#
+# [colors.primary]
+# background = "#000000"
+# foreground = "#ffffff"
 
 [env]
 TERM = "xterm-256color"
@@ -78,3 +78,45 @@ dimensions = { columns = 90, lines = 30 }
 [keyboard]
 # Shift+Return sends ESC+Enter (same as Option+Enter) to work in tmux
 bindings = [{ key = "Return", mods = "Shift", chars = "\u001b\r" }]
+
+[general]
+import = [
+  "~/.config/alacritty/themes/github_light.toml"
+]
+
+# # github Alacritty Colors
+#
+# # Default colors
+# [colors.primary]
+# background = '#ffffff'
+# foreground = '#24292f'
+#
+# # Normal colors
+# [colors.normal]
+# black   = '#24292e'
+# red     = '#d73a49'
+# green   = '#28a745'
+# yellow  = '#dbab09'
+# blue    = '#0366d6'
+# magenta = '#5a32a3'
+# cyan    = '#0598bc'
+# white   = '#6a737d'
+#
+# # Bright colors
+# [colors.bright]
+# black   = '#959da5'
+# red     = '#cb2431'
+# green   = '#22863a'
+# yellow  = '#b08800'
+# blue    = '#005cc5'
+# magenta = '#5a32a3'
+# cyan    = '#3192aa'
+# white   = '#d1d5da'
+#
+# [[colors.indexed_colors]]
+# index = 16
+# color = '#d18616'
+#
+# [[colors.indexed_colors]]
+# index = 17
+# color = '#cb2431'

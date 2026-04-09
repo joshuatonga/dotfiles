@@ -8,7 +8,18 @@ return {
 				formatters = { file = { truncate = 100, filename_first = false } },
 			},
 			explorer = { enabled = true, replace_netrw = false },
-			lazygit = { enabled = true },
+			lazygit = {
+				enabled = true,
+				theme = {
+					inactiveBorderColor = { fg = "Normal" },
+				},
+			},
+			styles = {
+				float = {
+					width = 0.95,
+					height = 0.95,
+				},
+			},
 		},
     -- stylua: ignore
 		keys = {
