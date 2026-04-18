@@ -98,7 +98,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws zsh-autosuggestions)
+plugins=(git gh aws zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
