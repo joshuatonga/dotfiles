@@ -15,11 +15,10 @@ return {
 		},
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
-		event = "BufReadPost",
-		config = function()
-			require("colorizer").setup()
-		end,
+		"brenoprata10/nvim-highlight-colors",
+		opts = {
+			enable_tailwind = true,
+		},
 	},
 	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	{ "tris203/precognition.nvim", event = "VeryLazy", opts = { startVisible = false } },
