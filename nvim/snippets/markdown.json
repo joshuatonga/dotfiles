@@ -1,0 +1,29 @@
+{
+  "Prompt template": {
+    "prefix": "prompt",
+    "body": [
+      "## Task",
+      "${1:one-line objective with deadline/context}",
+      "",
+      "## Intent & constraints",
+      "Goal: ${2:outcome in one sentence}",
+      "",
+      "Must:",
+      "- ${3:required behavior or constraint}",
+      "",
+      "Must not:",
+      "- ${4:forbidden behavior or out-of-scope item}",
+      "",
+      "## Acceptance criteria",
+      "- [ ] ${5:verifiable criterion}",
+      "",
+      "## Relevant files/context",
+      "- ${6:path/to/file or contact}",
+      "",
+      "## Reasoning effort",
+      "- ${7|Balance speed and depth based on the task.,Think carefully and step-by-step before responding; this problem is harder than it looks.,Prioritize responding quickly rather than thinking deeply. When in doubt\\, respond directly.|}",
+      "$0"
+    ],
+    "description": "Structured task prompt template"
+  }
+}
