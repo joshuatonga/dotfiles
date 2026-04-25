@@ -9,6 +9,7 @@ SEP=" | "
 
 # --- Model ---
 model=$(echo "$input" | jq -r '.model.display_name // "Unknown"')
+effort=$(echo "$input" | jq -r '.effort.level // empty')
 
 # --- Context percentage ---
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
@@ -65,7 +66,9 @@ else
 fi
 
 # --- Assemble output ---
-line="[${model}]${SEP}${ctx_str}"
+model_display="[${model}]"
+[ -n "$effort" ] && model_display="${model_display} ${effort}"
+line="${model_display}${SEP}${ctx_str}"
 [ -n "$rate_str" ] && line="${line}${SEP}${rate_str}"
 line="${line}${SEP}${dir_link}"
 if [ -n "$git_branch" ]; then
