@@ -26,6 +26,7 @@ return {
 				"rust",
 				"rust",
 				"go",
+				"terraform",
 			}
 			local alreadyInstalled = require("nvim-treesitter.config").get_installed()
 			local parsersToInstall = vim.iter(ensureInstalled)
