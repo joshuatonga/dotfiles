@@ -182,6 +182,14 @@ alias ls="ls -G"
 
 # For commit signing in MacOS
 export GPG_TTY=$TTY
+
+# TODO: Fix hardcoded path to deno completions
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/joshuatonga/.zsh/completions:"* ]]; then export FPATH="/Users/joshuatonga/.zsh/completions:$FPATH"; fi
+
+. "/Users/joshuatonga/.deno/env"
+
 {{else}}
 export BROWSER=firefox-developer-edition
 {{/if}}
+
