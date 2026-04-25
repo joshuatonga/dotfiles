@@ -14,6 +14,7 @@ depends = []
 "git/.gitignore-global" = "~/.gitignore-global"
 "gvim/.gvimrc" = "~/.gvimrc"
 lazygit = "~/.config/lazygit"
+claude = "~/.config/claude"
 paymongo = "~/.dotfiles-paymongo"
 personal = "~/.dotfiles-personal"
 s = "~/.config/s"
