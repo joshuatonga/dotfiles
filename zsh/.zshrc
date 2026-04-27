@@ -177,7 +177,7 @@ export MANPAGER='nvim +Man!'
 
 [ -f ~/.dotfiles-paymongo/.zshrc ] && source ~/.dotfiles-paymongo/.zshrc
 
-eval "$(supabase completion zsh)"
+# eval "$(supabase completion zsh)"
 
 {{#if dotter.macos}}
 alias ls="ls -G"
