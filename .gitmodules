@@ -1,6 +1,6 @@
 [submodule "personal"]
 	path = personal
-	url = git@github.com:hellojoshuatonga/dotfiles-personal.git
+	url = git@github.com:joshuatonga/dotfiles-personal.git
 
 [submodule "paymongo"]
 	path = paymongo
