@@ -7,7 +7,7 @@
     notification_limit = 16
 
     width = (50, 520)
-    height = (0, 400)
+    height = (0, 200)
     progress_bar = false
     indicate_hidden = yes
     transparency = 0
