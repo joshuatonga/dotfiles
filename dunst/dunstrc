@@ -61,13 +61,13 @@
     background = "#000000"
     foreground = "#fbfaf2"
     frame_color = "#04cc04"
-    timeout = 10
+    timeout = 30
 
 [urgency_normal]
     background = "#000000"
     foreground = "#fbfaf2"
     frame_color = "#04cc04"
-    timeout = 10
+    timeout = 30
 
 [urgency_critical]
     background = "#000000"
