@@ -5,15 +5,15 @@ DND_FILE="/tmp/dnd_status.txt"
 case "$BLOCK_BUTTON" in
 1)
   if [[ -f "$DND_FILE" ]]; then
-    wired --dnd off
+    dunstctl set-paused false
     rm -f "$DND_FILE"
   else
-    wired --dnd on
+    dunstctl set-paused true
     touch "$DND_FILE"
   fi
   ;;
 3)
-  wired --show 5
+  dunstctl history-pop
   ;;
 esac
 

@@ -14,11 +14,11 @@ toggle_dnd() {
 	current_status=$(check_dnd_status)
 
 	if [ "$current_status" == "on" ]; then
-		wired --dnd off
+		dunstctl set-paused false
 		rm "$dnd_file"
 		echo "DND is now off."
 	else
-		wired --dnd on
+		dunstctl set-paused true
 		touch "$dnd_file"
 		echo "DND is now on."
 	fi
