@@ -3,28 +3,28 @@
     follow = mouse
 
     origin = top-right
-    offset = 15x{{notif_top_pos}}
+    offset = (15, {{notif_top_pos}})
     notification_limit = 16
 
-    width = (50, 400)
-    height = 300
+    width = (50, 520)
+    height = (0, 400)
     progress_bar = false
     indicate_hidden = yes
     transparency = 0
     separator_height = 0
-    padding = 10
+    padding = 12
     horizontal_padding = 15
-    text_icon_padding = 0
+    text_icon_padding = 8
     frame_width = 2
     frame_color = "#04cc04"
-    gap_size = 10
+    gap_size = 15
     corner_radius = 0
 
     sort = yes
     font = {{notif_font_name}} {{notif_font_size}}
     line_height = 0
     markup = full
-    format = "<b><span underline='low' foreground='#00bf00'>%s</span></b>\n%b"
+    format = "<b><span underline='low' foreground='#00bf00'>%s</span></b>\n<span size='4pt'>\n</span>%b"
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
@@ -36,8 +36,8 @@
     show_indicators = yes
 
     enable_recursive_icon_lookup = true
-    icon_theme = Adwaita
-    icon_position = off
+    icon_theme = "Adwaita, hicolor"
+    icon_position = left
     min_icon_size = 0
     max_icon_size = 64
 
@@ -60,8 +60,9 @@
 [urgency_low]
     background = "#000000"
     foreground = "#fbfaf2"
-    frame_color = "#04cc04"
-    timeout = 30
+    frame_color = "#036b03"
+    format = "<b><span underline='low' foreground='#036b03'>%s</span></b>\n<span size='4pt'>\n</span>%b"
+    timeout = 10
 
 [urgency_normal]
     background = "#000000"
