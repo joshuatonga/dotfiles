@@ -128,6 +128,14 @@ return {
 						bg1 = "#d7d7d7",
 					},
 				},
+				groups = {
+					all = {
+						DiagnosticVirtualTextError = { fg = "#9b4444" },
+						DiagnosticVirtualTextWarn = { fg = "#8a6d3b" },
+						DiagnosticVirtualTextInfo = { fg = "#4a6fa5" },
+						DiagnosticVirtualTextHint = { fg = "#5a7d5a" },
+					},
+				},
 			})
 		end,
 	},
