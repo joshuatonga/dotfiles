@@ -150,3 +150,18 @@ mkproj() {
 
   echo "created project folder $dir"
 }
+
+fcerts() {
+  local file
+  file=$(find . -maxdepth 2 -type f \( -name '*.crt' -o -name '*.pem' \) | fzf \
+    --preview 'openssl x509 -in {} -noout -text 2>/dev/null || openssl req -in {} -noout -text 2>/dev/null || cat {}' \
+    --preview-window=right:70%:wrap) || return
+
+  [ -z "$file" ] && return
+
+  ( openssl x509 -in "$file" -noout -text 2>/dev/null \
+    || openssl req -in "$file" -noout -text 2>/dev/null \
+    || cat "$file" ) | xclip -selection clipboard -in
+
+  echo "Copied openssl output for: $file"
+}
