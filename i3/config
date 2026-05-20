@@ -346,6 +346,7 @@ bindsym Control+Mod1+4 exec --no-startup-id flameshot gui
 
 bindsym $mod+t exec --no-startup-id thunar
 
+bindsym F1 exec --no-startup-id gromit-mpx -t -c
 # for delux split kb
 bindsym F12 exec --no-startup-id ksnip -m
 bindsym Shift+F12 exec --no-startup-id ksnip -r
