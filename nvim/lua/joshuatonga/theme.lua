@@ -30,7 +30,7 @@ vim.opt.background = "dark"
 -- vim.cmd("colorscheme cyberdream")
 -- vim.cmd("colorscheme eldar")
 -- vim.cmd("colorscheme default")
-vim.cmd("colorscheme industry")
+vim.cmd("colorscheme elflord")
 -- vim.cmd("colorscheme ron")
 -- vim.cmd("colorscheme cinnabar")
 -- vim.cmd("colorscheme github_light_default")
