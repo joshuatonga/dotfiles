@@ -50,7 +50,7 @@ return {
 			-- Grep
 			{ "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
 			{ "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-			{ "<leader>sg", function() Snacks.picker.grep({ exclude = { "node_modules", ".git" } }) end, desc = "Grep" },
+			{ "<leader>sg", function() Snacks.picker.grep({ hidden = true, exclude = { "node_modules", ".git" } }) end, desc = "Grep" },
 			{ "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
 			-- search
 			{ '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
