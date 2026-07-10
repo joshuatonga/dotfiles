@@ -151,6 +151,36 @@ mkproj() {
   echo "created project folder $dir"
 }
 
+# Switch BROWSER (and xdg default) between firefox and chrome.
+# Persists to a state file read by .zshrc so new shells pick it up.
+browser() {
+  if [[ "$OSTYPE" == darwin* ]]; then
+    echo "browser: linux only (mac uses system default)"
+    return 1
+  fi
+
+  local state_file="$HOME/.local/state/browser"
+  local bin desktop
+
+  case "$1" in
+    firefox) bin=firefox-developer-edition; desktop=firefox-developer-edition.desktop ;;
+    chrome)  bin=google-chrome-stable;      desktop=google-chrome.desktop ;;
+    "")
+      echo "BROWSER=$BROWSER"
+      echo "xdg default: $(env -u BROWSER xdg-settings get default-web-browser)"
+      return
+      ;;
+    *) echo "usage: browser [firefox|chrome]"; return 1 ;;
+  esac
+
+  mkdir -p "${state_file:h}"
+  echo "$bin" > "$state_file"
+  export BROWSER="$bin"
+  # xdg-settings refuses to write (and reads back) $BROWSER when it's set
+  env -u BROWSER xdg-settings set default-web-browser "$desktop"
+  echo "BROWSER=$BROWSER (xdg default: $desktop)"
+}
+
 fcerts() {
   local file
   file=$(find . -maxdepth 2 -type f \( -name '*.crt' -o -name '*.pem' \) | fzf \
