@@ -1,26 +1,31 @@
+# Elflord — based on vim's elflord.vim palette
 [colors.bright]
-black = "0x767676"
-blue = "0x3b78ff"
-cyan = "0x61d6d6"
-green = "0x16c60c"
-magenta = "0xb4009e"
-red = "0xe74856"
-white = "0xf2f2f2"
-yellow = "0xf9f1a5"
+black = "0x666666"
+blue = "0x80a0ff"   # elflord Comment
+cyan = "0x40ffff"   # elflord Identifier
+green = "0x60ff60"  # elflord Type
+magenta = "0xff80ff" # elflord PreProc
+red = "0xff0000"    # elflord Special/Operator
+white = "0xffffff"
+yellow = "0xffff00"
 
 [colors.normal]
-black = "0x0c0c0c"
-blue = "0x0037da"
-cyan = "0x3a96dd"
-green = "0x13a10e"
-magenta = "0x881798"
-red = "0xc50f1f"
+black = "0x000000"
+blue = "0x6688ee"
+cyan = "0x00cdcd"
+green = "0x00cd00"
+magenta = "0xcd00cd"
+red = "0xcd0000"
 white = "0xcccccc"
-yellow = "0xc19c00"
+yellow = "0xcdcd00"
 
 [colors.primary]
 background = "#000000"
-foreground = "#ffffff"
+foreground = "#00ffff" # elflord Normal is cyan on black
+
+[colors.cursor]
+text = "#000000"
+cursor = "#40ffff"
 
 [env]
 TERM = "xterm-256color"
