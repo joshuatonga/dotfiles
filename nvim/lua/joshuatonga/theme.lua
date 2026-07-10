@@ -35,6 +35,10 @@ vim.cmd("colorscheme industry")
 -- vim.cmd("colorscheme cinnabar")
 -- vim.cmd("colorscheme github_light_default")
 
+-- Fix for lazygit inside neovim theme issue
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+
 -- show a visual indicator when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
