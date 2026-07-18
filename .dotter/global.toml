@@ -62,6 +62,8 @@ alacritty = "~/.config/alacritty"
 "tmux/.tmux-startup.sh" = "~/.tmux-startup.sh"
 "tmux/.tmux.conf" = "~/.tmux.conf"
 "zsh/.zsh-config" = { target = "~/.zsh-config", type = "symbolic" }
+"zsh/.zshenv" = "~/.zshenv"
+"zsh/.zprofile" = "~/.zprofile"
 "zsh/.zshrc" = "~/.zshrc"
 nvim = "~/.config/nvim"
 "powerlevel10k/.p10k.zsh" = "~/.p10k.zsh"

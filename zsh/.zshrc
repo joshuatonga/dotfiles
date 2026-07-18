@@ -1,7 +1,5 @@
 ZSH_FOLDER=.zsh-config
 
-[[ -r ~/.zprofile ]] && source ~/.zprofile
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -9,16 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export GOPATH=$HOME/go
-
-export PATH=$HOME/bin:~/biv/:/usr/local/bin:$PATH:/usr/local/go/bin:/opt/homebrew/opt/influxdb@1/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.ebcli-virtual-env/executables
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/scripts
-export PATH=$PATH:$HOME/.dotfiles-personal/scripts
-export PATH=$PATH:$HOME/.local/share/nvim/mason/bin
 eval "$(rbenv init -)"
 
 # Path to your oh-my-zsh installation.
@@ -90,8 +78,18 @@ ZSH_CUSTOM=~/.zsh-config/custom
 
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Node, npm, and pnpm are already on PATH via .zshenv. Load the comparatively
+# expensive NVM shell function only when it is explicitly used.
+nvm() {
+  unfunction nvm
+  if [[ ! -s "$NVM_DIR/nvm.sh" ]]; then
+    print -u2 "nvm: initialization script not found at $NVM_DIR/nvm.sh"
+    return 127
+  fi
+  source "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -149,8 +147,7 @@ source $HOME/$ZSH_FOLDER/mappings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
 
-autoload -Uz compinit bashcompinit
-compinit
+autoload -Uz bashcompinit
 bashcompinit
 
 complete -o nospace -C /usr/bin/terraform terraform
@@ -195,4 +192,3 @@ if [[ ":$FPATH:" != *":/Users/joshuatonga/.zsh/completions:"* ]]; then export FP
 # Default firefox; override persisted by the `browser` function (utils.zsh)
 export BROWSER="$(cat ~/.local/state/browser 2>/dev/null || echo firefox-developer-edition)"
 {{/if}}
-
