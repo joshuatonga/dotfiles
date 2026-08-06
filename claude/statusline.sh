@@ -65,6 +65,15 @@ else
   dir_link="$dir_display"
 fi
 
+# --- Authenticated user email ---
+# Prefer the account email from the stdin JSON (newer Claude Code versions
+# may expose it under .account.email or similar). Fall back to the
+# oauthAccount stored in ~/.claude.json.
+email=$(echo "$input" | jq -r '.account.email // .account.emailAddress // .account.email_address // .user.email // .user.emailAddress // empty' 2>/dev/null)
+if [ -z "$email" ]; then
+  email=$(jq -r '.oauthAccount.emailAddress // empty' "$HOME/.claude.json" 2>/dev/null)
+fi
+
 # --- Assemble output ---
 model_display="[${model}]"
 [ -n "$effort" ] && model_display="${model_display} ${effort}"
@@ -76,5 +85,7 @@ if [ -n "$git_branch" ]; then
   [ -n "$git_status_str" ] && branch_part="${branch_part} ${git_status_str}"
   line="${line}${SEP}${branch_part}"
 fi
+
+[ -n "$email" ] && line="${line}${SEP}${email}"
 
 printf "%b\n" "${line}"

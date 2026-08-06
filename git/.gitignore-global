@@ -5,3 +5,5 @@ notes.jtonga.txt
 notes.jtonga.md
 custom-venv/
 codebuild-secure-params.yaml
+
+**/.claude/settings.local.json
