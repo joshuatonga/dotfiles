@@ -64,3 +64,5 @@ if [[ ! -d "$NVM_DIR/current/bin" ]]; then
 fi
 
 export PATH
+
+alias assume=". assume"
