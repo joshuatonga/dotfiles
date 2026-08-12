@@ -244,6 +244,10 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec rofi -show p -modi p:rofi-power-menu
 
+# resize step sizes: plain key nudges, Shift+key jumps
+set $resize_fine 3 px or 3 ppt
+set $resize_big 10 px or 10 ppt
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
@@ -251,16 +255,27 @@ mode "resize" {
   # Pressing right will grow the window’s width.
   # Pressing up will shrink the window’s height.
   # Pressing down will grow the window’s height.
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym l resize shrink height 10 px or 10 ppt
-  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym j resize shrink width $resize_fine
+  bindsym k resize grow height $resize_fine
+  bindsym l resize shrink height $resize_fine
+  bindsym semicolon resize grow width $resize_fine
+
+  bindsym Shift+j resize shrink width $resize_big
+  bindsym Shift+k resize grow height $resize_big
+  bindsym Shift+l resize shrink height $resize_big
+  bindsym Shift+semicolon resize grow width $resize_big
 
   # same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width $resize_fine
+  bindsym Down resize grow height $resize_fine
+  bindsym Up resize shrink height $resize_fine
+  bindsym Right resize grow width $resize_fine
+
+  bindsym Shift+Left resize shrink width $resize_big
+  bindsym Shift+Down resize grow height $resize_big
+  bindsym Shift+Up resize shrink height $resize_big
+  bindsym Shift+Right resize grow width $resize_big
+
   # back to normal: Enter or Escape or $mod+r
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -373,7 +388,7 @@ for_window [class="protonmail-bridge"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Slack"] move to workspace $ws10
 for_window [class="Pidgin"] move to workspace $ws7
-for_window [class="MainTerm"] move to workspace $ws3
+# for_window [class="MainTerm"] move to workspace $ws3
 for_window [class="calibre"] move to workspace $ws5
 # for yad calendar
 for_window [class="Yad"] floating enable
