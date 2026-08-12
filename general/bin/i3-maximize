@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Toggle "maximize" for the focused i3 window: float it so it fills the whole
+# workspace (bar still visible), or restore it to where it came from.
+#
+# Bound in i3/config as $mod+m.
+
+set -euo pipefail
+
+STATE="/tmp/i3-maximize-${USER}.state"
+MARK="_maximized"
+
+focused=$(i3-msg -t get_tree |
+	jq -c '[recurse(.nodes[]?, .floating_nodes[]?) | select(.focused == true)][0]')
+
+if [[ -z $focused || $focused == "null" ]]; then
+	exit 0
+fi
+
+id=$(jq -r '.id' <<<"$focused")
+
+if jq -e --arg m "$MARK" '.marks | index($m)' <<<"$focused" >/dev/null; then
+	# Restore: either drop back into the tiling tree, or put the floating
+	# geometry back the way it was.
+	read -r saved_id saved_float x y w h <<<"$(cat "$STATE" 2>/dev/null || echo)"
+
+	if [[ ${saved_id:-} == "$id" && ${saved_float:-} == floating ]]; then
+		i3-msg "unmark $MARK, resize set ${w}px ${h}px, move position ${x}px ${y}px"
+	else
+		i3-msg "unmark $MARK, floating disable"
+	fi
+	rm -f "$STATE"
+else
+	# Remember what to come back to, then fill the workspace.
+	case "$(jq -r '.floating' <<<"$focused")" in
+	user_on | auto_on) was=floating ;;
+	*) was=tiled ;;
+	esac
+	jq -r --arg id "$id" --arg was "$was" \
+		'"\($id) \($was) \(.rect.x) \(.rect.y) \(.rect.width) \(.rect.height)"' \
+		<<<"$focused" >"$STATE"
+
+	# Workspace rect already excludes the bar, so the bar stays visible.
+	read -r wx wy ww wh <<<"$(i3-msg -t get_workspaces |
+		jq -r '.[] | select(.focused) | "\(.rect.x) \(.rect.y) \(.rect.width) \(.rect.height)"')"
+
+	i3-msg "mark --add $MARK, floating enable, resize set ${ww}px ${wh}px, move position ${wx}px ${wy}px"
+fi
