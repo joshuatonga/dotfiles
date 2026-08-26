@@ -20,7 +20,8 @@ return {
 				null_ls.builtins.formatting.goimports_reviser,
 				null_ls.builtins.code_actions.gomodifytags,
 				-- TypeScript/JavaScript
-				null_ls.builtins.formatting.prettierd,
+				-- null_ls.builtins.formatting.prettierd,
+				null_ls.builtins.formatting.biome,
 				-- shell
 				null_ls.builtins.formatting.shfmt,
 				-- markdown
