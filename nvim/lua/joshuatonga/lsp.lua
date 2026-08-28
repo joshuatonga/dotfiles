@@ -7,6 +7,21 @@ vim.diagnostic.config({
 	},
 })
 
+-- Format with biome when it's attached; fall back to typescript-tools otherwise
+local function lsp_format(opts)
+	opts = opts or {}
+	local bufnr = opts.bufnr or vim.api.nvim_get_current_buf()
+	local has_biome = next(vim.lsp.get_clients({ bufnr = bufnr, name = "biome" })) ~= nil
+	vim.lsp.buf.format(vim.tbl_extend("force", opts, {
+		filter = function(client)
+			if client.name == "typescript-tools" then
+				return not has_biome
+			end
+			return true
+		end,
+	}))
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP Mappings",
 	callback = function(args)
@@ -46,8 +61,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<Space>rn", vim.lsp.buf.rename, add_desc(bufopts, "rename word"))
 		vim.keymap.set("n", "<Space>ca", vim.lsp.buf.code_action, add_desc(bufopts, "view code actions"))
 		vim.keymap.set("n", "<Space>f", function()
-			vim.lsp.buf.format({ async = true })
+			lsp_format({ async = true })
 		end, add_desc(bufopts, "format"))
+
+		if client and client:supports_method("textDocument/formatting") then
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = vim.api.nvim_create_augroup("LspFormatting." .. bufnr, { clear = true }),
+				buffer = bufnr,
+				callback = function()
+					lsp_format({ bufnr = bufnr })
+				end,
+			})
+		end
 	end,
 })
 
@@ -67,6 +92,7 @@ local servers = {
 	tailwindcss = {},
 	rust_analyzer = {},
 	astro = {},
+	biome = {},
 	jsonls = {
 		settings = {
 			json = {
