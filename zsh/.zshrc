@@ -193,3 +193,11 @@ if [[ ":$FPATH:" != *":/Users/joshuatonga/.zsh/completions:"* ]]; then export FP
 # Default firefox; override persisted by the `browser` function (utils.zsh)
 export BROWSER="$(cat ~/.local/state/browser 2>/dev/null || echo firefox-developer-edition)"
 {{/if}}
+
+# bun completions
+[ -s "/Users/joshuatonga/.bun/_bun" ] && source "/Users/joshuatonga/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
