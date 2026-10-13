@@ -42,7 +42,7 @@ window { background-color: transparent; }
 
 .panel {
   min-width: @@PANEL_WIDTH@@px;
-  padding: 4px 8px 10px 8px;
+  padding: 6px 8px 8px 8px;
 }
 .panel-header { padding: 2px 8px 8px 8px; }
 .panel-title { font-weight: bold; font-size: 11px; color: @@MUTED@@; }
@@ -76,7 +76,9 @@ window { background-color: transparent; }
 .empty-hint { font-size: 11px; color: @@MUTED@@; padding: 4px 0 6px 0; }
 
 // captures section
-.captures { margin-top: 6px; border-top: 1px solid @@BORDER@@; padding-top: 6px; }
+.captures { margin-top: 12px; border-top: 1px solid @@BORDER@@; padding-top: 10px; }
+.captures-header { padding: 2px 8px 8px 8px; }
+.footer-hint { font-size: 10px; color: @@MUTED@@; padding: 10px 0 2px 0; }
 .cap-row { margin: 0 6px; border-radius: 10px; }
 .cap-check { padding: 6px 8px 6px 10px; font-size: 13px; color: @@MUTED@@; border-radius: 10px 0 0 10px; }
 .row-hit:hover .cap-check { background-color: @@BG_HOVER@@; color: @@FG@@; }

@@ -53,7 +53,9 @@
         (session_row :s s)))
     (label :class "empty-hint" :visible {state.total == 0} :halign "center"
            :text "Start claude in a terminal to see it here")
-    (captures)))
+    (captures)
+    (label :class "footer-hint" :halign "center"
+           :text "click: focus terminal / copy capture   ·   right-click: remove")))
 
 ;; Copper-style captures: highlighted text or typed notes, click to copy back into Claude.
 (defwidget captures []
@@ -67,11 +69,10 @@
 
 (defwidget capture_row [c]
   (box :class "cap-row ${c.done ? 'done' : ''}" :orientation "h" :space-evenly false :spacing 0
-    (eventbox :class "row-hit" :cursor "pointer" :tooltip "mark done / undone"
+    (eventbox :class "row-hit" :cursor "pointer"
               :onclick "'@@BIN@@' toggle '${c.id}' >/dev/null 2>&1 &"
       (box :class "cap-check" (label :text "${c.done ? '☑' : '☐'}")))
     (eventbox :class "row-hit" :cursor "pointer" :hexpand true
-              :tooltip "click: copy to clipboard   ·   right-click: delete"
               :onclick "'@@BIN@@' copy '${c.id}' >/dev/null 2>&1 &"
               :onrightclick "'@@BIN@@' delete '${c.id}' >/dev/null 2>&1 &"
       (box :class "cap-body" :orientation "h" :space-evenly false :spacing 8
@@ -81,7 +82,6 @@
 (defwidget session_row [s]
   ;; the eventbox only captures input; the styled box inside gets :hover via GTK state propagation
   (eventbox :class "row-hit" :cursor "pointer"
-            :tooltip "click: focus terminal   ·   right-click: remove from list"
             :onclick "'@@BIN@@' focus '${s.id}' >/dev/null 2>&1 &"
             :onrightclick "'@@BIN@@' dismiss '${s.id}' >/dev/null 2>&1 &"
     (box :class "row ${s.color}" :orientation "h" :space-evenly false :spacing 10
