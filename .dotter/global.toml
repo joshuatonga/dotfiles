@@ -33,6 +33,8 @@ i3blocks = "~/.config/i3blocks"
 dunst = "~/.config/dunst"
 rofi = "~/.config/rofi"
 picom = "~/.config/picom"
+"claude-notch" = { target = "~/.config/claude-notch", type = "symbolic" }
+"claude-notch/systemd/claude-notch.service" = { target = "~/.config/systemd/user/claude-notch.service", type = "symbolic" }
 
 [i3.variables]
 enable_bar_wlan = false

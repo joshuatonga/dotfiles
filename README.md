@@ -10,7 +10,7 @@ My Linux (Arch + i3) dotfiles, managed with [dotter](https://github.com/SuperCub
 
 | Area | Configs |
 | --- | --- |
-| Desktop (`i3` package) | i3, polybar, i3blocks, dunst, rofi, picom |
+| Desktop (`i3` package) | i3, polybar, i3blocks, dunst, rofi, picom, [claude-notch](claude-notch/README.md) (Claude Code activity notch, Eww) |
 | Terminal (`term` package) | alacritty, tmux, zsh, neovim, powerlevel10k |
 | Everywhere (`default` package) | git, lazygit, commitizen, claude, fonts, scripts, wallpapers |
 | Submodules | private configs (personal, work) |

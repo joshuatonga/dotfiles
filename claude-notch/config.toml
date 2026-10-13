@@ -1,0 +1,65 @@
+# claude-notch configuration
+# Reload with:  claude-notch reload
+
+[notch]
+# "primary" = xrandr primary output, or an output name like "HDMI-0", or an index
+monitor = "primary"
+# Where the notch sits: "top center", "top left", "top right"
+anchor = "top center"
+x_offset = 0
+y_offset = 0
+# Collapsed pill height. 25 matches your i3bar height.
+pill_height = 25
+pill_min_width = 110
+panel_width = 400
+# Delay before the panel collapses after the pointer leaves (milliseconds)
+collapse_delay_ms = 120
+# Animate expand/collapse. false = instant open/close
+animate = false
+# Animation duration when enabled (milliseconds, GTK ease-out curve)
+anim_ms = 100
+# Hide the notch while a fullscreen window is shown on its monitor
+hide_on_fullscreen = true
+
+[notifications]
+enabled = true
+# Notify when a session needs input (permission, question, plan approval)
+attention = true
+# Low-urgency notification when a turn finishes
+completion = true
+# Don't notify when the session's terminal is the focused window
+skip_if_focused = true
+attention_timeout_ms = 20000
+completion_timeout_ms = 4000
+
+[sound]
+# Your ~/scripts/notify_sounds.sh already plays a sound for every dunst
+# notification, so this is off by default to avoid doubling up.
+enabled = false
+file = "~/.config/assets/notifications/confident.mp3"
+player = "paplay"
+# Skip the sound while this file exists (your i3blocks DND toggle)
+dnd_file = "/tmp/dnd_status.txt"
+
+[sessions]
+# Ended sessions kept in the panel (count and max age in seconds)
+recent_retain = 3
+recent_ttl_s = 600
+# Seconds a session stays visible as "Disconnected" after its process vanished
+disconnect_grace_s = 20
+# Focusing a session's terminal while it is "Ready" marks it Idle (reviewed)
+ready_clears_on_focus = true
+
+[theme]
+font = "DejaVu Sans"
+font_size_px = 12
+bg = "#0b0b0e"
+bg_hover = "#1a1a21"
+border = "#26262d"
+fg = "#ececf1"
+muted = "#8b8f9a"
+working = "#3ddc84"
+attention = "#f5a524"
+ready = "#4c9df2"
+idle = "#6b7280"
+radius = 14

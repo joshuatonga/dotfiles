@@ -403,6 +403,9 @@ for_window [title="Save screenshot"] floating enable, resize set 800px 600px, mo
 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Claude Code notch (Eww widget + systemd user service). Idempotent: start is a no-op when
+# already running; on i3 restart it just re-raises the notch. See ~/.config/claude-notch/README.md
+exec_always --no-startup-id $HOME/.config/claude-notch/bin/claude-notch ensure
 exec --no-startup-id sleep 5 && picom -b
 exec --no-startup-id playerctld daemon
 exec --no-startup-id xscreensaver -no-splash

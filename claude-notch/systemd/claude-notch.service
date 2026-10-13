@@ -1,0 +1,18 @@
+[Unit]
+Description=Claude Code notch (Eww activity monitor for i3)
+Documentation=file:%h/.config/claude-notch/README.md
+# Only meaningful inside an X session; i3 starts it via exec_always.
+ConditionEnvironment=DISPLAY
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=%h/.config/claude-notch/bin/claude-notch start
+ExecReload=%h/.config/claude-notch/bin/claude-notch reload
+Restart=on-failure
+RestartSec=2
+KillMode=mixed
+TimeoutStopSec=8
+Nice=5
+UnsetEnvironment=I3SOCK

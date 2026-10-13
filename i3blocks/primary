@@ -2,8 +2,8 @@ interval=5
 
 [task]
 command=./scripts/task.sh
-min_width=900
-align=center
+# sits right next to DND instead of being centered under the Claude notch
+align=right
 interval=5
 
 [DND]

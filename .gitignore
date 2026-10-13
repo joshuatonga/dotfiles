@@ -6,3 +6,4 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 
 .dotter/local.toml
 .dotter/cache*
+__pycache__/

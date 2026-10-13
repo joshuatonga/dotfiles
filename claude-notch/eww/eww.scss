@@ -1,0 +1,76 @@
+// claude-notch theme — template; @@TOKENS@@ come from config.toml [theme] / [notch]
+* { all: unset; }
+
+window { background-color: transparent; }
+
+.shell {
+  font-family: "@@FONT@@";
+  font-size: @@FONT_SIZE@@px;
+  background-color: @@BG@@;
+  color: @@FG@@;
+  border: 1px solid @@BORDER@@;
+  border-top: none;
+  border-radius: 0 0 @@RADIUS@@px @@RADIUS@@px;
+  transition: border-color 200ms ease;
+}
+.shell.attention { border-color: @@ATTENTION@@; }
+.shell.expanded  { border-radius: 0 0 (@@RADIUS@@px + 4px) (@@RADIUS@@px + 4px); }
+
+.pill {
+  min-height: @@PILL_HEIGHT@@px;
+  min-width: @@PILL_MIN_WIDTH@@px;
+  padding: 0 14px;
+}
+.shell.empty .pill { min-width: 56px; }
+
+.icon { font-size: 14px; color: @@FG@@; transition: color 200ms ease; }
+.icon.working   { color: @@WORKING@@; animation: pulse 1.6s ease-in-out infinite; }
+.icon.attention { color: @@ATTENTION@@; }
+.icon.ready     { color: @@READY@@; }
+.shell.empty .icon { color: @@MUTED@@; }
+
+.count { font-weight: bold; font-size: 12px; color: @@FG@@; }
+
+.dot { font-size: 8px; }
+.dot.working   { color: @@WORKING@@;   animation: pulse 1.2s ease-in-out infinite; }
+.dot.attention { color: @@ATTENTION@@; animation: blink 0.8s ease-in-out infinite; }
+.dot.ready     { color: @@READY@@; }
+.dot.idle      { color: @@IDLE@@; }
+
+@keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.15; } 100% { opacity: 1; } }
+
+.panel {
+  min-width: @@PANEL_WIDTH@@px;
+  padding: 4px 8px 10px 8px;
+}
+.panel-header { padding: 2px 8px 8px 8px; }
+.panel-title { font-weight: bold; font-size: 11px; color: @@MUTED@@; }
+.panel-sub { font-size: 11px; color: @@MUTED@@; }
+
+.row {
+  padding: 7px 10px;
+  margin: 0 6px;
+  border-radius: 10px;
+  transition: background-color 120ms ease;
+}
+// hover state lives on the eventbox (.row-hit); the styled box inside gets the highlight
+.row-hit:hover .row { background-color: @@BG_HOVER@@; }
+.row.attention { background-color: rgba(@@ATTENTION_RGB@@, 0.08); }
+.row-hit:hover .row.attention { background-color: rgba(@@ATTENTION_RGB@@, 0.16); }
+
+.row-dot { font-size: 9px; }
+.row-dot.working   { color: @@WORKING@@; animation: pulse 1.2s ease-in-out infinite; }
+.row-dot.attention { color: @@ATTENTION@@; animation: blink 0.8s ease-in-out infinite; }
+.row-dot.ready     { color: @@READY@@; }
+.row-dot.idle      { color: @@IDLE@@; }
+
+.project  { font-weight: bold; font-size: 12.5px; color: @@FG@@; }
+.status   { font-size: 10.5px; font-weight: bold; }
+.status.working   { color: @@WORKING@@; }
+.status.attention { color: @@ATTENTION@@; }
+.status.ready     { color: @@READY@@; }
+.status.idle      { color: @@IDLE@@; }
+.activity { font-size: 11px; color: @@MUTED@@; margin-top: 2px; }
+.meta     { font-size: 10.5px; color: @@MUTED@@; margin-top: 2px; }
+.empty-hint { font-size: 11px; color: @@MUTED@@; padding: 4px 0 6px 0; }

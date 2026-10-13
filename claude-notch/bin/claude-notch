@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+"""Launcher for claude-notch. Real code lives in ../lib/claude_notch.py."""
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "lib"))
+from claude_notch import main  # noqa: E402
+
+sys.exit(main())

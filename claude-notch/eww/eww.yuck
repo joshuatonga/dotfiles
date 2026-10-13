@@ -1,0 +1,72 @@
+;; claude-notch — Eww widget. This file is a template: @@TOKENS@@ are filled in
+;; from config.toml by `claude-notch reload` and written to ~/.cache/claude-notch/eww/.
+
+(defvar expanded false)    ; outer (width) revealer
+(defvar expanded_v false)  ; inner (height) revealer; set one IPC call later so it is mapped and animates
+(defvar hovered false)     ; pointer is over the notch
+
+(deflisten state
+  :initial '{"count":0,"total":0,"state":"idle","counts":{"working":0,"attention":0,"ready":0,"idle":0},"sessions":[]}'
+  "@@BIN@@ stream")
+
+(defwindow notch
+  :monitor 0
+  :geometry (geometry :x "@@X_OFFSET@@px" :y "@@Y_OFFSET@@px" :anchor "@@ANCHOR@@")
+  :stacking "overlay"
+  :wm-ignore true
+  :resizable false
+  :windowtype "dock"
+  (notch))
+
+(defwidget notch []
+  (eventbox
+    :onhover "eww -c '@@EWW_DIR@@' update hovered=true expanded=true; @@EXPAND_GAP@@eww -c '@@EWW_DIR@@' update expanded_v=true"
+    :onhoverlost "eww -c '@@EWW_DIR@@' update hovered=false; (sleep @@COLLAPSE_DELAY_S@@; eww -c '@@EWW_DIR@@' get hovered | grep -qx false && eww -c '@@EWW_DIR@@' update expanded=false expanded_v=false) >/dev/null 2>&1 &"
+    (box :class "shell ${state.state} ${expanded ? 'expanded' : 'collapsed'} ${state.count == 0 ? 'empty' : ''}"
+         :orientation "v" :space-evenly false
+      (pill)
+      ;; Two nested revealers: the outer one scales the width request, the inner one the
+      ;; height, so the panel grows/shrinks on both axes at once (GTK ease-out-cubic).
+      (revealer :reveal expanded :transition "slideright" :duration "@@ANIM_MS@@ms"
+        (revealer :reveal expanded_v :transition "slidedown" :duration "@@ANIM_MS@@ms"
+          (panel))))))
+
+(defwidget pill []
+  ;; outer box carries the min-width, inner box keeps the content centered inside it
+  (box :class "pill" :orientation "h" :space-evenly false
+    (box :orientation "h" :space-evenly false :halign "center" :hexpand true :valign "center" :spacing 7
+      (label :class "icon ${state.state}" :text "✳")
+      (label :class "count" :visible {state.count > 0} :text "${state.count}")
+      ;; one dot per live session, colored by its status (amber input, green working, blue ready, gray idle)
+      (box :class "dots" :orientation "h" :space-evenly false :spacing 3 :visible {state.count > 0}
+        (for s in {state.sessions}
+          (label :class "dot ${s.color}" :visible {s.live} :text "●"))))))
+
+(defwidget panel []
+  (box :class "panel" :orientation "v" :space-evenly false
+    (box :class "panel-header" :orientation "h" :space-evenly false
+      (label :class "panel-title" :halign "start" :hexpand true :text "Claude Code")
+      (label :class "panel-sub" :halign "end"
+             :text {state.count == 0 ? "no sessions" : "${state.count} session${state.count == 1 ? '' : 's'}"}))
+    (box :class "rows" :orientation "v" :space-evenly false :spacing 2
+      (for s in {state.sessions}
+        (session_row :s s)))
+    (label :class "empty-hint" :visible {state.total == 0} :halign "center"
+           :text "Start claude in a terminal to see it here")))
+
+(defwidget session_row [s]
+  ;; the eventbox only captures input; the styled box inside gets :hover via GTK state propagation
+  (eventbox :class "row-hit" :cursor "pointer"
+            :tooltip "click: focus terminal   ·   right-click: remove from list"
+            :onclick "'@@BIN@@' focus '${s.id}' >/dev/null 2>&1 &"
+            :onrightclick "'@@BIN@@' dismiss '${s.id}' >/dev/null 2>&1 &"
+    (box :class "row ${s.color}" :orientation "h" :space-evenly false :spacing 10
+      (label :class "row-dot ${s.color}" :valign "center" :text "●")
+      (box :orientation "v" :space-evenly false :hexpand true
+        (box :orientation "h" :space-evenly false
+          (label :class "project" :halign "start" :hexpand true :limit-width 30 :text "${s.project}")
+          (label :class "status ${s.color}" :halign "end" :text "${s.label}"))
+        (box :orientation "h" :space-evenly false
+          (label :class "activity" :halign "start" :hexpand true :limit-width 44 :text "${s.activity}")
+          (label :class "meta" :halign "end"
+                 :text "${s.ws != '' ? 'ws ' + s.ws + '  ·  ' : ''}${s.elapsed}"))))))
