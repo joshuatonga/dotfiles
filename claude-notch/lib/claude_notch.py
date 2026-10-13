@@ -12,6 +12,10 @@ Subcommands
   stream          Stream UI state as JSON lines (used by eww deflisten)
   focus <id>      Focus the terminal of a session through i3
   dismiss <id>    Remove a session from the panel (right-click on a row)
+  capture [text]  Save the highlighted text (X11 PRIMARY selection) or the given text as a capture
+  note            Rofi prompt: type a note or prompt, Enter saves it
+  pick            Rofi picker: choose a capture, Enter copies it to the clipboard
+  copy|toggle|delete <id>, captures [list|clear-done|clear]
   raise           Re-raise the notch window above other windows
   install-hooks   Merge the hooks into ~/.claude/settings.json (idempotent)
   uninstall-hooks Remove them again
@@ -47,6 +51,8 @@ SESSIONS_DIR = RUNTIME_DIR / "sessions"
 SOCK_PATH = RUNTIME_DIR / "daemon.sock"
 HOOK_LOG = RUNTIME_DIR / "hook.log"
 EWW_DIR = CACHE_DIR / "eww"
+DATA_DIR = Path(os.environ.get("XDG_DATA_HOME") or "~/.local/share").expanduser() / APP
+CAPTURES_PATH = DATA_DIR / "captures.json"
 SERVICE = f"{APP}.service"
 CLAUDE_SETTINGS = Path("~/.claude/settings.json").expanduser()
 
@@ -78,6 +84,10 @@ DEFAULTS = {
     "sessions": {
         "recent_retain": 3, "recent_ttl_s": 600, "disconnect_grace_s": 20,
         "ready_clears_on_focus": True,
+    },
+    "captures": {
+        "enabled": True, "max_shown": 8, "copy_notification": True, "capture_notification": True,
+        "max_chars": 20000,
     },
     "theme": {
         "font": "DejaVu Sans", "font_size_px": 12,
@@ -802,6 +812,7 @@ class Daemon:
         self.focused_window = None
         self.hidden_for_fullscreen = False
         self.notified = {}
+        self.captures = load_captures()
         self.last_broadcast = ""
         self.stopping = False
         self.lock = threading.Lock()
@@ -1186,7 +1197,8 @@ class Daemon:
         if s.get("ws_name"):
             body += f"  ·  workspace {clean_text(str(s['ws_name']), 20)}"
         cmd = ["notify-send", "-a", "Claude Code", "-u", urgency, "-t", str(int(timeout)), "-i", icon,
-               "-h", f"string:x-dunst-stack-tag:{APP}-{sid}", "-A", "default=Focus terminal", title, body]
+               "-h", f"string:x-dunst-stack-tag:{APP}-{sid}", "-A", "default=Focus terminal",
+               markup_escape(title), markup_escape(body)]
         threading.Thread(target=self._notify_thread, args=(cmd, sid), daemon=True).start()
 
     def _notify_thread(self, cmd, sid):
@@ -1236,9 +1248,25 @@ class Daemon:
         for r in rows:
             counts[r["color"]] += 1
         live = sum(1 for r in rows if r["status"] in LIVE_STATUSES)
+        ccfg = self.cfg["captures"]
+        caps = []
+        if ccfg["enabled"]:
+            ordered = sorted(self.captures, key=lambda it: (it.get("done", False), -(it.get("created_at") or 0)))
+            for it in ordered[: int(ccfg["max_shown"])]:
+                text = it.get("text") or ""
+                first = text.strip().splitlines()[0] if text.strip() else ""
+                nlines = len(text.splitlines())
+                caps.append({
+                    "id": it["id"] if SID_RE.match(str(it.get("id", ""))) else "",
+                    "text": clean_text(first, 70) + (f"  +{nlines - 1}" if nlines > 1 else ""),
+                    "done": bool(it.get("done")),
+                    "age": fmt_elapsed(t - (it.get("created_at") or t)),
+                })
         overall = "attention" if counts["attention"] else "working" if counts["working"] else \
             "ready" if counts["ready"] else "idle"
-        return {"count": live, "total": len(rows), "state": overall, "counts": counts, "sessions": rows}
+        return {"count": live, "total": len(rows), "state": overall, "counts": counts, "sessions": rows,
+                "captures": caps, "captures_total": len(self.captures),
+                "captures_open": sum(1 for it in self.captures if not it.get("done"))}
 
     def broadcast(self, force=False):
         payload = json.dumps(self.ui_state(), separators=(",", ":"))
@@ -1303,6 +1331,9 @@ class Daemon:
             sid = req.get("id")
             if isinstance(sid, str) and SID_RE.match(sid):
                 self.reload_session(sid)
+        elif op == "captures":
+            self.captures = load_captures()
+            self.last_broadcast = ""
         elif op == "stream":
             self.streams.append(c)
             try:
@@ -1386,6 +1417,202 @@ def dismiss_session(sid):
     except OSError:
         pass
     return True
+
+
+# --------------------------------------------------------------------------- captures (Copper-style)
+
+class captures_lock:
+    def __enter__(self):
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        self.f = open(DATA_DIR / "captures.lock", "w")
+        fcntl.flock(self.f, fcntl.LOCK_EX)
+        return self
+
+    def __exit__(self, *a):
+        fcntl.flock(self.f, fcntl.LOCK_UN)
+        self.f.close()
+
+
+def load_captures():
+    try:
+        with open(CAPTURES_PATH) as f:
+            data = json.load(f)
+        return data if isinstance(data, list) else []
+    except (OSError, ValueError):
+        return []
+
+
+def save_captures(items):
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    atomic_write_json(CAPTURES_PATH, items)
+
+
+def notify_daemon_captures():
+    try:
+        c = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        c.settimeout(0.5)
+        c.connect(str(SOCK_PATH))
+        c.sendall(b'{"op":"captures"}\n')
+        c.close()
+    except OSError:
+        pass
+
+
+def markup_escape(text):
+    """dunst renders the body as Pango markup; captured text must not be able to inject it."""
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def small_notify(title, body, ms=1500):
+    subprocess.Popen(["notify-send", "-a", "Claude Code", "-u", "low", "-t", str(ms),
+                      "-h", f"string:x-dunst-stack-tag:{APP}-captures", title, markup_escape(body)],
+                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def clipboard_set(text):
+    """Put text on the CLIPBOARD selection (xclip keeps serving it in the background)."""
+    tool = shutil.which("xclip")
+    if tool:
+        cmd = [tool, "-selection", "clipboard", "-in"]
+    else:
+        tool = shutil.which("xsel")
+        if not tool:
+            return False
+        cmd = [tool, "--clipboard", "--input"]
+    p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                         start_new_session=True)
+    p.stdin.write(text.encode())
+    p.stdin.close()
+    return True
+
+
+def selection_get(which="primary"):
+    for cmd in (["xclip", "-selection", which, "-out"], ["xsel", f"--{which}", "--output"]):
+        if shutil.which(cmd[0]):
+            try:
+                r = subprocess.run(cmd, capture_output=True, timeout=2)
+                if r.returncode == 0:
+                    return r.stdout.decode("utf-8", "replace")
+            except Exception:
+                pass
+    return ""
+
+
+def add_capture(text, source):
+    cfg = load_config()["captures"]
+    text = text.replace("\r\n", "\n").strip("\n")
+    if not text.strip():
+        return None
+    text = text[: int(cfg["max_chars"])]
+    item = {"id": f"c{int(now() * 1000):x}{os.getpid() % 1000:03d}", "text": text, "done": False,
+            "created_at": now(), "source": source}
+    with captures_lock():
+        items = load_captures()
+        items.append(item)
+        save_captures(items)
+    notify_daemon_captures()
+    if cfg["capture_notification"]:
+        small_notify("Captured", clean_text(text.splitlines()[0] if text.strip() else text, 60))
+    return item
+
+
+def capture_find(items, cid):
+    for it in items:
+        if it.get("id") == cid:
+            return it
+    return None
+
+
+def cmd_capture(args):
+    if args:
+        text = " ".join(args)
+        src = "typed"
+    else:
+        text = selection_get("primary") or selection_get("clipboard")
+        src = "selection"
+    if not text.strip():
+        small_notify("Nothing to capture", "Highlight some text first")
+        return 1
+    return 0 if add_capture(text, src) else 1
+
+
+def rofi(args, stdin=""):
+    r = subprocess.run(["rofi", *args], input=stdin, capture_output=True, text=True, timeout=600)
+    return r.returncode, r.stdout.rstrip("\n")
+
+
+def cmd_note():
+    rc, out = rofi(["-dmenu", "-p", "Capture", "-l", "0", "-theme-str", "listview { enabled: false; }"])
+    if rc != 0 or not out.strip():
+        return 1
+    return 0 if add_capture(out, "typed") else 1
+
+
+def cmd_pick():
+    items = [it for it in load_captures()]
+    if not items:
+        small_notify("No captures yet", "Highlight text and press the capture shortcut")
+        return 1
+    items = sorted(items, key=lambda it: (it.get("done", False), -(it.get("created_at") or 0)))
+    lines = []
+    for it in items:
+        first = clean_text(it["text"].splitlines()[0] if it["text"].strip() else it["text"], 90)
+        extra = f"  (+{len(it['text'].splitlines()) - 1} lines)" if len(it["text"].splitlines()) > 1 else ""
+        lines.append(("☑ " if it.get("done") else "☐ ") + first + extra)
+    rc, out = rofi(["-dmenu", "-i", "-p", "Copy", "-format", "i", "-no-custom"], "\n".join(lines))
+    if rc != 0 or not out.strip().isdigit():
+        return 1
+    return cmd_copy(items[int(out.strip())]["id"])
+
+
+def cmd_copy(cid):
+    it = capture_find(load_captures(), cid)
+    if not it:
+        return 1
+    ok = clipboard_set(it["text"])
+    cfg = load_config()["captures"]
+    if ok and cfg["copy_notification"]:
+        small_notify("Copied", clean_text(it["text"].splitlines()[0] if it["text"].strip() else it["text"], 60))
+    try:
+        eww_cmd("update", "hovered=false", "expanded=false", "expanded_v=false", timeout=3)
+    except Exception:
+        pass
+    return 0 if ok else 1
+
+
+def cmd_capture_edit(action, cid):
+    with captures_lock():
+        items = load_captures()
+        it = capture_find(items, cid)
+        if not it:
+            return 1
+        if action == "toggle":
+            it["done"] = not it.get("done", False)
+        elif action == "delete":
+            items.remove(it)
+        save_captures(items)
+    notify_daemon_captures()
+    return 0
+
+
+def cmd_captures(args):
+    sub = args[0] if args else "list"
+    if sub == "list":
+        for it in load_captures():
+            mark = "done" if it.get("done") else "open"
+            first = it["text"].splitlines()[0] if it["text"].strip() else ""
+            print(f"{mark}  {it['id']}  {clean_text(first, 80)}")
+        return 0
+    if sub in ("clear-done", "clear"):
+        with captures_lock():
+            items = load_captures()
+            items = [] if sub == "clear" else [it for it in items if not it.get("done")]
+            save_captures(items)
+        notify_daemon_captures()
+        print("ok")
+        return 0
+    print("captures [list|clear-done|clear]")
+    return 1
 
 
 # --------------------------------------------------------------------------- hooks install
@@ -1507,7 +1734,8 @@ def cmd_status():
 def cmd_stream():
     """Used by eww deflisten: print UI state lines forever, reconnecting when the daemon restarts."""
     empty = json.dumps({"count": 0, "total": 0, "state": "idle",
-                        "counts": {"working": 0, "attention": 0, "ready": 0, "idle": 0}, "sessions": []})
+                        "counts": {"working": 0, "attention": 0, "ready": 0, "idle": 0}, "sessions": [],
+                        "captures": [], "captures_total": 0, "captures_open": 0})
     print(empty, flush=True)
     while True:
         try:
@@ -1630,6 +1858,18 @@ def main(argv=None):
         return cmd_stream()
     if cmd == "focus":
         return 0 if len(argv) > 1 and focus_session(argv[1]) else 1
+    if cmd == "capture":
+        return cmd_capture(argv[1:])
+    if cmd == "note":
+        return cmd_note()
+    if cmd == "pick":
+        return cmd_pick()
+    if cmd == "copy":
+        return cmd_copy(argv[1]) if len(argv) > 1 and SID_RE.match(argv[1]) else 1
+    if cmd in ("toggle", "delete"):
+        return cmd_capture_edit(cmd, argv[1]) if len(argv) > 1 and SID_RE.match(argv[1]) else 1
+    if cmd == "captures":
+        return cmd_captures(argv[1:])
     if cmd == "dismiss":
         return 0 if len(argv) > 1 and dismiss_session(argv[1]) else 1
     if cmd == "raise":

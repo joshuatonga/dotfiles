@@ -52,6 +52,21 @@ socket/pane. Focus resolves, in order: tmux client → ancestor process with an 
 window (`xdotool search --pid`) → `WINDOWID`. The lookup is repeated at click
 time, so re-attaching tmux from another terminal still works.
 
+## Captures (Copper-style scratchpad)
+
+Keep prompts, answers and links you want to reuse, and copy them back into
+Claude with one click. Stored locally in `~/.local/share/claude-notch/captures.json`.
+
+| Key (i3) | Action |
+| --- | --- |
+| `$mod+Shift+i` | capture the highlighted text (X11 PRIMARY selection, falls back to the clipboard) |
+| `$mod+Shift+n` | rofi prompt: type a note or prompt, Enter saves it |
+| `$mod+Shift+p` | rofi picker: choose a capture, Enter copies it to the clipboard |
+
+In the panel, each capture has a checkbox (click to mark done), click the text
+to copy it, right-click to delete. `claude-notch captures list|clear-done|clear`
+from the shell. Options in `[captures]` of `config.toml`.
+
 ## Commands
 
 ```
@@ -63,6 +78,9 @@ claude-notch logs          journalctl --user -u claude-notch -f
 claude-notch raise         re-raise the notch above other windows
 claude-notch focus <id>    focus a session's terminal
 claude-notch dismiss <id>  remove a session from the panel
+claude-notch capture [txt] save highlighted text (or txt) as a capture
+claude-notch note | pick   rofi prompt to add / rofi picker to copy
+claude-notch captures      list | clear-done | clear
 claude-notch install-hooks / uninstall-hooks
 claude-notch simulate start demo | prompt demo | tool demo | permission demo | done demo | end demo | stop
 ```

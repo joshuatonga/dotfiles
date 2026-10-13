@@ -6,7 +6,7 @@
 (defvar hovered false)     ; pointer is over the notch
 
 (deflisten state
-  :initial '{"count":0,"total":0,"state":"idle","counts":{"working":0,"attention":0,"ready":0,"idle":0},"sessions":[]}'
+  :initial '{"count":0,"total":0,"state":"idle","counts":{"working":0,"attention":0,"ready":0,"idle":0},"sessions":[],"captures":[],"captures_total":0,"captures_open":0}'
   "@@BIN@@ stream")
 
 (defwindow notch
@@ -52,7 +52,31 @@
       (for s in {state.sessions}
         (session_row :s s)))
     (label :class "empty-hint" :visible {state.total == 0} :halign "center"
-           :text "Start claude in a terminal to see it here")))
+           :text "Start claude in a terminal to see it here")
+    (captures)))
+
+;; Copper-style captures: highlighted text or typed notes, click to copy back into Claude.
+(defwidget captures []
+  (box :orientation "v" :space-evenly false :class "captures" :visible {state.captures_total > 0}
+    (box :class "panel-header captures-header" :orientation "h" :space-evenly false
+      (label :class "panel-title" :halign "start" :hexpand true :text "Captures")
+      (label :class "panel-sub" :halign "end" :text "${state.captures_open} open  ·  click copies"))
+    (box :class "rows" :orientation "v" :space-evenly false :spacing 2
+      (for c in {state.captures}
+        (capture_row :c c)))))
+
+(defwidget capture_row [c]
+  (box :class "cap-row ${c.done ? 'done' : ''}" :orientation "h" :space-evenly false :spacing 0
+    (eventbox :class "row-hit" :cursor "pointer" :tooltip "mark done / undone"
+              :onclick "'@@BIN@@' toggle '${c.id}' >/dev/null 2>&1 &"
+      (box :class "cap-check" (label :text "${c.done ? '☑' : '☐'}")))
+    (eventbox :class "row-hit" :cursor "pointer" :hexpand true
+              :tooltip "click: copy to clipboard   ·   right-click: delete"
+              :onclick "'@@BIN@@' copy '${c.id}' >/dev/null 2>&1 &"
+              :onrightclick "'@@BIN@@' delete '${c.id}' >/dev/null 2>&1 &"
+      (box :class "cap-body" :orientation "h" :space-evenly false :spacing 8
+        (label :class "cap-text" :halign "start" :hexpand true :limit-width 52 :text "${c.text}")
+        (label :class "meta" :halign "end" :text "${c.age}")))))
 
 (defwidget session_row [s]
   ;; the eventbox only captures input; the styled box inside gets :hover via GTK state propagation

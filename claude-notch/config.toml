@@ -50,6 +50,16 @@ disconnect_grace_s = 20
 # Focusing a session's terminal while it is "Ready" marks it Idle (reviewed)
 ready_clears_on_focus = true
 
+[captures]
+# Copper-style captures shown under the sessions. Keys are bound in i3 config:
+#   $mod+Shift+i  capture highlighted text      $mod+Shift+n  type a note (rofi)
+#   $mod+Shift+p  pick one and copy (rofi)      click a row to copy, right-click to delete
+enabled = true
+max_shown = 8
+copy_notification = true
+capture_notification = true
+max_chars = 20000
+
 [theme]
 font = "DejaVu Sans"
 font_size_px = 12

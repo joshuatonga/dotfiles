@@ -406,6 +406,10 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Claude Code notch (Eww widget + systemd user service). Idempotent: start is a no-op when
 # already running; on i3 restart it just re-raises the notch. See ~/.config/claude-notch/README.md
 exec_always --no-startup-id $HOME/.config/claude-notch/bin/claude-notch ensure
+# claude-notch captures: save highlighted text / type a note / pick one to copy
+bindsym $mod+Shift+i exec --no-startup-id $HOME/.config/claude-notch/bin/claude-notch capture
+bindsym $mod+Shift+n exec --no-startup-id $HOME/.config/claude-notch/bin/claude-notch note
+bindsym $mod+Shift+p exec --no-startup-id $HOME/.config/claude-notch/bin/claude-notch pick
 exec --no-startup-id sleep 5 && picom -b
 exec --no-startup-id playerctld daemon
 exec --no-startup-id xscreensaver -no-splash
