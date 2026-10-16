@@ -286,7 +286,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x focus output right
 bindsym $mod+Shift+x [urgent=latest] focus
 
-default_border normal 5
+# no title bars; the focused window title is shown in the top polybar
+default_border pixel 1
+default_floating_border pixel 1
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #13a10e #13A10E #000000 #13a10e   #13a10e
@@ -296,61 +298,8 @@ client.urgent           #2f343a #fc0303 #ffffff #fc0303   #fc0303
 client.placeholder      #000000 #0c0c0c #000000 #000000   #0c0c0c
 client.background       #ffffff
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    position top
-    status_command i3blocks -c ~/.config/i3blocks/primary
-    tray_output $out_main
-    output $out_main
-    colors {
-        background #dcdad5
-        statusline #000000
-        separator #666666
-
-        focused_workspace  #585959 #5e5e5e #d7dbdb
-        active_workspace   #333333 #5f676a #000000
-        inactive_workspace #8f8e8d #c9c8c3 #3e3f40
-        urgent_workspace   #2f343a #fc0303 #ffffff
-        binding_mode       #2f343a #fc0303 #ffffff
-    }
-}
-
-bar {
-    position top
-    output $out_second
-    tray_output none
-    status_command i3blocks -c ~/.config/i3blocks/second
-    colors {
-        background #dcdad5
-        statusline #000000
-        separator #666666
-
-        focused_workspace  #585959 #5e5e5e #d7dbdb
-        active_workspace   #333333 #5f676a #000000
-        inactive_workspace #8f8e8d #c9c8c3 #3e3f40
-        urgent_workspace   #2f343a #fc0303 #ffffff
-        binding_mode       #2f343a #fc0303 #ffffff
-    }
-}
-
-# bar {
-#     position top
-#     output $out_third
-#     tray_output none
-#     status_command i3blocks -c ~/.config/i3blocks/third
-#     colors {
-#         background #dcdad5
-#         statusline #000000
-#         separator #666666
-#
-#         focused_workspace  #585959 #5e5e5e #d7dbdb
-#         active_workspace   #333333 #5f676a #000000
-#         inactive_workspace #8f8e8d #c9c8c3 #3e3f40
-#         urgent_workspace   #2f343a #fc0303 #ffffff
-#         binding_mode       #2f343a #fc0303 #ffffff
-#     }
-# }
+# No i3bar: both top bars and the bottom bar are polybar
+# (polybar/config.ini, started by polybar/launch.sh at the bottom of this file)
 
 # custom options
 focus_follows_mouse no

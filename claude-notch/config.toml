@@ -8,8 +8,8 @@ monitor = "primary"
 anchor = "top center"
 x_offset = 0
 y_offset = 0
-# Collapsed pill height. 25 matches your i3bar height.
-pill_height = 25
+# Collapsed pill height (top polybar is 25px).
+pill_height = 24
 pill_min_width = 110
 panel_width = 400
 # Delay before the panel collapses after the pointer leaves (milliseconds)
@@ -38,7 +38,7 @@ completion_timeout_ms = 4000
 enabled = false
 file = "~/.config/assets/notifications/confident.mp3"
 player = "paplay"
-# Skip the sound while this file exists (your i3blocks DND toggle)
+# Skip the sound while this file exists (the polybar DND toggle)
 dnd_file = "/tmp/dnd_status.txt"
 
 [sessions]

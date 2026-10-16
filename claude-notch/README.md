@@ -92,9 +92,9 @@ Sections: `[notch]` monitor/anchor/offsets/sizes/collapse delay,
 `[notifications]`, `[sound]`, `[sessions]`, `[theme]`. Run `claude-notch reload`
 after editing.
 
-Tip: the i3blocks `task` block is centered on the primary bar, so a long task
-text can run under the notch. Set `x_offset` in `[notch]` to shift the notch, or
-lower `min_width` of the task block.
+Tip: the window title on the top polybar starts after the workspace buttons, so
+a long title can run under the notch. Set `x_offset` in `[notch]` to shift the
+notch, or lower the title length in `[module/xwindow]` of `polybar/config.ini`.
 
 ## Troubleshooting
 
